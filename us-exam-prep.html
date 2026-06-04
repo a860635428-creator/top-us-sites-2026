@@ -62,14 +62,12 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    /* Typography */
     h1, h2, h3, h4 { letter-spacing: -0.02em; }
     .serif { font-family: var(--font-serif); }
 
-    /* Layout */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* ---- NAVBAR ---- */
+    /* Navbar */
     .navbar {
       position: sticky; top: 0; z-index: 100;
       background: var(--bg);
@@ -86,10 +84,10 @@
       color: var(--text); display: flex; align-items: center; gap: 8px;
     }
     .nav-logo span { color: var(--primary); }
-    .nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+    .nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
     .nav-links a {
       text-decoration: none; font-size: 0.8125rem; font-weight: 500;
-      color: var(--text-muted); padding: 6px 14px; border-radius: 100px;
+      color: var(--text-muted); padding: 6px 12px; border-radius: 100px;
       transition: all 0.2s;
     }
     .nav-links a:hover, .nav-links a.active { background: var(--primary-light); color: var(--primary); }
@@ -101,19 +99,19 @@
     }
     .theme-btn:hover { border-color: var(--primary); color: var(--primary); }
 
-    /* ---- HERO ---- */
+    /* Hero */
     .hero {
       padding: 72px 0 56px;
       background: linear-gradient(180deg, var(--primary-light) 0%, var(--bg) 100%);
     }
     .hero-inner { text-align: center; max-width: 760px; margin: 0 auto; }
     .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex; align-items: center; gap: 8px;
       background: var(--surface); border: 1px solid var(--border);
-      padding: 5px 16px; border-radius: 100px;
+      padding: 6px 18px; border-radius: 100px;
       font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 20px;
     }
-    .hero-badge .dot { width: 7px; height: 7px; background: var(--primary); border-radius: 50%; animation: pulse 2s infinite; }
+    .hero-badge .dot { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
     .hero h1 {
@@ -122,8 +120,7 @@
     }
     .hero h1 span {
       background: linear-gradient(135deg, var(--primary), var(--accent-purple));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
     .hero p { font-size: 1.08rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 36px; }
     .hero-stats { display: flex; justify-content: center; gap: clamp(20px, 5vw, 56px); flex-wrap: wrap; }
@@ -131,7 +128,7 @@
     .hero-stat .num { font-size: 2rem; font-weight: 800; color: var(--primary); }
     .hero-stat .label { font-size: 0.8125rem; color: var(--text-light); margin-top: 4px; }
 
-    /* ---- QUICK NAV ---- */
+    /* Quick Nav */
     .quick-nav { padding: 0 0 40px; position: sticky; top: 66px; z-index: 50; }
     .quick-nav-inner {
       background: var(--surface); border: 1px solid var(--border);
@@ -140,16 +137,14 @@
       box-shadow: var(--shadow-sm);
     }
     .quick-nav-btn {
-      padding: 8px 18px; border-radius: 100px; border: none;
+      padding: 8px 16px; border-radius: 100px; border: none;
       background: transparent; color: var(--text-muted); font-size: 0.8125rem;
       font-weight: 500; cursor: pointer; font-family: inherit;
       transition: all 0.2s; white-space: nowrap;
     }
     .quick-nav-btn:hover { background: var(--surface-alt); color: var(--text); }
     .quick-nav-btn.active { background: var(--primary); color: #fff; }
-    .search-box {
-      display: flex; justify-content: center; margin-top: 12px;
-    }
+    .search-box { display: flex; justify-content: center; margin-top: 12px; }
     .search-input {
       width: 100%; max-width: 440px; padding: 10px 18px;
       border: 1px solid var(--border); border-radius: 100px;
@@ -159,24 +154,24 @@
     .search-input:focus { border-color: var(--primary); }
     .search-input::placeholder { color: var(--text-light); }
 
-    /* ---- SECTIONS ---- */
+    /* Sections */
     .section { padding: 0 0 64px; }
     .section-header { margin-bottom: 28px; }
     .section-header h2 { font-size: 1.5rem; font-weight: 700; }
     .section-header p { font-size: 0.9rem; color: var(--text-muted); margin-top: 4px; max-width: 600px; }
-    .section-divider { display: flex; align-items: center; gap: 12px; }
+    .section-divider { display: flex; align-items: center; gap: 14px; }
     .section-icon {
-      width: 40px; height: 40px; border-radius: 12px;
+      width: 44px; height: 44px; border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; flex-shrink: 0;
+      font-size: 1.3rem; flex-shrink: 0;
     }
 
-    /* ---- EXAM CARD ---- */
+    /* Exam Card */
     .exam-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 18px; }
     .exam-card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius-lg); padding: 28px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.25s;
       cursor: default; position: relative; overflow: hidden;
     }
     .exam-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
@@ -184,11 +179,11 @@
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
       background: var(--card-accent, var(--primary));
     }
-    .exam-card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
+    .exam-card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; gap: 12px; }
     .exam-card-name { font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
     .exam-card-fullname { font-size: 0.8rem; color: var(--text-light); margin-bottom: 2px; }
     .exam-card-badge {
-      font-size: 0.6875rem; font-weight: 600; padding: 3px 10px;
+      font-size: 0.6875rem; font-weight: 600; padding: 4px 10px;
       border-radius: 100px; white-space: nowrap; flex-shrink: 0;
     }
     .badge-green { background: #ecfdf5; color: #065f46; }
@@ -233,7 +228,7 @@
     }
     .exam-card-link:hover { background: var(--primary-dark); }
 
-    /* ---- STUDY TIPS SECTION ---- */
+    /* Study Tips Section */
     .tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
     .tip-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -249,7 +244,7 @@
     .tip-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
     .tip-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
 
-    /* ---- TIMELINE ---- */
+    /* Timeline */
     .timeline { position: relative; padding-left: 28px; }
     .timeline::before {
       content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
@@ -264,7 +259,7 @@
     .timeline-item h3 { font-size: 0.95rem; font-weight: 700; }
     .timeline-item p { font-size: 0.8125rem; color: var(--text-muted); margin-top: 2px; }
 
-    /* ---- FOOTER ---- */
+    /* Footer */
     .footer {
       border-top: 1px solid var(--border); padding: 40px 0 32px;
       background: var(--surface-alt);
@@ -281,21 +276,28 @@
       text-align: center; font-size: 0.75rem; color: var(--text-light);
     }
     .footer-bottom p { margin: 2px 0; }
+    .footer-bottom a { color: var(--primary); text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; }
 
-    /* ---- ANIMATIONS ---- */
+    /* Animations */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .exam-card { animation: fadeUp 0.5s ease both; }
-    .exam-card:nth-child(1){animation-delay:.02s}.exam-card:nth-child(2){animation-delay:.05s}
-    .exam-card:nth-child(3){animation-delay:.08s}.exam-card:nth-child(4){animation-delay:.11s}
-    .exam-card:nth-child(5){animation-delay:.14s}.exam-card:nth-child(6){animation-delay:.17s}
-    .exam-card:nth-child(7){animation-delay:.20s}.exam-card:nth-child(8){animation-delay:.23s}
+    .exam-card:nth-child(1){animation-delay:.02s}
+    .exam-card:nth-child(2){animation-delay:.05s}
+    .exam-card:nth-child(3){animation-delay:.08s}
+    .exam-card:nth-child(4){animation-delay:.11s}
+    .exam-card:nth-child(5){animation-delay:.14s}
+    .exam-card:nth-child(6){animation-delay:.17s}
+    .exam-card:nth-child(7){animation-delay:.20s}
+    .exam-card:nth-child(8){animation-delay:.23s}
 
     .hidden { display: none !important; }
     .no-results {
       text-align: center; padding: 48px 24px; color: var(--text-muted);
+      grid-column: 1 / -1;
     }
     .no-results h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
 
@@ -325,7 +327,7 @@
         <a href="#military">Military</a>
         <a href="#study-tips">Study Tips</a>
       </div>
-      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">🌙 Dark Mode</button>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">&#9790; Dark Mode</button>
     </div>
   </nav>
 
@@ -334,9 +336,9 @@
     <div class="container hero-inner">
       <div class="hero-badge"><span class="dot"></span> Updated for 2026 Test Cycles</div>
       <h1>Your Complete Guide to <span>American Exams</span></h1>
-      <p>From K-12 assessments and college admissions to professional certifications and citizenship — find everything you need to prepare, study smarter, and pass with confidence.</p>
+      <p>From K-12 assessments and college admissions to professional certifications and citizenship &mdash; find everything you need to prepare, study smarter, and pass with confidence.</p>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="num">28+</div><div class="label">Exams Covered</div></div>
+        <div class="hero-stat"><div class="num">33+</div><div class="label">Exams Covered</div></div>
         <div class="hero-stat"><div class="num">7</div><div class="label">Categories</div></div>
         <div class="hero-stat"><div class="num">100%</div><div class="label">Free Resources</div></div>
       </div>
@@ -370,17 +372,17 @@
         <div class="tip-card">
           <div class="tip-icon" style="background:#eff4ff;">&#9202;</div>
           <h3>Spaced Repetition</h3>
-          <p>Review material at increasing intervals (1 day, 3 days, 1 week, 2 weeks, 1 month). This technique, pioneered by psychologist Hermann Ebbinghaus, fights the forgetting curve by reinforcing neural pathways exactly when recall is about to fade. Use tools like Anki or Quizlet to automate review scheduling.</p>
+          <p>Review material at increasing intervals (1 day, 3 days, 1 week, 2 weeks, 1 month). This technique, pioneered by Hermann Ebbinghaus, fights the forgetting curve by reinforcing neural pathways exactly when recall is about to fade. Use tools like Anki or Quizlet to automate review scheduling.</p>
         </div>
         <div class="tip-card">
           <div class="tip-icon" style="background:#ecfdf5;">&#128214;</div>
           <h3>Active Recall</h3>
-          <p>Close the book and test yourself. Don't just re-read notes — force your brain to retrieve information. Write down everything you remember about a topic, then check against your materials. Research shows active recall is 2-3x more effective than passive review for long-term retention.</p>
+          <p>Close the book and test yourself. Don't just re-read notes &mdash; force your brain to retrieve information. Write down everything you remember about a topic, then check against your materials. Research shows active recall is 2-3x more effective than passive review for long-term retention.</p>
         </div>
         <div class="tip-card">
           <div class="tip-icon" style="background:#f5f3ff;">&#127942;</div>
           <h3>Practice Tests</h3>
-          <p>Take full-length timed practice exams under real test conditions. Simulate the actual testing environment: same time limits, no distractions, no phone. Review every mistake thoroughly — each wrong answer is a learning opportunity. Aim for at least 3-5 full practice tests before exam day.</p>
+          <p>Take full-length timed practice exams under real test conditions. Simulate the actual testing environment: same time limits, no distractions, no phone. Review every mistake thoroughly &mdash; each wrong answer is a learning opportunity. Aim for at least 3-5 full practice tests before exam day.</p>
         </div>
         <div class="tip-card">
           <div class="tip-icon" style="background:#fff1f2;">&#9200;</div>
@@ -395,7 +397,7 @@
         <div class="tip-card">
           <div class="tip-icon" style="background:#fffbeb;">&#127939;</div>
           <h3>Physical & Mental Wellness</h3>
-          <p>Sleep 7-9 hours — especially the night before. Exercise 3 times per week to boost BDNF, a protein that enhances learning. Eat brain-healthy foods (blueberries, nuts, fatty fish). Meditate for 10 minutes daily to reduce test anxiety. Your brain performs best when your body is well cared for.</p>
+          <p>Sleep 7-9 hours &mdash; especially the night before. Exercise 3 times per week to boost BDNF, a protein that enhances learning. Eat brain-healthy foods (blueberries, nuts, fatty fish). Meditate for 10 minutes daily to reduce test anxiety. Your brain performs best when your body is well cared for.</p>
         </div>
         <div class="tip-card">
           <div class="tip-icon" style="background:#eff4ff;">&#128161;</div>
@@ -405,7 +407,7 @@
         <div class="tip-card">
           <div class="tip-icon" style="background:#ecfdf5;">&#128736;</div>
           <h3>Error Analysis Log</h3>
-          <p>Keep a dedicated notebook where you record every mistake from practice problems. For each error, write: the correct answer, why you got it wrong, and what you'll do differently next time. Review this log weekly — pattern recognition in your errors is the fastest path to improvement.</p>
+          <p>Keep a dedicated notebook where you record every mistake from practice problems. For each error, write: the correct answer, why you got it wrong, and what you'll do differently next time. Review this log weekly &mdash; pattern recognition in your errors is the fastest path to improvement.</p>
         </div>
       </div>
     </div>
@@ -423,28 +425,28 @@
       </div>
       <div class="timeline">
         <div class="timeline-item">
-          <h3>6 Months Before — Diagnostic & Planning</h3>
+          <h3>6 Months Before &mdash; Diagnostic & Planning</h3>
           <p>Take a full-length diagnostic test to identify strengths and weaknesses. Research target scores for your schools or licensing boards. Create a study schedule with weekly goals. Gather official prep materials and register for your test date.</p>
         </div>
         <div class="timeline-item">
-          <h3>4 Months Before — Content Review</h3>
+          <h3>4 Months Before &mdash; Content Review</h3>
           <p>Systematically review all content areas, focusing heavily on your weak spots. Spend 60-70% of time on weaker areas and 30-40% on reinforcement of strengths. Complete chapter-by-chapter exercises in prep books. Begin building your error analysis log.</p>
         </div>
         <div class="timeline-item">
-          <h3>2 Months Before — Practice Phase</h3>
+          <h3>2 Months Before &mdash; Practice Phase</h3>
           <p>Transition from content review to timed practice. Take one full practice test every 1-2 weeks under real conditions. Analyze results thoroughly and adjust your study plan. Join a study group or hire a tutor for difficult areas.</p>
         </div>
         <div class="timeline-item">
-          <h3>3 Weeks Before — Intensive Drilling</h3>
+          <h3>3 Weeks Before &mdash; Intensive Drilling</h3>
           <p>Focus on timing strategies and test-day pacing. Take your final practice tests. Review all error logs and note patterns. Memorize key formulas, vocabulary, or frameworks. Fine-tune your test-taking strategy (order of sections, time allocation).</p>
         </div>
         <div class="timeline-item">
-          <h3>1 Week Before — Final Review & Rest</h3>
-          <p>Light review only — no new material. Review summary sheets, flashcards, and your error log. Prepare logistics: ID, admission ticket, directions to test center, approved calculator, snacks. Prioritize sleep: 8+ hours every night. Visualize success with positive mental rehearsal.</p>
+          <h3>1 Week Before &mdash; Final Review & Rest</h3>
+          <p>Light review only &mdash; no new material. Review summary sheets, flashcards, and your error log. Prepare logistics: ID, admission ticket, directions to test center, approved calculator, snacks. Prioritize sleep: 8+ hours every night. Visualize success with positive mental rehearsal.</p>
         </div>
         <div class="timeline-item">
-          <h3>Test Day — Execute Your Plan</h3>
-          <p>Eat a protein-rich breakfast. Arrive 30 minutes early. Use the restroom before the exam begins. Read every question carefully. Trust your preparation. Manage time: if stuck, mark and return later. Take deep breaths between sections. You've prepared — now perform.</p>
+          <h3>Test Day &mdash; Execute Your Plan</h3>
+          <p>Eat a protein-rich breakfast. Arrive 30 minutes early. Use the restroom before the exam begins. Read every question carefully. Trust your preparation. Manage time: if stuck, mark and return later. Take deep breaths between sections. You've prepared &mdash; now perform.</p>
         </div>
       </div>
     </div>
@@ -475,7 +477,7 @@
           <a href="https://www.cfainstitute.org/" target="_blank" rel="noopener">CFA Institute</a>
         </div>
         <div class="footer-col">
-          <h4>Citizenship & Equity</h4>
+          <h4>Citizenship & Equivalency</h4>
           <a href="https://www.uscis.gov/citizenship" target="_blank" rel="noopener">USCIS Citizenship</a>
           <a href="https://ged.com/" target="_blank" rel="noopener">GED Official</a>
           <a href="https://www.ets.org/toefl" target="_blank" rel="noopener">TOEFL Official</a>
@@ -483,8 +485,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>US Exam Prep Hub — Free, accessible test preparation resources for all Americans.</p>
+        <p>US Exam Prep Hub &mdash; Free, accessible test preparation resources for all Americans.</p>
         <p>Not affiliated with any testing organization. All trademarks belong to their respective owners.</p>
+        <p><a href="https://github.com/a860635428-creator/top-us-sites-2026" target="_blank">View on GitHub</a></p>
       </div>
     </div>
   </footer>
@@ -528,7 +531,7 @@
         icon: '&#128188;',
         color: '#fff3e0',
         iconBg: '#ffe0b2',
-        desc: 'Licensing and certification exams for careers in accounting, law, nursing, medicine, finance, and project management.',
+        desc: 'Licensing and certification exams for careers in accounting, law, nursing, medicine, finance, teaching, and project management.',
         badge: 'badge-amber',
         accent: '#e65100'
       },
@@ -589,8 +592,8 @@
         id: 'common-core',
         cat: 'k12',
         name: 'State Assessments',
-        fullname: 'Common Core / SBAC / PARCC',
-        desc: 'Annual state-level assessments aligned with Common Core standards. States use SBAC (Smarter Balanced) or PARCC, testing English Language Arts and Mathematics in grades 3-8 and high school.',
+        fullname: 'Common Core / SBAC / PARCC / STAAR',
+        desc: 'Annual state-level assessments aligned with Common Core standards. Most states use SBAC (Smarter Balanced) or their own tests like STAAR (Texas), testing English Language Arts and Mathematics in grades 3-8 and high school.',
         format: 'Online & performance tasks',
         duration: '3-4 hours total',
         score: 'Level 1-4 Achievement',
@@ -621,6 +624,25 @@
           'Build writing skills with timed essay practice'
         ],
         link: 'https://www.act.org/content/act/en/products-and-services/act-aspire.html',
+        accent: '#2e7d32'
+      },
+      {
+        id: 'naep',
+        cat: 'k12',
+        name: 'NAEP',
+        fullname: 'National Assessment of Educational Progress',
+        desc: 'Known as "The Nation\'s Report Card," NAEP is the largest nationally representative assessment of what US students know and can do. Tests reading, math, science, and other subjects in grades 4, 8, and 12.',
+        format: 'Computer-based (sampled students)',
+        duration: '90-120 min per subject',
+        score: '0-500 scale score',
+        who: 'Sampled students (grades 4, 8, 12)',
+        tips: [
+          'NAEP is not something you "study for" — it measures overall learning',
+          'Strong reading and math fundamentals are the best preparation',
+          'Focus on critical thinking, not memorization',
+          'Teachers: use NAEP question frameworks to guide instruction'
+        ],
+        link: 'https://nces.ed.gov/nationsreportcard/',
         accent: '#2e7d32'
       },
 
@@ -706,7 +728,7 @@
         cat: 'college',
         name: 'IB Exams',
         fullname: 'International Baccalaureate',
-        desc: 'A rigorous two-year diploma program recognized globally. IB exams assess six subject groups plus Theory of Knowledge, the Extended Essay, and Creativity-Activity-Service. Universities worldwide grant credit for high scores (5-7).',
+        desc: 'A rigorous two-year diploma program recognized globally. IB exams assess six subject groups plus Theory of Knowledge, the Extended Essay, and Creativity-Action-Service. Universities worldwide grant credit for high scores (5-7).',
         format: 'Paper-based (written + oral)',
         duration: '2-3 hours per subject',
         score: '1-7 per subject (total max 45)',
@@ -718,6 +740,25 @@
           'The TOK essay requires interdisciplinary thinking'
         ],
         link: 'https://www.ibo.org/',
+        accent: '#1565c0'
+      },
+      {
+        id: 'clep',
+        cat: 'college',
+        name: 'CLEP',
+        fullname: 'College-Level Examination Program',
+        desc: 'A set of 34 exams that allow students to earn college credit for what they already know, whether from independent study, on-the-job experience, or prior coursework. Each exam is 90-120 minutes and costs a fraction of college tuition.',
+        format: 'Computer-based',
+        duration: '90-120 min per exam',
+        score: '20-80 (50+ = passing at most schools)',
+        who: 'College students & adult learners',
+        tips: [
+          'Check which CLEP exams your college accepts before taking',
+          'Use free study resources at clep.collegeboard.org',
+          'Modern States offers free CLEP prep courses',
+          'Each passed CLEP can save $1,000+ in tuition'
+        ],
+        link: 'https://clep.collegeboard.org/',
         accent: '#1565c0'
       },
 
@@ -744,7 +785,7 @@
       {
         id: 'gmat',
         cat: 'grad',
-        name: 'GMAT',
+        name: 'GMAT Focus Edition',
         fullname: 'Graduate Management Admission Test',
         desc: 'The standard entrance exam for MBA and business master\'s programs. The GMAT Focus Edition (launched 2024) tests quantitative reasoning, verbal reasoning, and data insights. Most top-50 business schools require or strongly recommend it.',
         format: 'Computer-adaptive',
@@ -796,6 +837,44 @@
           'Use AAMC official prep materials as your primary resource'
         ],
         link: 'https://www.aamc.org/students/mcat/',
+        accent: '#6a1b9a'
+      },
+      {
+        id: 'dat',
+        cat: 'grad',
+        name: 'DAT',
+        fullname: 'Dental Admission Test',
+        desc: 'Required for admission to dental schools in the US and Canada. Tests natural sciences (biology, general chemistry, organic chemistry), perceptual ability, reading comprehension, and quantitative reasoning.',
+        format: 'Computer-based',
+        duration: '4 hours 30 min',
+        score: '1-30 (average ~19)',
+        who: 'Pre-dental students',
+        tips: [
+          'Perceptual Ability (PAT) is unique — practice daily with DAT Destroyer',
+          'Organic chemistry is heavily tested — know reaction mechanisms',
+          'Use Bootcamp or DAT Ready for comprehensive prep',
+          'Aim for a 20+ for competitive dental school admission'
+        ],
+        link: 'https://www.ada.org/en/education-cme/predental/dental-admission-test/',
+        accent: '#6a1b9a'
+      },
+      {
+        id: 'oat',
+        cat: 'grad',
+        name: 'OAT',
+        fullname: 'Optometry Admission Test',
+        desc: 'Required for admission to optometry schools in the US. Tests natural sciences, physics, reading comprehension, and quantitative reasoning. Similar in structure to the DAT but tailored for optometry.',
+        format: 'Computer-based',
+        duration: '4 hours 40 min',
+        score: '200-400 (average ~300)',
+        who: 'Pre-optometry students',
+        tips: [
+          'Study alongside pre-med students for the science sections',
+          'Physics section is unique — dedicate 4-6 weeks to prep',
+          'Use OAT Booster or OAT Destroyer for practice',
+          'Aim for 320+ for competitive admission'
+        ],
+        link: 'https://www.ada.org/en/education-cme/predental/optometry-admission-test/',
         accent: '#6a1b9a'
       },
 
@@ -952,6 +1031,44 @@
         link: 'https://www.arello.org/',
         accent: '#e65100'
       },
+      {
+        id: 'praxis',
+        cat: 'professional',
+        name: 'Praxis',
+        fullname: 'Praxis Series',
+        desc: 'The leading series of exams for aspiring teachers in the US. Praxis Core tests basic skills (reading, writing, math) required for teacher prep program admission. Praxis Subject Assessments test knowledge in specific teaching fields for state licensure.',
+        format: 'Computer-based or paper',
+        duration: '1-4 hours (varies by test)',
+        score: '100-200 (varies by test; 160+ typically passing)',
+        who: 'Aspiring K-12 teachers',
+        tips: [
+          'Praxis Core is similar to SAT/ACT — review high school math basics',
+          'Subject Assessments require deep content knowledge in your field',
+          'Use ETS Praxis study companions (free on their website)',
+          'Check your state\'s specific passing score requirements'
+        ],
+        link: 'https://www.ets.org/praxis',
+        accent: '#e65100'
+      },
+      {
+        id: 'teas',
+        cat: 'professional',
+        name: 'TEAS',
+        fullname: 'Test of Essential Academic Skills',
+        desc: 'Required for admission to many nursing schools across the US. Tests reading, math, science, and English language usage. Administered by ATI Nursing Education. A high TEAS score significantly improves nursing school admission chances.',
+        format: 'Computer-based or paper',
+        duration: '3 hours 29 min (170 questions)',
+        score: '0-100% (most schools require 60-70%+)',
+        who: 'Aspiring nursing students',
+        tips: [
+          'Science section covers anatomy, physiology, biology, and chemistry',
+          'Use ATI TEAS prep packages (official) or Mometrix study guides',
+          'Reading comprehension is heavily weighted — practice active reading',
+          'Take multiple full-length practice tests under timed conditions'
+        ],
+        link: 'https://www.atitesting.com/teas/',
+        accent: '#e65100'
+      },
 
       // ---- LANGUAGE ----
       {
@@ -1070,6 +1187,25 @@
         link: 'https://hiset.ets.org/',
         accent: '#c62828'
       },
+      {
+        id: 'tasc',
+        cat: 'citizenship',
+        name: 'TASC',
+        fullname: 'Test Assessing Secondary Completion',
+        desc: 'Another high school equivalency option, though less common than GED and HiSET. Recognized in a handful of states including New York and Indiana. Covers five subject areas similar to HiSET.',
+        format: 'Computer or paper',
+        duration: '7+ hours total',
+        score: '500+ per subtest (300-800 scale)',
+        who: 'Adults seeking high school equivalency',
+        tips: [
+          'Check if your state offers TASC before committing to prep',
+          'New York State offered TASC for many years (now transitioning to GED)',
+          'Free prep materials available through state education websites',
+          'Consider GED or HiSET if you plan to relocate across state lines'
+        ],
+        link: 'https://www.tasctest.com/',
+        accent: '#c62828'
+      },
 
       // ---- MILITARY ----
       {
@@ -1096,9 +1232,10 @@
     // ---- BUILD QUICK NAV ----
     function buildQuickNav() {
       const nav = document.getElementById('quickNav');
-      nav.innerHTML = categories.map(c =>
-        `<button class="quick-nav-btn" data-cat="${c.id}">${c.title}</button>`
-      ).join('');
+      nav.innerHTML = '<button class="quick-nav-btn active" data-cat="all">All Categories</button>' +
+        categories.map(c =>
+          `<button class="quick-nav-btn" data-cat="${c.id}">${c.title}</button>`
+        ).join('');
     }
 
     // ---- BUILD SECTIONS ----
@@ -1259,7 +1396,7 @@
     let isDark = localStorage.getItem('examHubTheme') === 'dark' || (!localStorage.getItem('examHubTheme') && prefersDark);
     function applyTheme() {
       document.documentElement.setAttribute('data-theme', isDark ? 'dark' : '');
-      themeToggle.textContent = isDark ? '\u2600\uFE0F Light Mode' : '\uD83C\uDF19 Dark Mode';
+      themeToggle.innerHTML = isDark ? '&#9728; Light Mode' : '&#9790; Dark Mode';
       localStorage.setItem('examHubTheme', isDark ? 'dark' : 'light');
     }
     applyTheme();
