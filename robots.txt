@@ -1,4 +1,8 @@
+# robots.txt for USMLE Prep Platform
+# https://hebin.fun
+
 User-agent: *
 Allow: /
-Disallow: /api/
+
+# Sitemap
 Sitemap: https://hebin.fun/sitemap.xml
