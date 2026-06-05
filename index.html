@@ -4,9 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>usmle-prep</title>
-    <script type="module" crossorigin src="/assets/index-Du-DzXA8.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-B5XXzLEP.css">
+    <title>USMLE Prep Platform | Study in English, Understand in Your Language</title>
+    <meta name="description" content="Free USMLE Step 1, Step 2 CK, Step 3 practice questions with explanations in English, Chinese, and Spanish. Study smarter with USMLE Prep Platform." />
+    <!-- SPA 路由修复：从 sessionStorage 恢复原始 URL -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.getItem('spa_redirect');
+        if (redirect) {
+          sessionStorage.removeItem('spa_redirect');
+          var url = new URL(redirect);
+          history.replaceState(null, null, url.pathname + url.search + url.hash);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DSY8KWzU.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BrlUpiEz.css">
   </head>
   <body>
     <div id="root"></div>
