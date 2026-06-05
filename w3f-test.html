@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web3Forms 测试</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; }
+    button { padding: 10px 20px; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    pre { background: #f1f5f9; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 13px; }
+    .status { padding: 10px; border-radius: 6px; margin-top: 15px; }
+    .success { background: #dcfce7; color: #166534; }
+    .error { background: #fee2e2; color: #991b1b; }
+  </style>
+</head>
+<body>
+  <h2>Web3Forms API 测试</h2>
+  <p>点击按钮，模拟网站订阅操作，向 a860635428@gmail.com 发送一封测试邮件。</p>
+  <button id="btn" onclick="testSubmit()">发送测试邮件</button>
+  <div id="result"></div>
+
+  <script>
+    async function testSubmit() {
+      const btn = document.getElementById('btn')
+      const result = document.getElementById('result')
+      btn.disabled = true
+      btn.textContent = '发送中…'
+      result.innerHTML = ''
+
+      const formData = new FormData()
+      formData.append('access_key', 'cb94bc7d-3efb-466a-b5e4-01bc5e4c755a')
+      formData.append('email', 'test-subscriber@example.com')
+      formData.append('subject', '📬 New USMLE Prep Subscriber [TEST]')
+      formData.append('message', '这是一条测试邮件。\\n\\n订阅者邮箱: test-subscriber@example.com\\n时间: ' + new Date().toLocaleString() + '\\n\\n— USMLE Prep Platform')
+      formData.append('from_name', 'USMLE Prep Platform')
+      formData.append('replyto', 'test-subscriber@example.com')
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+        })
+        const data = await res.json()
+        console.log('Web3Forms response:', data)
+        if (data.success) {
+          result.innerHTML = '<div class="status success">✅ 发送成功！请检查 a860635428@gmail.com 收件箱（及垃圾邮件）。<br><pre>' + JSON.stringify(data, null, 2) + '</pre></div>'
+        } else {
+          result.innerHTML = '<div class="status error">❌ 发送失败：' + (data.message || '未知错误') + '<br><pre>' + JSON.stringify(data, null, 2) + '</pre></div>'
+        }
+      } catch (err) {
+        result.innerHTML = '<div class="status error">❌ 网络错误：' + err.message + '</div>'
+      }
+      btn.disabled = false
+      btn.textContent = '重新发送测试邮件'
+    }
+  </script>
+</body>
+</html>
