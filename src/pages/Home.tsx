@@ -72,7 +72,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '500+', label: 'Practice Questions', icon: '📚' },
+              { number: '569+', label: 'Practice Questions', icon: '📚' },
               { number: '3', label: 'USMLE Steps Covered', icon: '🎯' },
               { number: '3', label: 'Explanation Languages', icon: '🌐' },
               { number: 'Free', label: 'Starting Price', icon: '💰' },
@@ -114,7 +114,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Question Bank</h3>
               <p className="text-gray-600 leading-relaxed text-center">
-                500+ high-yield practice questions organized by USMLE Step and subject area.
+                569+ high-yield practice questions organized by USMLE Step and subject area.
                 Covers all major topics tested on the exam, with detailed explanations for every answer.
               </p>
             </div>
@@ -225,7 +225,7 @@ const Home = () => {
               {
                 icon: '💯',
                 title: 'Completely Free',
-                text: 'No subscriptions, no credit cards, no paywalls. All 500+ practice questions and mock exams are free. We believe test prep should be accessible to everyone.',
+                text: 'No subscriptions, no credit cards, no paywalls. All 569+ practice questions and mock exams are free. We believe test prep should be accessible to everyone.',
               },
               {
                 icon: '📱',
@@ -465,7 +465,7 @@ const Home = () => {
           {/* Trust badges */}
           <div className="mt-12 flex flex-wrap justify-center gap-8 text-center">
             {[
-              { number: '570+', label: 'Practice Questions' },
+              { number: '569+', label: 'Practice Questions' },
               { number: '3', label: 'Languages Supported' },
               { number: 'Free', label: 'No Hidden Costs' },
               { number: 'Weekly', label: 'Content Updates' },

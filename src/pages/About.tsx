@@ -21,7 +21,7 @@ const About = () => {
             <div className="grid md:grid-cols-3 gap-6 mt-4">
               <div className="bg-blue-50 p-6 rounded-2xl">
                 <div className="text-3xl mb-3">📚</div>
-                <h3 className="font-bold text-gray-900 mb-2">80+ Practice Questions</h3>
+                <h3 className="font-bold text-gray-900 mb-2">569+ Practice Questions</h3>
                 <p className="text-sm text-gray-600">
                   USMLE-style questions with detailed explanations in English, Chinese, and Spanish.
                 </p>
