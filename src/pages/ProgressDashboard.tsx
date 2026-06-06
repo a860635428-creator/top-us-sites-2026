@@ -1,13 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { questions, steps, subjects } from '../data/questions'
+import { questions, steps } from '../data/questions'
 import { getWrongAnswers } from '../utils/storage'
-
-interface WrongAnswerEntry {
-  questionId: number
-  userAnswer: number
-  timestamp: number
-}
 
 interface ExamHistoryEntry {
   step: string
@@ -19,13 +13,13 @@ interface ExamHistoryEntry {
 
 const ProgressDashboard = () => {
   const navigate = useNavigate()
-  const [wrongAnswers, setWrongAnswers] = useState<WrongAnswerEntry[]>([])
+  const [wrongAnswerIds, setWrongAnswerIds] = useState<number[]>([])
   const [examHistory, setExamHistory] = useState<ExamHistoryEntry[]>([])
   const [activeTab, setActiveTab] = useState<'overview' | 'weak'>('overview')
 
   useEffect(() => {
     // Load wrong answers
-    getWrongAnswers().then(setWrongAnswers).catch(() => {})
+    getWrongAnswers().then(setWrongAnswerIds).catch(() => {})
 
     // Load exam history
     try {
@@ -39,23 +33,19 @@ const ProgressDashboard = () => {
   // Compute stats
   const wrongByStep: Record<string, number> = {}
   const wrongBySubject: Record<string, number> = {}
-  const wrongQuestionIds = new Set(wrongAnswers.map(w => w.questionId))
 
-  wrongAnswers.forEach(w => {
-    const q = questions.find(q => q.id === w.questionId)
+  wrongAnswerIds.forEach(id => {
+    const q = questions.find(q => q.id === id)
     if (!q) return
     wrongByStep[q.step] = (wrongByStep[q.step] || 0) + 1
     wrongBySubject[q.subject] = (wrongBySubject[q.subject] || 0) + 1
   })
 
   const totalQuestions = questions.length
-  const totalWrong = wrongAnswers.length
+  const totalWrong = wrongAnswerIds.length
   const weakSubjects = Object.entries(wrongBySubject)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
-
-  const weakSteps = Object.entries(wrongByStep)
-    .sort((a, b) => b[1] - a[1])
 
   // Accuracy rate (if we have exam history)
   const avgScore = examHistory.length > 0
