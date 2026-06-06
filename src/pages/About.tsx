@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 
 const About = () => {
   return (
     <div className="bg-white">
       <SEO
-        title="About USMLE Prep — Free USMLE Practice for IMGs"
-        description="Learn about USMLE Prep Platform — a free, independent resource for international medical graduates (IMGs) preparing for USMLE Step 1, Step 2 CK, and Step 3 with multi-language explanations."
+        title="About USMLE Prep 鈥?Free USMLE Practice for IMGs"
+        description="Learn about USMLE Prep Platform 鈥?a free, independent resource for international medical graduates (IMGs) preparing for USMLE Step 1, Step 2 CK, and Step 3 with multi-language explanations."
         canonicalPath="/about"
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -26,21 +26,21 @@ const About = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">What We Offer</h2>
             <div className="grid md:grid-cols-3 gap-6 mt-4">
               <div className="bg-blue-50 p-6 rounded-2xl">
-                <div className="text-3xl mb-3">📚</div>
-                <h3 className="font-bold text-gray-900 mb-2">569+ Practice Questions</h3>
+                <div className="text-3xl mb-3">馃摎</div>
+                <h3 className="font-bold text-gray-900 mb-2">1069+ Practice Questions</h3>
                 <p className="text-sm text-gray-600">
                   USMLE-style questions with detailed explanations in English, Chinese, and Spanish.
                 </p>
               </div>
               <div className="bg-green-50 p-6 rounded-2xl">
-                <div className="text-3xl mb-3">🌍</div>
+                <div className="text-3xl mb-3">馃實</div>
                 <h3 className="font-bold text-gray-900 mb-2">Multi-Language Support</h3>
                 <p className="text-sm text-gray-600">
-                  Study in English and review explanations in your native language — 中文 or Español.
+                  Study in English and review explanations in your native language 鈥?涓枃 or Espa帽ol.
                 </p>
               </div>
               <div className="bg-purple-50 p-6 rounded-2xl">
-                <div className="text-3xl mb-3">📊</div>
+                <div className="text-3xl mb-3">馃搳</div>
                 <h3 className="font-bold text-gray-900 mb-2">Smart Analytics</h3>
                 <p className="text-sm text-gray-600">
                   Track your progress, identify weak areas, and focus your study time effectively.
@@ -53,13 +53,13 @@ const About = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Story</h2>
             <p>
               As a team of medical professionals and educators, we understand the unique challenges IMGs face when preparing
-              for the USMLE. Many of us have been through the journey ourselves — struggling with complex medical concepts
+              for the USMLE. Many of us have been through the journey ourselves 鈥?struggling with complex medical concepts
               while adapting to a new language and healthcare system.
             </p>
             <p className="mt-4">
               We created this platform to bridge that gap. Every question on our platform is carefully crafted to match
               the style and difficulty of actual USMLE questions, and every explanation is written to help you truly
-              understand the underlying concepts — not just memorize answers.
+              understand the underlying concepts 鈥?not just memorize answers.
             </p>
           </section>
 
@@ -87,15 +87,15 @@ const About = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
             <p>Have questions, suggestions, or feedback? We'd love to hear from you.</p>
             <div className="mt-4 space-y-2">
-              <p>📧 <a href="mailto:a860635428@gmail.com" className="text-blue-600 hover:underline">a860635428@gmail.com</a></p>
-              <p>🔒 Your data is safe with us. Read our <Link to="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>.</p>
+              <p>馃摟 <a href="mailto:a860635428@gmail.com" className="text-blue-600 hover:underline">a860635428@gmail.com</a></p>
+              <p>馃敀 Your data is safe with us. Read our <Link to="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>.</p>
             </div>
           </section>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <Link to="/" className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-1">
-            ← Back to Home
+            鈫?Back to Home
           </Link>
         </div>
       </div>
