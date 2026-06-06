@@ -51,7 +51,14 @@ const Register = () => {
     setLoading(false)
 
     if (!result.success) {
-      setError(result.message)
+      const msg = result.message
+      if (msg === 'Failed to fetch' || msg?.includes('fetch') || msg?.includes('network')) {
+        setError(
+          'Unable to connect to the server. If you are in a region that blocks Supabase (e.g., China, Saudi Arabia), please connect to a VPN (U.S. or Europe node) and try again.'
+        )
+      } else {
+        setError(msg)
+      }
       return
     }
 
