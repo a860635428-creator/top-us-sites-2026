@@ -13,6 +13,7 @@ import Register from './pages/Register'
 import Privacy from './pages/Privacy'
 import TermsOfService from './pages/TermsOfService'
 import About from './pages/About'
+import ProgressDashboard from './pages/ProgressDashboard'
 
 // Track page views for Google Analytics (SPA-friendly)
 const RouteTracker = () => {
@@ -70,6 +71,7 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/about" element={<About />} />
+            <Route path="/dashboard" element={<ProgressDashboard />} />
           </Routes>
         </main>
         <Footer />

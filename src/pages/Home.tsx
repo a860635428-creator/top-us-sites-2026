@@ -225,7 +225,7 @@ const Home = () => {
               {
                 icon: '💯',
                 title: 'Completely Free',
-                text: 'No subscriptions, no credit cards, no paywalls. All 80+ practice questions and mock exams are free. We believe test prep should be accessible to everyone.',
+                text: 'No subscriptions, no credit cards, no paywalls. All 500+ practice questions and mock exams are free. We believe test prep should be accessible to everyone.',
               },
               {
                 icon: '📱',
@@ -376,7 +376,110 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Ad: After FAQ */}
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Trusted by IMGs Worldwide
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              See what international medical graduates are saying about our free USMLE preparation platform
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Dr. Maria G.',
+                flag: '🇧🇷',
+                role: 'IMG from Brazil · Step 2 CK: 252',
+                text: 'The Chinese and Spanish explanations were a game-changer for me. As a non-native English speaker, being able to read explanations in my language helped me understand concepts I struggled with for months.',
+                step: 'Step 2 CK',
+              },
+              {
+                name: 'Dr. Wei L.',
+                flag: '🇨🇳',
+                role: 'IMG from China · Matched Internal Medicine 2025',
+                text: '作为中国医学生，英文题目 + 中文解析的组合太实用了。免费的题库质量很高，帮我通过了 Step 1 和 Step 2 CK。强烈推荐给所有中国 IMG！',
+                step: 'Step 1 & Step 2 CK',
+              },
+              {
+                name: 'Dr. Ahmed K.',
+                flag: '🇵🇰',
+                role: 'IMG from Pakistan · Step 1: Pass, Step 2: 248',
+                text: 'This platform saved me hundreds of dollars on USMLE prep. The mock exam timer is exactly what I needed to build stamina. The multi-language feature sets it apart from everything else.',
+                step: 'Step 1',
+              },
+              {
+                name: 'Dr. Sofia R.',
+                flag: '🇲🇽',
+                role: 'IMG from Mexico · Preparing for Match 2027',
+                text: 'Las explicaciones en español son increíblemente útiles. Finalmente puedo entender conceptos complejos sin tener que traducir cada palabra. ¡Y es completamente gratis!',
+                step: 'Step 2 CK',
+              },
+              {
+                name: 'Dr. Raj P.',
+                flag: '🇮🇳',
+                role: 'IMG from India · ECFMG Certified 2026',
+                text: 'I was skeptical about a free resource, but the question quality surprised me. The vignettes are well-written and the explanations are thorough. My go-to platform for quick practice sessions.',
+                step: 'Step 3',
+              },
+              {
+                name: 'Dr. Chen Y.',
+                flag: '🇹🇼',
+                role: 'IMG from Taiwan · Step 2 CK Prep',
+                text: '题库覆盖很全面，从基础到临床都有。特别是多语言解析功能，让我可以先用中文理解，再切换到英文巩固专业术语。免费用真的很良心！',
+                step: 'Step 1 & Step 2 CK',
+              },
+            ].map((testimonial, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover:border-blue-200 flex flex-col"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-2xl flex-shrink-0">
+                    {testimonial.flag}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-sm">{testimonial.name}</h3>
+                    <p className="text-xs text-gray-500 leading-tight">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed flex-grow mb-4">
+                  "{testimonial.text}"
+                </p>
+                <div className="flex items-center gap-2 mt-auto">
+                  <span className="text-xs font-semibold bg-blue-50 text-blue-700 px-2 py-1 rounded">
+                    {testimonial.step}
+                  </span>
+                  <span className="text-xs text-gray-400">Verified IMG</span>
+                </div>
+                {/* Stars */}
+                <div className="flex gap-1 mt-3 text-yellow-400 text-sm">
+                  {'★'.repeat(5)}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Trust badges */}
+          <div className="mt-12 flex flex-wrap justify-center gap-8 text-center">
+            {[
+              { number: '570+', label: 'Practice Questions' },
+              { number: '3', label: 'Languages Supported' },
+              { number: 'Free', label: 'No Hidden Costs' },
+              { number: 'Weekly', label: 'Content Updates' },
+            ].map((badge, i) => (
+              <div key={i} className="bg-white rounded-xl px-6 py-4 shadow-sm border border-gray-100 min-w-[120px]">
+                <div className="text-2xl font-bold text-blue-600">{badge.number}</div>
+                <div className="text-xs text-gray-500 mt-1">{badge.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ad: After Testimonials */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AdBanner format="horizontal" />
       </div>

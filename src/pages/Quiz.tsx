@@ -21,6 +21,11 @@ const Quiz = () => {
   const [showResult, setShowResult] = useState(false)
   const [wrongAnswers, setWrongAnswers] = useState<number[]>([])
 
+  // Report Error modal state
+  const [showReport, setShowReport] = useState(false)
+  const [reportText, setReportText] = useState('')
+  const [reportStatus, setReportStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+
   // Filter questions by step and optional subject
   const filteredQuestions = questions.filter((q) => {
     if (subject) {
@@ -232,10 +237,16 @@ const Quiz = () => {
             Explanation ({langLabels[lang]})
           </h3>
           <p className="text-gray-700 leading-relaxed mb-3">{getExplanation()}</p>
-          <p className="text-xs text-gray-400 italic">
+          <p className="text-xs text-gray-400 italic mb-3">
             ⚠️ AI-generated explanation. Please verify with official resources (First Aid, UWorld, NBME) before your exam.
             <span className="hidden sm:inline">/ AI 生成解释，请结合官方资源（First Aid、UWorld、NBME）核实。</span>
           </p>
+          <button
+            onClick={() => { setShowReport(true); setReportText('') }}
+            className="text-xs text-blue-600 hover:text-blue-800 underline-offset-2 hover:underline transition-colors"
+          >
+            🐛 Report Error / 报告错误
+          </button>
         </div>
       )}
 
@@ -274,6 +285,96 @@ const Quiz = () => {
           </button>
         )}
       </div>
+
+      {/* Report Error Modal */}
+      {showReport && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/50"
+            onClick={() => setShowReport(false)}
+          />
+          {/* Modal */}
+          <div className="relative bg-white rounded-2xl p-6 lg:p-8 w-full max-w-md shadow-2xl">
+            <h3 className="text-lg font-bold text-gray-900 mb-1">Report a Problem / 报告错误</h3>
+            <p className="text-xs text-gray-500 mb-4">
+              Question #{currentQuestion.id} · {currentQuestion.subject}
+            </p>
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault()
+                setReportStatus('sending')
+                try {
+                  const formData = new FormData()
+                  formData.append('access_key', 'cb94bc7d-3efb-466a-b5e4-01bc5e4c755a')
+                  formData.append('subject', `🚨 Question Error Report #${currentQuestion.id}`)
+                  formData.append('question_id', String(currentQuestion.id))
+                  formData.append('question_subject', currentQuestion.subject)
+                  formData.append('question_text', currentQuestion.question.slice(0, 200))
+                  formData.append('user_comment', reportText)
+                  formData.append('page_url', window.location.href)
+                  formData.append('from_name', 'USMLE Prep User')
+                  const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
+                  const data = await res.json()
+                  if (data.success) {
+                    setReportStatus('sent')
+                    setTimeout(() => { setShowReport(false); setReportStatus('idle'); setReportText('') }, 2000)
+                  } else {
+                    setReportStatus('error')
+                  }
+                } catch {
+                  setReportStatus('error')
+                }
+              }}
+              className="space-y-4"
+            >
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">What's wrong? / 问题描述</label>
+                <select className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                  <option value="">-- Select / 选择 --</option>
+                  <option value="wrong-answer">Wrong answer / 答案错误</option>
+                  <option value="typo">Typo / 错别字</option>
+                  <option value="confusing">Confusing explanation / 解释不清楚</option>
+                  <option value="outdated">Outdated info / 信息过时</option>
+                  <option value="other">Other / 其他</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Details (optional) / 详细说明</label>
+                <textarea
+                  value={reportText}
+                  onChange={ev => setReportText(ev.target.value)}
+                  rows={3}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Describe the issue... / 描述问题..."
+                />
+              </div>
+              <div className="flex gap-3 justify-end pt-2">
+                <button
+                  type="button"
+                  onClick={() => { setShowReport(false); setReportStatus('idle'); setReportText('') }}
+                  className="px-4 py-2 rounded-lg border border-gray-300 text-sm hover:bg-gray-50 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={reportStatus === 'sending'}
+                  className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50 transition-colors"
+                >
+                  {reportStatus === 'sending' ? 'Sending...' : reportStatus === 'sent' ? '✓ Sent!' : 'Submit / 提交'}
+                </button>
+              </div>
+              {reportStatus === 'sent' && (
+                <p className="text-sm text-green-600 text-center">Thank you! We'll review this question. / 感谢反馈！</p>
+              )}
+              {reportStatus === 'error' && (
+                <p className="text-sm text-red-600 text-center">Failed to send. Please email us directly. / 发送失败，请直接发邮件。</p>
+              )}
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

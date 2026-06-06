@@ -77,6 +77,7 @@ const Navbar = () => {
               { label: 'Question Bank', path: '/question-bank' },
               { label: 'Mock Exam', path: '/mock-exam' },
               { label: 'Wrong Answers', path: '/wrong-answers' },
+              { label: 'Dashboard', path: '/dashboard' },
               { label: 'Resources', path: '/resources' },
             ].map(({ label, path }) => (
               <Link
@@ -143,6 +144,13 @@ const Navbar = () => {
                       >
                         📝 My Wrong Answers
                       </Link>
+                      <Link
+                        to="/dashboard"
+                        onClick={() => setMenuOpen(false)}
+                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      >
+                        📊 My Progress
+                      </Link>
                       <button
                         onClick={handleLogout}
                         className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
@@ -179,6 +187,7 @@ const Navbar = () => {
               { label: 'Question Bank', path: '/question-bank' },
               { label: 'Mock Exam', path: '/mock-exam' },
               { label: 'Wrong Answers', path: '/wrong-answers' },
+              { label: 'Dashboard', path: '/dashboard' },
               { label: 'Resources', path: '/resources' },
             ].map(({ label, path }) => (
               <Link
