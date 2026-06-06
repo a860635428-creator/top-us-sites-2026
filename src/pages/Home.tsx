@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import AdBanner from '../components/AdBanner'
+import SEO from '../components/SEO'
 
 // Configure this to receive email notifications when users subscribe
 const WEB3FORMS_ACCESS_KEY = 'cb94bc7d-3efb-466a-b5e4-01bc5e4c755a' // Get free key at https://web3forms.com/
@@ -9,6 +10,11 @@ const ADMIN_EMAIL = 'a860635428@gmail.com'
 const Home = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="Free USMLE Step 1, 2 & 3 Practice Questions — USMLE Prep for IMGs"
+        description="569+ free USMLE Step 1, Step 2 CK & Step 3 practice questions with multi-language explanations in English, Chinese and Spanish. Designed for international medical graduates (IMGs). No signup required."
+        canonicalPath="/"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 relative z-10">

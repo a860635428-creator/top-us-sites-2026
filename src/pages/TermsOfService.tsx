@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const TermsOfService = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="Terms of Service"
+        description="USMLE Prep Platform terms of service. Read about the terms and conditions for using our free USMLE practice question platform."
+        canonicalPath="/terms"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
         <p className="text-gray-500 mb-10">Last updated: June 6, 2026</p>

@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const Privacy = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="Privacy Policy"
+        description="USMLE Prep Platform privacy policy. Learn how we handle your personal data, cookies, and account information."
+        canonicalPath="/privacy"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
         <p className="text-gray-500 mb-10">Last updated: June 6, 2026</p>

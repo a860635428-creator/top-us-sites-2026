@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const NotFound = () => {
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <SEO
+        title="Page Not Found"
+        description="The page you're looking for doesn't exist. Browse our USMLE practice questions instead."
+        noindex
+      />
       <div className="text-7xl mb-6">🔬</div>
       <h1 className="text-4xl font-bold text-gray-900 mb-4">404 — Page Not Found</h1>
       <p className="text-gray-600 mb-8">

@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const About = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="About USMLE Prep — Free USMLE Practice for IMGs"
+        description="Learn about USMLE Prep Platform — a free, independent resource for international medical graduates (IMGs) preparing for USMLE Step 1, Step 2 CK, and Step 3 with multi-language explanations."
+        canonicalPath="/about"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">About USMLE Prep Platform</h1>
         <p className="text-gray-500 mb-10">Free USMLE prep for international medical graduates</p>

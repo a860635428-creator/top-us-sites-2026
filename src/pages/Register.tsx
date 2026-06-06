@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { isLoggedIn, registerUser } from '../utils/auth'
+import SEO from '../components/SEO'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -109,13 +110,19 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <SEO
+        title="Create Account"
+        description="Create your free USMLE Prep account to track your study progress, save wrong answers, and prepare for USMLE Step 1, Step 2 CK, and Step 3 effectively."
+        canonicalPath="/register"
+        noindex
+      />
       <div className="max-w-md w-full space-y-8">
         {/* Logo */}
         <div className="text-center">
           <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span className="text-white font-bold text-2xl">U</span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900">Create your account</h2>
+          <h1 className="text-3xl font-bold text-gray-900">Create your account</h1>
           <p className="mt-2 text-sm text-gray-600">
             Already have an account?{' '}
             <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500">

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import AdBanner from '../components/AdBanner'
+import SEO from '../components/SEO'
 
 const resources = [
   // === Books ===
@@ -172,9 +173,14 @@ const Resources = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <SEO
+        title="USMLE Study Resources — Best Books, Videos & Tools"
+        description="Curated collection of the best USMLE study resources: First Aid books, UWorld, Pathoma, SketchyMedical, Anki, and more. Includes free video channels and study schedules for IMGs."
+        canonicalPath="/resources"
+      />
       {/* Page Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Study Resources</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">USMLE Study Resources — Books, Videos & Tools</h1>
         <p className="text-gray-600">
           Curated list of the best resources for USMLE preparation.
           These are affiliate links — your support helps keep this platform free.

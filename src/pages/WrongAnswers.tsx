@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { questions } from '../data/questions'
 import { getWrongAnswers, removeWrongAnswer } from '../utils/storage'
+import SEO from '../components/SEO'
 
 const WrongAnswers = () => {
   const [wrongQuestionIds, setWrongQuestionIds] = useState<number[]>([])
@@ -48,10 +49,15 @@ const WrongAnswers = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <SEO
+        title="Wrong Answer Review — USMLE Practice"
+        description="Review your incorrectly answered USMLE practice questions. Identify weak areas, understand correct answers, and improve your Step 1, Step 2 CK, and Step 3 exam scores with targeted review."
+        canonicalPath="/wrong-answers"
+      />
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Wrong Answers</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">USMLE Wrong Answer Review — Learn From Your Mistakes</h1>
         <p className="text-gray-600">
-          Review questions you've answered incorrectly. Learn from mistakes to build stronger knowledge.
+          Review and re-study USMLE questions you've answered incorrectly. Master weak areas with focused practice.
         </p>
       </div>
 

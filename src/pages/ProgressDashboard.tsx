@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { questions, steps } from '../data/questions'
 import { getWrongAnswers } from '../utils/storage'
+import SEO from '../components/SEO'
 
 interface ExamHistoryEntry {
   step: string
@@ -57,6 +58,11 @@ const ProgressDashboard = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <SEO
+        title="Your USMLE Progress Dashboard"
+        description="Track your USMLE study progress. View wrong answers by Step, mock exam history, weakest subjects, and personalized study recommendations for Step 1, Step 2 CK, and Step 3."
+        canonicalPath="/dashboard"
+      />
       {/* Header */}
       <div className="mb-8">
         <button

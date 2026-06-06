@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { setUser, isLoggedIn, verifyLogin, sendPasswordReset } from '../utils/auth'
+import SEO from '../components/SEO'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -107,13 +108,19 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <SEO
+        title="Sign In"
+        description="Sign in to your USMLE Prep account to track your progress, save wrong answers, and access personalized study analytics for USMLE Step 1, Step 2 CK, and Step 3."
+        canonicalPath="/login"
+        noindex
+      />
       <div className="max-w-md w-full space-y-8">
         {/* Logo */}
         <div className="text-center">
           <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span className="text-white font-bold text-2xl">U</span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900">Sign in to USMLE Prep</h2>
+          <h1 className="text-3xl font-bold text-gray-900">Sign in to USMLE Prep</h1>
           <p className="mt-2 text-sm text-gray-600">
             Or{' '}
             <Link to="/register" className="font-medium text-blue-600 hover:text-blue-500">

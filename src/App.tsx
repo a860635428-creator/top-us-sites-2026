@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -54,31 +55,33 @@ const BackToTop = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <RouteTracker />
-      <BackToTop />
-      <div className="min-h-screen flex flex-col bg-gray-50">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/question-bank" element={<QuestionBank />} />
-            <Route path="/quiz/:step/:subject?" element={<Quiz />} />
-            <Route path="/mock-exam" element={<MockExam />} />
-            <Route path="/wrong-answers" element={<WrongAnswers />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/dashboard" element={<ProgressDashboard />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <RouteTracker />
+        <BackToTop />
+        <div className="min-h-screen flex flex-col bg-gray-50">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/question-bank" element={<QuestionBank />} />
+              <Route path="/quiz/:step/:subject?" element={<Quiz />} />
+              <Route path="/mock-exam" element={<MockExam />} />
+              <Route path="/wrong-answers" element={<WrongAnswers />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/dashboard" element={<ProgressDashboard />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }
 

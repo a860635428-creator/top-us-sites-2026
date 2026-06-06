@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { questions, steps } from '../data/questions'
 import { addWrongAnswer } from '../utils/storage'
 import AdBanner from '../components/AdBanner'
+import SEO from '../components/SEO'
 
 type Lang = 'en' | 'zh' | 'es'
 
@@ -100,6 +101,11 @@ const Quiz = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <SEO
+        title={`${stepLabel} Practice Questions — USMLE Prep`}
+        description={`Free USMLE ${stepLabel} practice questions${subject ? ` focused on ${subject.replace(/-/g, ' ')}` : ''}. Interactive quiz with detailed explanations in English, Chinese and Spanish for IMGs.`}
+        canonicalPath={`/quiz/${step}${subject ? `/${subject}` : ''}`}
+      />
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-2">
@@ -181,9 +187,9 @@ const Quiz = () => {
           )}
         </div>
 
-        <h2 className="text-lg font-semibold text-gray-900 mb-6 leading-relaxed">
+        <p className="text-lg font-semibold text-gray-900 mb-6 leading-relaxed">
           {currentQuestion.question}
-        </h2>
+        </p>
 
         {/* Options */}
         <div className="space-y-3">

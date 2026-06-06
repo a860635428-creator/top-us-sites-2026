@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { questions, steps } from '../data/questions'
 import { addWrongAnswer } from '../utils/storage'
+import SEO from '../components/SEO'
 
 type Question = typeof questions[number]
 type Lang = 'en' | 'zh' | 'es'
@@ -463,9 +464,9 @@ const MockExam = () => {
               {q.subject}
             </span>
           </div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-6 leading-relaxed">
+          <p className="text-lg font-semibold text-gray-900 mb-6 leading-relaxed">
             {q.question}
-          </h2>
+          </p>
           {options.map((opt, idx) => (
             <button
               key={idx}
@@ -512,6 +513,11 @@ const MockExam = () => {
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <SEO
+        title="Free USMLE Mock Exam — Timed Practice Test"
+        description="Take a free, timed USMLE mock exam simulating the real test experience. Choose your Step (1, 2 CK, or 3), set question count and time limit. Track your score and review answers with multi-language explanations."
+        canonicalPath="/mock-exam"
+      />
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Mock Exam</h1>
         <p className="text-gray-600">
