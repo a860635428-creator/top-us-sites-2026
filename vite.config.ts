@@ -18,7 +18,7 @@ export default defineConfig({
               id.includes('node_modules/scheduler')) {
             return 'vendor-react'
           }
-          // Split question data (569 questions) into separate chunk
+          // Split question data (1069 questions) into separate chunk
           if (id.includes('/src/data/questions')) {
             return 'data-questions'
           }
