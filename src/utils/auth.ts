@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabase'
+import { supabase, isSupabaseReachable } from '../lib/supabase'
 
 export interface User {
   id: string
@@ -44,20 +44,6 @@ function saveLocalUsers(users: Record<string, { password: string; name: string; 
   localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(users))
 }
 
-function isNetworkError(msg: string): boolean {
-  const m = msg.toLowerCase()
-  return (
-    m === 'failed to fetch' ||
-    m.includes('fetch') ||
-    m.includes('network') ||
-    m.includes('timeout') ||
-    m.includes('abort') ||
-    m.includes('unreachable') ||
-    m.includes('connection') ||
-    m.includes('offline')
-  )
-}
-
 // ── Register ──────────────────────────────────────────────
 export async function registerUser(
   name: string,
@@ -65,7 +51,29 @@ export async function registerUser(
   password: string,
   language: 'en' | 'zh' | 'es'
 ): Promise<{ success: boolean; message: string }> {
-  // Always try Supabase first
+  // Pre-check: if Supabase is unreachable, skip directly to localStorage
+  let online = false
+  try {
+    online = await isSupabaseReachable()
+  } catch {
+    online = false
+  }
+
+  if (!online) {
+    // Supabase unreachable — register locally
+    const users = getLocalUsers()
+    if (users[email]) {
+      return { success: false, message: 'This email is already registered. Please log in instead.' }
+    }
+    users[email] = { password, name, language }
+    saveLocalUsers(users)
+    const user: User = { id: 'local-' + email, name, email, language }
+    saveLocalUser(user)
+    currentUser = user
+    return { success: true, message: 'Account created in offline mode. Your data is saved locally on this browser.' }
+  }
+
+  // Supabase is reachable — try cloud registration
   try {
     const { data, error } = await supabase.auth.signUp({
       email,
@@ -74,27 +82,6 @@ export async function registerUser(
     })
 
     if (error) {
-      // Network error → fallback to localStorage so user can still use the app
-      if (isNetworkError(error.message)) {
-        const users = getLocalUsers()
-        if (users[email]) {
-          return { success: false, message: 'This email is already registered. Please log in instead.' }
-        }
-        users[email] = { password, name, language }
-        saveLocalUsers(users)
-        const user: User = {
-          id: 'local-' + email,
-          name,
-          email,
-          language,
-        }
-        saveLocalUser(user)
-        currentUser = user
-        return {
-          success: true,
-          message: 'Account created in offline mode. Your data is saved locally on this browser.',
-        }
-      }
       if (error.message.includes('already registered') || error.message.includes('already exists')) {
         return { success: false, message: 'This email is already registered. Please log in instead.' }
       }
@@ -111,30 +98,18 @@ export async function registerUser(
       return { success: true, message: 'Registration successful!' }
     }
     return { success: true, message: 'Account created! Check your inbox for a verification link, then log in.' }
-  } catch (err: any) {
-    const msg = err?.message || ''
-    if (isNetworkError(msg)) {
-      // Fallback: register in localStorage
-      const users = getLocalUsers()
-      if (users[email]) {
-        return { success: false, message: 'This email is already registered. Please log in instead.' }
-      }
-      users[email] = { password, name, language }
-      saveLocalUsers(users)
-      const user: User = {
-        id: 'local-' + email,
-        name,
-        email,
-        language,
-      }
-      saveLocalUser(user)
-      currentUser = user
-      return {
-        success: true,
-        message: 'Account created in offline mode. Your data is saved locally on this browser.',
-      }
+  } catch {
+    // Supabase call failed despite pre-check passing — fallback to local
+    const users = getLocalUsers()
+    if (users[email]) {
+      return { success: false, message: 'This email is already registered. Please log in instead.' }
     }
-    return { success: false, message: msg }
+    users[email] = { password, name, language }
+    saveLocalUsers(users)
+    const user: User = { id: 'local-' + email, name, email, language }
+    saveLocalUser(user)
+    currentUser = user
+    return { success: true, message: 'Account created in offline mode. Your data is saved locally on this browser.' }
   }
 }
 
@@ -143,33 +118,43 @@ export async function verifyLogin(
   email: string,
   password: string
 ): Promise<{ success: boolean; message: string; user?: User }> {
+  // Pre-check: if Supabase is unreachable, go directly to localStorage
+  let online = false
+  try {
+    online = await isSupabaseReachable()
+  } catch {
+    online = false
+  }
+
+  if (!online) {
+    // Supabase unreachable — verify against localStorage
+    const users = getLocalUsers()
+    if (!users[email]) {
+      return { success: false, message: 'Invalid email or password.' }
+    }
+    if (users[email].password !== password) {
+      return { success: false, message: 'Invalid email or password.' }
+    }
+    const user: User = {
+      id: 'local-' + email,
+      name: users[email].name,
+      email,
+      language: users[email].language,
+    }
+    saveLocalUser(user)
+    currentUser = user
+    return {
+      success: true,
+      message: 'Signed in (offline mode). Your progress is saved locally on this browser.',
+      user,
+    }
+  }
+
+  // Supabase is reachable — try cloud login
   try {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password })
 
     if (error) {
-      // Network error → fallback to localStorage
-      if (isNetworkError(error.message)) {
-        const users = getLocalUsers()
-        if (!users[email]) {
-          return { success: false, message: 'Invalid email or password.' }
-        }
-        if (users[email].password !== password) {
-          return { success: false, message: 'Invalid email or password.' }
-        }
-        const user: User = {
-          id: 'local-' + email,
-          name: users[email].name,
-          email,
-          language: users[email].language,
-        }
-        saveLocalUser(user)
-        currentUser = user
-        return {
-          success: true,
-          message: 'Signed in (offline mode). Your progress is saved locally on this browser.',
-          user,
-        }
-      }
       if (error.message.includes('Invalid login')) {
         return { success: false, message: 'Invalid email or password.' }
       }
@@ -187,35 +172,30 @@ export async function verifyLogin(
       language: (u.user_metadata?.language as 'en' | 'zh' | 'es') || 'en',
     }
     currentUser = user
-    // Clear any stale local user data when Supabase login succeeds
     clearLocalUser()
     return { success: true, message: 'Login successful!', user }
-  } catch (err: any) {
-    const msg = err?.message || ''
-    if (isNetworkError(msg)) {
-      // Fallback: check localStorage
-      const users = getLocalUsers()
-      if (!users[email]) {
-        return { success: false, message: 'Invalid email or password.' }
-      }
-      if (users[email].password !== password) {
-        return { success: false, message: 'Invalid email or password.' }
-      }
-      const user: User = {
-        id: 'local-' + email,
-        name: users[email].name,
-        email,
-        language: users[email].language,
-      }
-      saveLocalUser(user)
-      currentUser = user
-      return {
-        success: true,
-        message: 'Signed in (offline mode). Your progress is saved locally on this browser.',
-        user,
-      }
+  } catch {
+    // Supabase call failed despite pre-check — fallback to local
+    const users = getLocalUsers()
+    if (!users[email]) {
+      return { success: false, message: 'Invalid email or password.' }
     }
-    return { success: false, message: msg }
+    if (users[email].password !== password) {
+      return { success: false, message: 'Invalid email or password.' }
+    }
+    const user: User = {
+      id: 'local-' + email,
+      name: users[email].name,
+      email,
+      language: users[email].language,
+    }
+    saveLocalUser(user)
+    currentUser = user
+    return {
+      success: true,
+      message: 'Signed in (offline mode). Your progress is saved locally on this browser.',
+      user,
+    }
   }
 }
 
@@ -235,22 +215,32 @@ export async function getUser(): Promise<User | null> {
   // Prefer cached
   if (currentUser) return currentUser
 
-  // Try Supabase session first
+  // Pre-check: if Supabase is unreachable, skip directly to localStorage
+  let online = false
   try {
-    const { data } = await supabase.auth.getSession()
-    if (data.session) {
-      const u = data.session.user
-      const user: User = {
-        id: u.id,
-        name: u.user_metadata?.name || u.email?.split('@')[0] || 'User',
-        email: u.email || '',
-        language: (u.user_metadata?.language as 'en' | 'zh' | 'es') || 'en',
-      }
-      currentUser = user
-      return user
-    }
+    online = await isSupabaseReachable()
   } catch {
-    // Supabase unreachable — fall through to localStorage
+    online = false
+  }
+
+  if (online) {
+    // Try Supabase session only if reachable
+    try {
+      const { data } = await supabase.auth.getSession()
+      if (data.session) {
+        const u = data.session.user
+        const user: User = {
+          id: u.id,
+          name: u.user_metadata?.name || u.email?.split('@')[0] || 'User',
+          email: u.email || '',
+          language: (u.user_metadata?.language as 'en' | 'zh' | 'es') || 'en',
+        }
+        currentUser = user
+        return user
+      }
+    } catch {
+      // Supabase unreachable — fall through to localStorage
+    }
   }
 
   // Fall back to localStorage
@@ -326,7 +316,8 @@ export async function sendPasswordReset(email: string): Promise<{ success: boole
     return { success: true, message: 'Password reset link sent! Check your inbox (and spam folder).' }
   } catch (err: any) {
     const msg = err?.message || ''
-    if (isNetworkError(msg)) {
+    // Treat any catch error as network failure
+    if (msg) {
       return {
         success: false,
         message: 'Cannot connect to server. Password reset is unavailable in offline mode. Please ensure you have a stable internet connection.',
