@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { steps, subjects } from '../data/questions'
 import AdBanner from '../components/AdBanner'
@@ -10,13 +10,13 @@ const QuestionBank = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <SEO
-        title="USMLE Question Bank 鈥?Step 1, 2 & 3 Practice Questions"
+        title="USMLE Question Bank — Step 1, 2 & 3 Practice Questions"
         description="Browse 1069+ free USMLE practice questions organized by Step 1, Step 2 CK, and Step 3. Filter by subject area including Pathology, Pharmacology, Internal Medicine, and more. No signup required."
         canonicalPath="/question-bank"
       />
       {/* Page Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">USMLE Question Bank 鈥?Step 1, 2 & 3 Practice Questions</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">USMLE Question Bank — Step 1, 2 & 3 Practice Questions</h1>
         <p className="text-gray-600">
           Browse 1069+ free USMLE practice questions across all steps. Filter by subject to focus your study.
         </p>
@@ -62,7 +62,8 @@ const QuestionBank = () => {
                     </p>
                   </div>
                   <div className="text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                    鈫?                  </div>
+                    →
+                  </div>
                 </div>
               </Link>
             ))}

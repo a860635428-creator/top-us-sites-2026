@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import AdBanner from '../components/AdBanner'
 import SEO from '../components/SEO'
@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="bg-white">
       <SEO
-        title="Free USMLE Step 1, 2 & 3 Practice Questions 鈥?USMLE Prep for IMGs"
+        title="Free USMLE Step 1, 2 & 3 Practice Questions — USMLE Prep for IMGs"
         description="1069+ free USMLE Step 1, Step 2 CK & Step 3 practice questions with multi-language explanations in English, Chinese and Spanish. Designed for international medical graduates (IMGs). No signup required."
         canonicalPath="/"
       />
@@ -21,7 +21,7 @@ const Home = () => {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-blue-500/30 text-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-              Multi-language explanations: English 路 涓枃 路 Espa帽ol
+              Multi-language explanations: English · 中文 · Español
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
               Study in English,
@@ -78,10 +78,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '1069+', label: 'Practice Questions', icon: '馃摎' },
-              { number: '3', label: 'USMLE Steps Covered', icon: '馃幆' },
-              { number: '3', label: 'Explanation Languages', icon: '馃寪' },
-              { number: 'Free', label: 'Starting Price', icon: '馃挵' },
+              { number: '1069+', label: 'Practice Questions', icon: '📚' },
+              { number: '3', label: 'USMLE Steps Covered', icon: '🎯' },
+              { number: '3', label: 'Explanation Languages', icon: '🌐' },
+              { number: 'Free', label: 'Starting Price', icon: '💰' },
             ].map((stat, i) => (
               <div key={i} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-3xl mb-2">{stat.icon}</div>
@@ -134,7 +134,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Multi-Language Explanations</h3>
               <p className="text-gray-600 leading-relaxed text-center">
-                Get detailed explanations in <span className="font-semibold text-gray-900">Chinese (涓枃)</span> or <span className="font-semibold text-gray-900">Spanish (Espa帽ol)</span>.
+                Get detailed explanations in <span className="font-semibold text-gray-900">Chinese (中文)</span> or <span className="font-semibold text-gray-900">Spanish (Español)</span>.
                 Study in English, understand in your own language. Perfect for IMGs.
               </p>
             </div>
@@ -174,11 +174,11 @@ const Home = () => {
               rel="noopener noreferrer"
               className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 block no-underline"
             >
-              <div className="w-full h-40 bg-blue-100 rounded-lg mb-4 flex items-center justify-center text-6xl">馃帴</div>
+              <div className="w-full h-40 bg-blue-100 rounded-lg mb-4 flex items-center justify-center text-6xl">🎥</div>
               <h3 className="font-bold text-gray-900 mb-1">Pathology Made Simple</h3>
               <p className="text-sm text-gray-500 mb-2">Pathoma</p>
               <p className="text-sm text-gray-600 leading-relaxed">Master pathology concepts with clear, concise video lectures trusted by thousands of medical students worldwide.</p>
-              <div className="text-blue-600 font-medium text-sm mt-3 inline-flex items-center gap-1">Watch now 鈫?/div>
+              <div className="text-blue-600 font-medium text-sm mt-3 inline-flex items-center gap-1">Watch now →</div>
             </a>
             <a
               href="https://www.sketchymedical.com"
@@ -186,11 +186,11 @@ const Home = () => {
               rel="noopener noreferrer"
               className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 block no-underline"
             >
-              <div className="w-full h-40 bg-purple-100 rounded-lg mb-4 flex items-center justify-center text-6xl">馃帹</div>
+              <div className="w-full h-40 bg-purple-100 rounded-lg mb-4 flex items-center justify-center text-6xl">🎨</div>
               <h3 className="font-bold text-gray-900 mb-1">Visual Microbiology & Pharm</h3>
               <p className="text-sm text-gray-500 mb-2">Sketchy</p>
               <p className="text-sm text-gray-600 leading-relaxed">Learn microbiology and pharmacology through memorable visual stories and illustrations.</p>
-              <div className="text-purple-600 font-medium text-sm mt-3 inline-flex items-center gap-1">Watch now 鈫?/div>
+              <div className="text-purple-600 font-medium text-sm mt-3 inline-flex items-center gap-1">Watch now →</div>
             </a>
             <a
               href="https://onlinemeded.org"
@@ -198,11 +198,11 @@ const Home = () => {
               rel="noopener noreferrer"
               className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 block no-underline"
             >
-              <div className="w-full h-40 bg-green-100 rounded-lg mb-4 flex items-center justify-center text-6xl">馃摴</div>
+              <div className="w-full h-40 bg-green-100 rounded-lg mb-4 flex items-center justify-center text-6xl">📹</div>
               <h3 className="font-bold text-gray-900 mb-1">High-Yield Clinical Medicine</h3>
               <p className="text-sm text-gray-500 mb-2">OnlineMedEd</p>
               <p className="text-sm text-gray-600 leading-relaxed">Free, high-yield clinical medicine videos covering all core topics for Step 2 CK preparation.</p>
-              <div className="text-green-600 font-medium text-sm mt-3 inline-flex items-center gap-1">Watch now 鈫?/div>
+              <div className="text-green-600 font-medium text-sm mt-3 inline-flex items-center gap-1">Watch now →</div>
             </a>
           </div>
         </div>
@@ -224,17 +224,17 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: '馃寪',
+                icon: '🌐',
                 title: 'Multi-Language Explanations',
-                text: 'Unlike UWorld or Amboss, every explanation is available in English, Chinese, and Spanish 鈥?helping you grasp complex medical concepts in your native language.',
+                text: 'Unlike UWorld or Amboss, every explanation is available in English, Chinese, and Spanish — helping you grasp complex medical concepts in your native language.',
               },
               {
-                icon: '馃挴',
+                icon: '💯',
                 title: 'Completely Free',
                 text: 'No subscriptions, no credit cards, no paywalls. All 1069+ practice questions and mock exams are free. We believe test prep should be accessible to everyone.',
               },
               {
-                icon: '馃摫',
+                icon: '📱',
                 title: 'Mobile-Friendly Practice',
                 text: 'Study on the go with our fully responsive design. Practice questions during your commute, in the library, or between clinical rotations.',
               },
@@ -279,7 +279,8 @@ const Home = () => {
                   ))}
                 </div>
                 <Link to="/quiz/step1" className="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center gap-1">
-                  Start Step 1 Practice 鈫?                </Link>
+                  Start Step 1 Practice →
+                </Link>
               </div>
             </div>
 
@@ -300,7 +301,8 @@ const Home = () => {
                   ))}
                 </div>
                 <Link to="/quiz/step2" className="text-green-600 font-semibold hover:text-green-700 inline-flex items-center gap-1">
-                  Start Step 2 Practice 鈫?                </Link>
+                  Start Step 2 Practice →
+                </Link>
               </div>
             </div>
 
@@ -321,7 +323,8 @@ const Home = () => {
                   ))}
                 </div>
                 <Link to="/quiz/step3" className="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center gap-1">
-                  Start Step 3 Practice 鈫?                </Link>
+                  Start Step 3 Practice →
+                </Link>
               </div>
             </div>
           </div>
@@ -340,7 +343,7 @@ const Home = () => {
             {[
               {
                 q: 'Is this website free to use?',
-                a: 'Yes! The question bank, mock exams, and multi-language explanations are completely free to use. No credit card required 鈥?start practicing right away.',
+                a: 'Yes! The question bank, mock exams, and multi-language explanations are completely free to use. No credit card required — start practicing right away.',
               },
               {
                 q: 'How is this different from UWorld or Amboss?',
@@ -360,7 +363,7 @@ const Home = () => {
               },
               {
                 q: 'How do I switch explanation language?',
-                a: 'During practice, you can switch between English, Chinese (涓枃), and Spanish (Espa帽ol) explanations using the language toggle button at the top of the question interface.',
+                a: 'During practice, you can switch between English, Chinese (中文), and Spanish (Español) explanations using the language toggle button at the top of the question interface.',
               },
               {
                 q: 'Is this website affiliated with NBME or USMLE?',
@@ -370,7 +373,7 @@ const Home = () => {
               <details key={i} className="bg-gray-50 rounded-lg p-6 group">
                 <summary className="font-bold text-gray-900 cursor-pointer list-none flex items-center justify-between">
                   {faq.q}
-                  <span className="text-blue-600 group-open:rotate-180 transition-transform">鈻?/span>
+                  <span className="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="text-gray-600 mt-4 leading-relaxed">{faq.a}</p>
               </details>
@@ -394,44 +397,44 @@ const Home = () => {
             {[
               {
                 name: 'Dr. Maria G.',
-                flag: '馃嚙馃嚪',
-                role: 'IMG from Brazil 路 Step 2 CK: 252',
+                flag: '🇧🇷',
+                role: 'IMG from Brazil · Step 2 CK: 252',
                 text: 'The Chinese and Spanish explanations were a game-changer for me. As a non-native English speaker, being able to read explanations in my language helped me understand concepts I struggled with for months.',
                 step: 'Step 2 CK',
               },
               {
                 name: 'Dr. Wei L.',
-                flag: '馃嚚馃嚦',
-                role: 'IMG from China 路 Matched Internal Medicine 2025',
-                text: '浣滀负涓浗鍖诲鐢燂紝鑻辨枃棰樼洰 + 涓枃瑙ｆ瀽鐨勭粍鍚堝お瀹炵敤浜嗐€傚厤璐圭殑棰樺簱璐ㄩ噺寰堥珮锛屽府鎴戦€氳繃浜?Step 1 鍜?Step 2 CK銆傚己鐑堟帹鑽愮粰鎵€鏈変腑鍥?IMG锛?,
+                flag: '🇨🇳',
+                role: 'IMG from China · Matched Internal Medicine 2025',
+                text: '作为中国医学生，英文题目 + 中文解析的组合太实用了。免费的题库质量很高，帮我通过了 Step 1 和 Step 2 CK。强烈推荐给所有中国 IMG！',
                 step: 'Step 1 & Step 2 CK',
               },
               {
                 name: 'Dr. Ahmed K.',
-                flag: '馃嚨馃嚢',
-                role: 'IMG from Pakistan 路 Step 1: Pass, Step 2: 248',
+                flag: '🇵🇰',
+                role: 'IMG from Pakistan · Step 1: Pass, Step 2: 248',
                 text: 'This platform saved me hundreds of dollars on USMLE prep. The mock exam timer is exactly what I needed to build stamina. The multi-language feature sets it apart from everything else.',
                 step: 'Step 1',
               },
               {
                 name: 'Dr. Sofia R.',
-                flag: '馃嚥馃嚱',
-                role: 'IMG from Mexico 路 Preparing for Match 2027',
-                text: 'Las explicaciones en espa帽ol son incre铆blemente 煤tiles. Finalmente puedo entender conceptos complejos sin tener que traducir cada palabra. 隆Y es completamente gratis!',
+                flag: '🇲🇽',
+                role: 'IMG from Mexico · Preparing for Match 2027',
+                text: 'Las explicaciones en español son increíblemente útiles. Finalmente puedo entender conceptos complejos sin tener que traducir cada palabra. ¡Y es completamente gratis!',
                 step: 'Step 2 CK',
               },
               {
                 name: 'Dr. Raj P.',
-                flag: '馃嚠馃嚦',
-                role: 'IMG from India 路 ECFMG Certified 2026',
+                flag: '🇮🇳',
+                role: 'IMG from India · ECFMG Certified 2026',
                 text: 'I was skeptical about a free resource, but the question quality surprised me. The vignettes are well-written and the explanations are thorough. My go-to platform for quick practice sessions.',
                 step: 'Step 3',
               },
               {
                 name: 'Dr. Chen Y.',
-                flag: '馃嚬馃嚰',
-                role: 'IMG from Taiwan 路 Step 2 CK Prep',
-                text: '棰樺簱瑕嗙洊寰堝叏闈紝浠庡熀纭€鍒颁复搴婇兘鏈夈€傜壒鍒槸澶氳瑷€瑙ｆ瀽鍔熻兘锛岃鎴戝彲浠ュ厛鐢ㄤ腑鏂囩悊瑙ｏ紝鍐嶅垏鎹㈠埌鑻辨枃宸╁浐涓撲笟鏈銆傚厤璐圭敤鐪熺殑寰堣壇蹇冿紒',
+                flag: '🇹🇼',
+                role: 'IMG from Taiwan · Step 2 CK Prep',
+                text: '题库覆盖很全面，从基础到临床都有。特别是多语言解析功能，让我可以先用中文理解，再切换到英文巩固专业术语。免费用真的很良心！',
                 step: 'Step 1 & Step 2 CK',
               },
             ].map((testimonial, i) => (
@@ -459,7 +462,7 @@ const Home = () => {
                 </div>
                 {/* Stars */}
                 <div className="flex gap-1 mt-3 text-yellow-400 text-sm">
-                  {'鈽?.repeat(5)}
+                  {'★'.repeat(5)}
                 </div>
               </div>
             ))}
@@ -496,13 +499,13 @@ const Home = () => {
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 lg:p-12">
             <div className="max-w-3xl">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
-                馃挕 Study Tips for International Students
+                💡 Study Tips for International Students
               </h2>
               <div className="space-y-4">
                 {[
                   { tip: 'Start with Core Resources', detail: 'First Aid covers all high-yield topics. Our question bank provides free practice to reinforce concepts. Combine both for comprehensive preparation.' },
                   { tip: 'Use Multi-Language Resources', detail: 'If English is not your first language, supplement with resources in your native language to strengthen understanding.' },
-                  { tip: 'Simulate Real Exam Conditions', detail: 'Take timed practice exams to build stamina. The real USMLE is a marathon 鈥?train accordingly.' },
+                  { tip: 'Simulate Real Exam Conditions', detail: 'Take timed practice exams to build stamina. The real USMLE is a marathon — train accordingly.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 items-start">
                     <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
@@ -516,7 +519,8 @@ const Home = () => {
                 ))}
               </div>
               <Link to="/resources" className="bg-blue-600 text-white hover:bg-blue-700 inline-block mt-8 px-6 py-3 rounded-lg font-semibold transition-colors">
-                View All Resources 鈫?              </Link>
+                View All Resources →
+              </Link>
             </div>
           </div>
         </div>
@@ -547,7 +551,7 @@ const Home = () => {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Email Subscription 鈥?sends subscriber info to admin email           */
+/*  Email Subscription — sends subscriber info to admin email           */
 /*  1. Via Web3Forms (recommended): get free key at web3forms.com    */
 /*  2. Fallback: data saved to localStorage for manual export         */
 /* ------------------------------------------------------------------ */
@@ -577,17 +581,17 @@ const EmailSubscriptionSection = () => {
       // ignore storage errors
     }
 
-    // Web3Forms is configured 鈥?send real email notification
+    // Web3Forms is configured — send real email notification
     if (WEB3FORMS_ACCESS_KEY) {
       try {
         const formData = new FormData()
         formData.append('access_key', WEB3FORMS_ACCESS_KEY)
         formData.append('email', email)       // subscriber's email (for auto-reply if enabled)
-        formData.append('cc', ADMIN_EMAIL)    // 鈫?admin gets a copy of every submission
-        formData.append('subject', '馃摤 New USMLE Prep Subscriber')
+        formData.append('cc', ADMIN_EMAIL)    // ← admin gets a copy of every submission
+        formData.append('subject', '📬 New USMLE Prep Subscriber')
         formData.append(
           'message',
-          `A new user subscribed to USMLE Prep weekly tips:\n\nEmail: ${email}\nDate: ${new Date().toLocaleString()}\n\n鈥?USMLE Prep Platform`
+          `A new user subscribed to USMLE Prep weekly tips:\n\nEmail: ${email}\nDate: ${new Date().toLocaleString()}\n\n— USMLE Prep Platform`
         )
         formData.append('from_name', 'USMLE Prep Platform')
         formData.append('replyto', email)
@@ -622,13 +626,13 @@ const EmailSubscriptionSection = () => {
     <section className="py-20 bg-gradient-to-r from-yellow-50 via-orange-50 to-yellow-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-12 text-center border border-yellow-200">
-          <div className="text-4xl mb-4">馃摤</div>
+          <div className="text-4xl mb-4">📬</div>
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
             Get Free USMLE Study Tips Weekly
           </h2>
           <p className="text-gray-600 text-lg mb-6 max-w-xl mx-auto">
             Join <span className="font-bold text-blue-600">fellow IMGs</span> receiving weekly study strategies,
-            high-yield topic summaries, and new question alerts 鈥?straight to your inbox.
+            high-yield topic summaries, and new question alerts — straight to your inbox.
           </p>
 
           <form
@@ -658,9 +662,10 @@ const EmailSubscriptionSection = () => {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                   </svg>
-                  Sending鈥?                </span>
+                  Sending…
+                </span>
               ) : (
-                'Subscribe Free 鈫?
+                'Subscribe Free →'
               )}
             </button>
           </form>
@@ -668,12 +673,12 @@ const EmailSubscriptionSection = () => {
           {/* Status messages */}
           {status === 'success' && (
             <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm max-w-md mx-auto">
-              鉁?{message}
+              ✅ {message}
             </div>
           )}
           {status === 'error' && (
             <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm max-w-md mx-auto">
-              鈿狅笍 {message}
+              ⚠️ {message}
             </div>
           )}
 
@@ -681,7 +686,7 @@ const EmailSubscriptionSection = () => {
             No spam. Unsubscribe anytime. We respect your privacy.
           </p>
 
-          {/* Hidden admin hint 鈥?shows in page source only */}
+          {/* Hidden admin hint — shows in page source only */}
           {/* Admin: export subscribers via browser console: JSON.parse(localStorage.getItem('subscribers') || '[]') */}
         </div>
       </div>
