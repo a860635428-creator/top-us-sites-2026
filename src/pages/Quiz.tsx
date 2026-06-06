@@ -24,6 +24,7 @@ const Quiz = () => {
   // Report Error modal state
   const [showReport, setShowReport] = useState(false)
   const [reportText, setReportText] = useState('')
+  const [reportType, setReportType] = useState('')
   const [reportStatus, setReportStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   // Filter questions by step and optional subject
@@ -311,7 +312,7 @@ const Quiz = () => {
                   formData.append('question_id', String(currentQuestion.id))
                   formData.append('question_subject', currentQuestion.subject)
                   formData.append('question_text', currentQuestion.question.slice(0, 200))
-                  formData.append('user_comment', reportText)
+                  formData.append('user_comment', `[${reportType}] ${reportText}`)
                   formData.append('page_url', window.location.href)
                   formData.append('from_name', 'USMLE Prep User')
                   const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
@@ -330,7 +331,11 @@ const Quiz = () => {
             >
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">What's wrong? / 问题描述</label>
-                <select className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <select
+                  value={reportType}
+                  onChange={(e) => setReportType(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                >
                   <option value="">-- Select / 选择 --</option>
                   <option value="wrong-answer">Wrong answer / 答案错误</option>
                   <option value="typo">Typo / 错别字</option>

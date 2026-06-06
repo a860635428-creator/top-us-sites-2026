@@ -27,6 +27,7 @@ const MockExam = () => {
   // Report Error modal state
   const [showReport, setShowReport] = useState(false)
   const [reportText, setReportText] = useState('')
+  const [reportType, setReportType] = useState('')
   const [reportStatus, setReportStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   // Timer
@@ -92,7 +93,7 @@ const MockExam = () => {
         date: new Date().toISOString()
       })
       localStorage.setItem('usmle_exam_history', JSON.stringify(history))
-    } catch {}
+    } catch { /* localStorage full or corrupt — non-critical, exam result still displayed */ }
     setFinished(true)
   }
 
@@ -280,7 +281,7 @@ const MockExam = () => {
                       formData.append('question_id', String(q.id))
                       formData.append('question_subject', q.subject)
                       formData.append('question_text', q.question.slice(0, 200))
-                      formData.append('user_comment', reportText)
+                      formData.append('user_comment', `[${reportType}] ${reportText}`)
                       formData.append('page_url', window.location.href)
                       formData.append('from_name', 'USMLE Prep User')
                       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
@@ -299,7 +300,11 @@ const MockExam = () => {
                 >
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">What's wrong? / 问题描述</label>
-                    <select className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                    <select
+                      value={reportType}
+                      onChange={(e) => setReportType(e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                    >
                       <option value="">-- Select / 选择 --</option>
                       <option value="wrong-answer">Wrong answer / 答案错误</option>
                       <option value="typo">Typo / 错别字</option>
@@ -356,7 +361,7 @@ const MockExam = () => {
       : { emoji: '📚', text: 'Keep studying! Focus on weak areas.' }
 
     const shareText = `I scored ${scorePercent}% on the USMLE ${selectedStep === 'step1' ? 'Step 1' : selectedStep === 'step2' ? 'Step 2 CK' : 'Step 3'} mock exam at hebin.fun! 🩺 Free practice for IMGs.`
-    const shareUrl = 'https://hebin.fun'
+    const shareUrl = window.location.origin
 
     const handleShare = () => {
       if (navigator.share) {

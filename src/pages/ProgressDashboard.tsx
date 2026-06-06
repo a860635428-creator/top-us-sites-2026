@@ -67,6 +67,18 @@ const ProgressDashboard = () => {
         </button>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Your Progress Dashboard</h1>
         <p className="text-gray-600">Track your USMLE prep journey — focus on weak areas to improve.</p>
+        {wrongAnswerIds.length === 0 && examHistory.length === 0 && (
+          <div className="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-4">
+            <p className="text-sm text-blue-800">
+              👋 <strong>New here?</strong> Start practicing to unlock your dashboard!
+              <span className="hidden sm:inline"> / 开始做题，解锁个人仪表盘！</span>
+            </p>
+            <p className="text-xs text-blue-600 mt-1">
+              Your wrong answers and mock exam results will appear here automatically.
+              <span className="hidden sm:inline"> / 错题和模拟考试成绩会自动记录在这里。</span>
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Stats Overview */}
@@ -76,13 +88,26 @@ const ProgressDashboard = () => {
           { label: 'Wrong Answers', value: totalWrong, color: 'red', icon: '❌' },
           { label: 'Accuracy', value: avgScore !== null ? `${avgScore}%` : 'N/A', color: 'green', icon: '📊' },
           { label: 'Exams Taken', value: examHistory.length, color: 'purple', icon: '📝' },
-        ].map((stat, i) => (
-          <div key={i} className={`bg-white rounded-2xl p-5 shadow-sm border-t-4 border-${stat.color}-500`}>
+        ].map((stat, i) => {
+          const borderColorMap: Record<string, string> = {
+            blue: 'border-t-4 border-blue-500',
+            red: 'border-t-4 border-red-500',
+            green: 'border-t-4 border-green-500',
+            purple: 'border-t-4 border-purple-500',
+          }
+          const textColorMap: Record<string, string> = {
+            blue: 'text-blue-600',
+            red: 'text-red-600',
+            green: 'text-green-600',
+            purple: 'text-purple-600',
+          }
+          return (
+          <div key={i} className={`bg-white rounded-2xl p-5 shadow-sm ${borderColorMap[stat.color] || 'border-t-4 border-blue-500'}`}>
             <div className="text-2xl mb-1">{stat.icon}</div>
-            <div className={`text-2xl font-bold text-${stat.color}-600`}>{stat.value}</div>
+            <div className={`text-2xl font-bold ${textColorMap[stat.color] || 'text-blue-600'}`}>{stat.value}</div>
             <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
           </div>
-        ))}
+        )})}
       </div>
 
       {/* Tabs */}
@@ -183,7 +208,7 @@ const ProgressDashboard = () => {
                         </div>
                       </div>
                       <Link
-                        to={`/quiz/${questions.find(q => q.subject === subject)?.step || 'step1'}/${subject.toLowerCase().replace(/\\s+/g, '-')}`}
+                        to={`/quiz/${questions.find(q => q.subject === subject)?.step || 'step1'}/${subject.toLowerCase().replace(/\s+/g, '-')}`}
                         className="btn-primary text-sm whitespace-nowrap"
                       >
                         Practice / 练习 →
