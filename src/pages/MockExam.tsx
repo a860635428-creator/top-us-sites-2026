@@ -130,7 +130,7 @@ const MockExam = () => {
           </div>
 
           <div className="card mb-6">
-            <div className="flex gap-2 mb-4">
+            <div className="flex gap-2 mb-4 flex-wrap">
               <span className="text-xs font-semibold bg-blue-100 text-blue-700 px-2 py-1 rounded">
                 {q.step.toUpperCase()}
               </span>
@@ -140,6 +140,25 @@ const MockExam = () => {
               <span className={`text-xs font-semibold px-2 py-1 rounded ${isCorrect ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
                 {isCorrect ? '✓ Correct' : '✗ Incorrect'}
               </span>
+              {q.difficulty && (
+                <span className={`text-xs font-semibold px-2 py-1 rounded ${
+                  q.difficulty === 'Hard' ? 'bg-red-100 text-red-700' :
+                  q.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                  'bg-green-100 text-green-700'
+                }`}>
+                  {q.difficulty}
+                </span>
+              )}
+              {q.highYieldTag && (
+                <span className="text-xs font-semibold bg-amber-100 text-amber-700 px-2 py-1 rounded">
+                  🔥 {q.highYieldTag}
+                </span>
+              )}
+              {q.aiGenerated !== false && (
+                <span className="text-xs font-semibold bg-purple-100 text-purple-700 px-2 py-1 rounded">
+                  🤖 AI
+                </span>
+              )}
             </div>
 
             <h2 className="text-lg font-semibold text-gray-900 mb-6 leading-relaxed">
@@ -178,7 +197,11 @@ const MockExam = () => {
             <h3 className="font-bold text-gray-900 mb-3">
               Explanation ({langLabels[reviewLang]})
             </h3>
-            <p className="text-gray-700 leading-relaxed">{getExplanation()}</p>
+            <p className="text-gray-700 leading-relaxed mb-3">{getExplanation()}</p>
+            <p className="text-xs text-gray-400 italic">
+              ⚠️ AI-generated explanation. Please verify with official resources (First Aid, UWorld, NBME).
+              <span className="hidden sm:inline">/ AI 生成解释，请结合官方资源核实。</span>
+            </p>
           </div>
 
           {/* Review Navigation */}
@@ -279,6 +302,14 @@ const MockExam = () => {
     const options = q.options
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* AI Disclaimer Banner */}
+        <div className="bg-amber-50 border-l-4 border-amber-400 p-3 rounded-r mb-4 text-xs text-amber-800 leading-relaxed">
+          <strong>AI-Generated Content / AI 生成内容：</strong>
+          Questions in this exam are AI-generated for educational purposes. Accuracy is not guaranteed.
+          Please verify with official resources.
+          <span className="hidden sm:inline">/ 模拟考试题目由 AI 生成，准确性不予保证，请结合官方资源核实。</span>
+        </div>
+
         {/* Timer & Progress */}
         <div className="flex items-center justify-between mb-6">
           <div className="text-sm text-gray-600">

@@ -72,7 +72,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '80+', label: 'Practice Questions', icon: '📚' },
+              { number: '500+', label: 'Practice Questions', icon: '📚' },
               { number: '3', label: 'USMLE Steps Covered', icon: '🎯' },
               { number: '3', label: 'Explanation Languages', icon: '🌐' },
               { number: 'Free', label: 'Starting Price', icon: '💰' },
@@ -114,7 +114,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Question Bank</h3>
               <p className="text-gray-600 leading-relaxed text-center">
-                80+ high-yield practice questions organized by USMLE Step and subject area.
+                500+ high-yield practice questions organized by USMLE Step and subject area.
                 Covers all major topics tested on the exam, with detailed explanations for every answer.
               </p>
             </div>
@@ -345,7 +345,11 @@ const Home = () => {
               },
               {
                 q: 'Are the questions similar to the real USMLE?',
-                a: 'Yes, our questions are designed to mimic the style and difficulty of real USMLE questions. We regularly update our question bank based on the latest exam patterns and user feedback.',
+                a: 'Our questions are designed to mimic the style and difficulty of real USMLE questions. We regularly update our question bank based on the latest exam patterns and user feedback.',
+              },
+              {
+                q: 'Are these questions AI-generated? Are they accurate?',
+                a: 'Most of our practice questions are AI-generated for educational purposes. While we strive for accuracy, AI-generated content may contain errors or outdated information. Always verify answers with official resources (First Aid, UWorld, NBME practice exams) before your exam.',
               },
               {
                 q: 'Can I use this on mobile?',
@@ -354,6 +358,10 @@ const Home = () => {
               {
                 q: 'How do I switch explanation language?',
                 a: 'During practice, you can switch between English, Chinese (中文), and Spanish (Español) explanations using the language toggle button at the top of the question interface.',
+              },
+              {
+                q: 'Is this website affiliated with NBME or USMLE?',
+                a: 'No. This site is an independent educational platform and is NOT affiliated with the National Board of Medical Examiners (NBME), the USMLE program, or the Federation of State Medical Boards (FSMB). All USMLE questions are original/AI-generated content.',
               },
             ].map((faq, i) => (
               <details key={i} className="bg-gray-50 rounded-lg p-6 group">

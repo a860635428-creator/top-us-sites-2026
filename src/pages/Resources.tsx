@@ -179,6 +179,10 @@ const Resources = () => {
           Curated list of the best resources for USMLE preparation.
           These are affiliate links — your support helps keep this platform free.
         </p>
+        <p className="text-xs text-gray-400 mt-2">
+          ⚠️ External links are provided for reference only. We are not responsible for third-party content.
+          / 外部链接仅供参考，本网站不对第三方内容负责。
+        </p>
       </div>
 
       {/* Filter Tabs */}
