@@ -5254,7 +5254,1027 @@ export const questions: Question[] = [
     explanationZh: '体力活动：150分钟/周中等强度或75分钟/周高强度。加力量训练2次/周。',
     explanationEs: 'Actividad fisica: 150 min/sem moderada o 75 min/sem vigorosa.'
   },
-]
+  {
+    id: 929, step: 'step1', subject: 'Pathology',
+    question: "A 58-year-old male with chronic hepatitis C cirrhosis develops a 3 cm liver nodule on surveillance ultrasound. AFP is 450 ng/mL. Biopsy shows malignant hepatocytes with thickened trabeculae. Which molecular pathway is most commonly altered in this tumor?",
+    options: ["Wnt/beta-catenin pathway", "RAS/RAF/MAPK pathway", "JAK/STAT pathway", "Hedgehog pathway", "Notch pathway"],
+    correctAnswer: 0,
+    explanationEn: "Hepatocellular carcinoma (HCC). Beta-catenin mutations (CTNNB1) are found in 20-40% of HCCs, leading to nuclear accumulation and Wnt pathway activation. Other common mutations include TP53 and TERT promoter.",
+    explanationZh: "肝细胞癌（HCC）。20-40%的HCC存在β-catenin（CTNNB1）突变，导致核积累和Wnt通路激活。其他常见突变包括TP53和TERT启动子。",
+    explanationEs: "CHC. Mutaciones CTNNB1 en 20-40%. Wnt/beta-catenina activada.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 930, step: 'step1', subject: 'Pathology',
+    question: "A 40-year-old female presents with a painful, firm breast mass that fluctuates with her menstrual cycle. Ultrasound shows a well-circumscribed hypoechoic mass. Core biopsy reveals stromal and glandular proliferation with a pericanalicular pattern. Diagnosis?",
+    options: ["Fibroadenoma", "Phyllodes tumor", "Invasive ductal carcinoma", "Fibrocystic change", "Intraductal papilloma"],
+    correctAnswer: 0,
+    explanationEn: "Fibroadenoma: most common benign breast tumor in young women. Pericanalicular (glands surrounded by stroma) or intracanalicular (compressed slit-like glands) patterns. Estrogen-responsive, can enlarge during pregnancy or menstruation.",
+    explanationZh: "纤维腺瘤：年轻女性最常见的良性乳腺肿瘤。管周型（基质环绕腺体）或管内型（压缩裂隙状腺体）。雌激素反应性，孕期或月经期可增大。",
+    explanationEs: "Fibroadenoma: tumor benigno mas comun en jovenes. Patron pericanalicular o intracanalicular.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 931, step: 'step1', subject: 'Pathology',
+    question: "A 67-year-old male with a 40-pack-year smoking history presents with a solitary pulmonary nodule. Biopsy shows keratin pearls and intercellular bridges. Which gene is most frequently mutated in this tumor type?",
+    options: ["TP53", "KRAS", "EGFR", "ALK", "BRAF"],
+    correctAnswer: 0,
+    explanationEn: "Squamous cell carcinoma of the lung: keratin pearls and intercellular bridges are diagnostic. TP53 mutations are the most common (80-90% of cases). Strongly associated with smoking. Typically central location.",
+    explanationZh: "肺鳞状细胞癌：角化珠和细胞间桥是诊断依据。TP53突变最常见（80-90%）。与吸烟密切相关，通常为中央型。",
+    explanationEs: "Carcinoma escamoso pulmonar: perlas de queratina, puentes intercelulares. TP53 mutado en 80-90%.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 932, step: 'step1', subject: 'Pathology',
+    question: "A 50-year-old female with rheumatoid arthritis on long-term methotrexate develops generalized lymphadenopathy. Biopsy of a cervical lymph node shows effacement of architecture by large atypical lymphoid cells with Reed-Sternberg-like morphology. EBV is positive by in situ hybridization. What is the most likely diagnosis?",
+    options: ["Diffuse large B-cell lymphoma, EBV+", "Classical Hodgkin lymphoma", "Burkitt lymphoma", "Methotrexate-associated lymphoproliferative disorder", "Follicular lymphoma"],
+    correctAnswer: 3,
+    explanationEn: "Methotrexate (MTX) and other immunosuppressants can cause iatrogenic lymphoproliferative disorders (LPD), often EBV-driven. These can resemble Hodgkin or non-Hodgkin lymphoma. Many regress upon MTX withdrawal alone.",
+    explanationZh: "甲氨蝶呤（MTX）等免疫抑制剂可引起医源性淋巴增殖性疾病（LPD），通常由EBV驱动。可类似霍奇金或非霍奇金淋巴瘤。许多病例仅停用MTX即可消退。",
+    explanationEs: "Trastorno linfoproliferativo asociado a metotrexato. EBV+. Puede regresar al suspender MTX.",
+    highYieldTag: 'Immunosuppression-related lymphoma',
+    difficulty: 'Hard'
+  },
+  {
+    id: 933, step: 'step1', subject: 'Physiology',
+    question: "A researcher measures cardiac output in a healthy volunteer at rest and during exercise. During exercise, which of the following changes contributes MOST to the increase in cardiac output?",
+    options: ["Increased heart rate and stroke volume", "Increased heart rate only", "Increased stroke volume only", "Decreased systemic vascular resistance only", "Increased preload only"],
+    correctAnswer: 0,
+    explanationEn: "During exercise, cardiac output increases through both increased heart rate (sympathetic activation) and increased stroke volume (enhanced venous return via muscle pump, increased contractility). CO = HR x SV.",
+    explanationZh: "运动时心输出量通过心率增加（交感激活）和每搏量增加（肌肉泵增强静脉回流、收缩力增强）共同提高。CO = HR x SV。",
+    explanationEs: "Durante el ejercicio: FC y VS aumentan. Activacion simpatica + retorno venoso.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 934, step: 'step1', subject: 'Physiology',
+    question: "Which segment of the nephron is the primary site of action for thiazide diuretics?",
+    options: ["Proximal convoluted tubule", "Thick ascending limb of loop of Henle", "Distal convoluted tubule", "Collecting duct", "Glomerulus"],
+    correctAnswer: 2,
+    explanationEn: "Thiazide diuretics (e.g., hydrochlorothiazide) block the Na+/Cl- cotransporter (NCC) in the distal convoluted tubule. Loop diuretics act on the thick ascending limb (NKCC2). K-sparing diuretics act on the collecting duct.",
+    explanationZh: "噻嗪类利尿剂（如氢氯噻嗪）阻断远曲小管的Na+/Cl-共转运体（NCC）。袢利尿剂作用于髓袢升支粗段（NKCC2）。保钾利尿剂作用于集合管。",
+    explanationEs: "Tiazidas: bloquean cotransportador Na+/Cl- en tubulo contorneado distal.",
+    highYieldTag: 'Diuretic site of action',
+    difficulty: 'Medium'
+  },
+  {
+    id: 935, step: 'step1', subject: 'Physiology',
+    question: "A 25-year-old mountain climber ascends to 4,500 meters. Which of the following is the PRIMARY mechanism of her immediate respiratory response to high altitude?",
+    options: ["Central chemoreceptor response to increased arterial PCO2", "Peripheral chemoreceptor response to decreased arterial PO2", "Central chemoreceptor response to decreased arterial PO2", "Pulmonary stretch receptor activation", "Baroreceptor reflex"],
+    correctAnswer: 1,
+    explanationEn: "Acute hypoxic ventilatory response is mediated primarily by peripheral chemoreceptors (carotid and aortic bodies) sensing decreased PaO2. Central chemoreceptors respond to CO2/pH, not O2. This response increases minute ventilation.",
+    explanationZh: "急性缺氧通气反应主要由外周化学感受器（颈动脉体和主动脉体）感知PaO2下降介导。中枢化学感受器对CO2/pH反应，而非O2。此反应增加每分通气量。",
+    explanationEs: "Respuesta ventilatoria hipoxica: quimiorreceptores perifericos detectan baja PaO2.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 936, step: 'step1', subject: 'Physiology',
+    question: "In cardiac muscle, which of the following best explains the long plateau phase (phase 2) of the action potential?",
+    options: ["Sodium influx through fast Na+ channels", "Calcium influx through L-type Ca2+ channels balanced by potassium efflux", "Potassium efflux through delayed rectifier K+ channels only", "Chloride influx through Cl- channels", "Sodium-calcium exchanger reversal"],
+    correctAnswer: 1,
+    explanationEn: "Phase 2 (plateau): L-type Ca2+ channel opening allows Ca2+ influx, which is balanced by K+ efflux through delayed rectifier channels. This prolonged depolarization prevents tetany and allows sufficient time for ventricular filling.",
+    explanationZh: "平台期（2期）：L型Ca2+通道开放允许Ca2+内流，与延迟整流K+通道的K+外流平衡。此延长去极化防止强直收缩，确保心室充盈时间充足。",
+    explanationEs: "Fase 2 (meseta): entrada Ca2+ canales tipo L balanceada por salida K+. Previene tetania.",
+    highYieldTag: 'Cardiac action potential',
+    difficulty: 'Medium'
+  },
+  {
+    id: 937, step: 'step1', subject: 'Pharmacology',
+    question: "A patient on warfarin for atrial fibrillation develops a deep vein thrombosis despite a therapeutic INR (2.5). Which of the following best explains this apparent treatment failure?",
+    options: ["Warfarin resistance due to VKORC1 mutation", "Warfarin only prevents arterial clots", "Concomitant vitamin K intake completely inactivates warfarin", "Warfarin does not affect existing thrombi", "Protein C deficiency"],
+    correctAnswer: 0,
+    explanationEn: "Warfarin resistance can occur due to VKORC1 mutations reducing warfarin binding to its target enzyme. Other causes: poor compliance, high vitamin K intake, drug interactions. Genotyping for VKORC1 and CYP2C9 can help guide dosing.",
+    explanationZh: "华法林耐药可由VKORC1突变导致华法林与其靶酶结合减少。其他原因：依从性差、高维生素K摄入、药物相互作用。VKORC1和CYP2C9基因分型可指导剂量。",
+    explanationEs: "Resistencia a warfarina: mutacion VKORC1. Genotipificacion puede guiar dosis.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 938, step: 'step1', subject: 'Pharmacology',
+    question: "Which of the following beta-blockers also has alpha-1 blocking activity, making it particularly useful in hypertensive emergencies?",
+    options: ["Metoprolol", "Atenolol", "Labetalol", "Propranolol", "Esmolol"],
+    correctAnswer: 2,
+    explanationEn: "Labetalol is a combined alpha-1 and non-selective beta blocker. IV labetalol is used in hypertensive emergencies, including pregnancy-induced hypertension and aortic dissection. Carvedilol also has alpha-blocking properties.",
+    explanationZh: "拉贝洛尔是α1和非选择性β受体联合阻滞剂。静脉拉贝洛尔用于高血压急症，包括妊娠期高血压和主动脉夹层。卡维地洛也具有α阻滞作用。",
+    explanationEs: "Labetalol: bloqueador alfa-1 y beta no selectivo. Util en emergencias hipertensivas.",
+    highYieldTag: 'Beta blocker subtypes',
+    difficulty: 'Medium'
+  },
+  {
+    id: 939, step: 'step1', subject: 'Pharmacology',
+    question: "A patient on isoniazid for latent TB develops peripheral neuropathy. Which vitamin deficiency is responsible for this adverse effect?",
+    options: ["Vitamin B1 (Thiamine)", "Vitamin B6 (Pyridoxine)", "Vitamin B12 (Cobalamin)", "Vitamin B3 (Niacin)", "Vitamin B9 (Folate)"],
+    correctAnswer: 1,
+    explanationEn: "Isoniazid (INH) causes peripheral neuropathy by interfering with pyridoxine (B6) metabolism. It forms a complex with pyridoxal phosphate, the active form of B6. Pyridoxine supplementation (25-50 mg/day) prevents this. Other INH side effects: hepatitis, SLE-like syndrome.",
+    explanationZh: "异烟肼通过干扰吡哆醇（B6）代谢引起周围神经病变。与磷酸吡哆醛（B6活性形式）形成复合物。补充吡哆醇（25-50mg/天）可预防。其他INH副作用：肝炎、SLE样综合征。",
+    explanationEs: "Isoniazida: neuropatia periferica por deficit de piridoxina (B6). Suplementar B6.",
+    highYieldTag: 'INH neuropathy',
+    difficulty: 'Medium'
+  },
+  {
+    id: 940, step: 'step1', subject: 'Pharmacology',
+    question: "Which of the following antiepileptic drugs works primarily by enhancing GABA-mediated inhibition through increased frequency of chloride channel opening?",
+    options: ["Phenytoin", "Carbamazepine", "Valproic acid", "Phenobarbital", "Ethosuximide"],
+    correctAnswer: 3,
+    explanationEn: "Phenobarbital (and other barbiturates) enhances GABA-A receptor activity by increasing the duration (not frequency) of chloride channel opening. Benzodiazepines increase frequency of opening. This distinction is high-yield for USMLE.",
+    explanationZh: "苯巴比妥通过延长氯通道开放时间增强GABA-A受体活性。苯二氮卓类药物增加开放频率。此区别是USMLE高频考点。",
+    explanationEs: "Fenobarbital: aumenta duracion de apertura de canal Cl-. Benzodiazepinas: frecuencia.",
+    highYieldTag: 'GABA mechanism distinction',
+    difficulty: 'Hard'
+  },
+  {
+    id: 941, step: 'step1', subject: 'Biochemistry',
+    question: "A 3-day-old neonate develops lethargy, poor feeding, and seizures. Labs show hyperammonemia with normal blood glucose and no metabolic acidosis. Urine orotic acid is markedly elevated. Enzyme deficiency?",
+    options: ["Carbamoyl phosphate synthetase I (CPS I)", "Ornithine transcarbamylase (OTC)", "Argininosuccinate synthetase", "Argininosuccinate lyase", "Arginase"],
+    correctAnswer: 1,
+    explanationEn: "OTC deficiency: X-linked, most common urea cycle disorder. Elevated orotic acid (carbamoyl phosphate shunted to pyrimidine synthesis). Hyperammonemia, no acidosis, normal glucose. CPS I deficiency has LOW orotic acid (key distinction).",
+    explanationZh: "OTC缺乏症：X连锁，最常见尿素循环障碍。乳清酸升高（氨甲酰磷酸转向嘧啶合成）。高氨血症，无酸中毒，血糖正常。CPS I缺乏乳清酸降低（关键区别）。",
+    explanationEs: "Deficiencia OTC: X-ligada. Acido orotico elevado. Hiperamonemia sin acidosis.",
+    highYieldTag: 'Urea cycle disorders',
+    difficulty: 'Hard'
+  },
+  {
+    id: 942, step: 'step1', subject: 'Biochemistry',
+    question: "A patient with G6PD deficiency develops hemolytic anemia after eating fava beans. Which of the following best explains why RBCs are particularly susceptible?",
+    options: ["RBCs lack mitochondria for oxidative phosphorylation", "RBCs rely exclusively on the pentose phosphate pathway for NADPH production", "RBCs have high levels of glutathione reductase", "RBCs cannot synthesize new proteins", "RBCs have high oxygen tension"],
+    correctAnswer: 1,
+    explanationEn: "RBCs lack mitochondria and cannot generate NADPH via other pathways. The pentose phosphate pathway (G6PD is rate-limiting) is the ONLY source of NADPH in RBCs. NADPH is needed to regenerate reduced glutathione, which protects against oxidative stress.",
+    explanationZh: "红细胞缺乏线粒体，无法通过其他途径产生NADPH。磷酸戊糖途径（G6PD为限速酶）是红细胞NADPH的唯一来源。NADPH用于再生还原型谷胱甘肽，保护细胞免受氧化应激。",
+    explanationEs: "G6PD: via de pentosas fosfato es UNICA fuente de NADPH en eritrocitos.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 943, step: 'step1', subject: 'Biochemistry',
+    question: "During prolonged fasting (>48 hours), which of the following is the primary fuel source for the brain?",
+    options: ["Glucose from hepatic glycogenolysis", "Glucose from hepatic gluconeogenesis", "Ketone bodies from hepatic fatty acid oxidation", "Free fatty acids from adipose tissue", "Lactate from muscle glycolysis"],
+    correctAnswer: 2,
+    explanationEn: "After 2-3 days of fasting, the brain adapts to use ketone bodies (beta-hydroxybutyrate, acetoacetate) as its primary fuel, reducing glucose requirement from ~120g/day to ~40g/day. This spares muscle protein from gluconeogenesis.",
+    explanationZh: "禁食2-3天后，大脑适应使用酮体（β-羟丁酸、乙酰乙酸）作为主要燃料，葡萄糖需求从~120g/天降至~40g/天。此机制节省肌肉蛋白质用于糖异生。",
+    explanationEs: "Ayuno >48h: cerebro usa cuerpos cetonicos. Reduce requerimiento de glucosa.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 944, step: 'step1', subject: 'Microbiology',
+    question: "A 20-year-old college student presents with sore throat, fever, cervical lymphadenopathy, and splenomegaly. Peripheral smear shows atypical lymphocytes (>10% of WBCs). Heterophile antibody test is positive. Which virus is responsible?",
+    options: ["Cytomegalovirus (CMV)", "Epstein-Barr virus (EBV)", "HIV", "Adenovirus", "Human herpesvirus 6 (HHV-6)"],
+    correctAnswer: 1,
+    explanationEn: "EBV causes infectious mononucleosis: fever, pharyngitis, lymphadenopathy, splenomegaly. Atypical lymphocytes (Downey cells) on smear. Positive Monospot (heterophile antibody). CMV mono is heterophile-negative. Avoid contact sports due to splenomegaly risk of rupture.",
+    explanationZh: "EBV引起传染性单核细胞增多症：发热、咽炎、淋巴结肿大、脾肿大。外周血涂片异型淋巴细胞。Monospot（嗜异性抗体）阳性。CMV单核细胞增多症嗜异性抗体阴性。因脾破裂风险应避免接触性运动。",
+    explanationEs: "Mononucleosis infecciosa por VEB. Linfocitos atipicos, Monospot positivo.",
+    highYieldTag: 'EBV mononucleosis',
+    difficulty: 'Medium'
+  },
+  {
+    id: 945, step: 'step1', subject: 'Microbiology',
+    question: "A patient develops pseudomembranous colitis after a course of clindamycin. Which toxin-mediated mechanism is responsible?",
+    options: ["Clostridium difficile toxins A and B inactivate Rho GTPases", "Clostridium perfringens alpha toxin (lecithinase)", "Staphylococcus aureus enterotoxin superantigen", "Shigella Shiga toxin inhibiting 28S rRNA", "Bacillus cereus cereulide toxin"],
+    correctAnswer: 0,
+    explanationEn: "C. difficile toxins: Toxin A (enterotoxin) and Toxin B (cytotoxin) glucosylate and inactivate Rho family GTPases (Rho, Rac, Cdc42), disrupting actin cytoskeleton, causing cell rounding and death. Pseudomembranes: fibrin, neutrophils, cellular debris.",
+    explanationZh: "艰难梭菌毒素：毒素A（肠毒素）和毒素B（细胞毒素）葡糖基化并灭活Rho家族GTP酶，破坏肌动蛋白骨架，导致细胞变圆和死亡。伪膜：纤维蛋白、中性粒细胞、细胞碎片。",
+    explanationEs: "C. difficile: toxinas A y B inactivan Rho GTPasas. Colitis pseudomembranosa.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 946, step: 'step1', subject: 'Microbiology',
+    question: "A 2-year-old unvaccinated child presents with paroxysmal cough followed by an inspiratory \"whoop,\" post-tussive emesis, and lymphocytosis (WBC 60,000 with 80% lymphocytes). Which organism?",
+    options: ["Bordetella pertussis", "Mycoplasma pneumoniae", "Chlamydia trachomatis", "Respiratory syncytial virus (RSV)", "Haemophilus influenzae type B"],
+    correctAnswer: 0,
+    explanationEn: "Bordetella pertussis causes whooping cough (pertussis). Three stages: catarrhal, paroxysmal (whooping cough), convalescent. Profound lymphocytosis is a hallmark (pertussis toxin stimulates lymphocytosis). Treat with macrolides (azithromycin). Prevent with DTaP/Tdap.",
+    explanationZh: "百日咳鲍特菌引起百日咳。三期：卡他期、痉咳期（鸡鸣样回声）、恢复期。显著淋巴细胞增多是特征。大环内酯类（阿奇霉素）治疗。DTaP/Tdap预防。",
+    explanationEs: "Bordetella pertussis: tos ferina. Linfocitosis marcada. Macrolidos.",
+    highYieldTag: 'Pertussis',
+    difficulty: 'Medium'
+  },
+  {
+    id: 947, step: 'step1', subject: 'Immunology',
+    question: "A 6-month-old infant presents with recurrent sinopulmonary infections, failure to thrive, and absent tonsillar tissue. Serum immunoglobulins are markedly decreased. Flow cytometry shows absent B cells with normal T cell counts. Which mutation is most likely?",
+    options: ["BTK gene mutation", "CD40 ligand deficiency", "ADA deficiency", "RAG1/RAG2 mutation", "IL-2 receptor gamma chain mutation"],
+    correctAnswer: 0,
+    explanationEn: "X-linked (Bruton) agammaglobulinemia: BTK mutation blocks B cell maturation at pre-B stage. Absent B cells, all immunoglobulins low. Presents after 6 months when maternal IgG wanes. Normal T cells. Recurrent bacterial infections.",
+    explanationZh: "X连锁无丙种球蛋白血症（Bruton）：BTK突变阻断前B细胞成熟。B细胞缺失，所有免疫球蛋白降低。6个月后母体IgG消退时发病。T细胞正常。反复细菌感染。",
+    explanationEs: "Agammaglobulinemia de Bruton: mutacion BTK, celulas B ausentes. >6 meses.",
+    highYieldTag: 'Bruton agammaglobulinemia',
+    difficulty: 'Medium'
+  },
+  {
+    id: 948, step: 'step1', subject: 'Immunology',
+    question: "In the germinal center reaction, which enzyme is responsible for class switch recombination from IgM to IgG?",
+    options: ["RAG1/RAG2", "Terminal deoxynucleotidyl transferase (TdT)", "Activation-induced cytidine deaminase (AID)", "DNA-dependent protein kinase (DNA-PK)", "Artemis nuclease"],
+    correctAnswer: 2,
+    explanationEn: "AID (Activation-Induced Cytidine Deaminase) is essential for both somatic hypermutation and class switch recombination in germinal centers. AID deficiency causes Hyper-IgM syndrome type 2 (elevated IgM, low IgG/IgA/IgE).",
+    explanationZh: "AID（活化诱导胞苷脱氨酶）对生发中心的体细胞高频突变和类别转换重组均至关重要。AID缺乏导致高IgM综合征2型（IgM升高，IgG/IgA/IgE降低）。",
+    explanationEs: "AID: esencial para hipermutacion somatica y cambio de clase. Deficit = Hiper-IgM tipo 2.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 949, step: 'step1', subject: 'Anatomy',
+    question: "A patient develops foot drop after a fibular neck fracture. Which nerve is most likely injured?",
+    options: ["Tibial nerve", "Common peroneal (fibular) nerve", "Superficial peroneal nerve", "Deep peroneal nerve", "Sural nerve"],
+    correctAnswer: 1,
+    explanationEn: "Common peroneal nerve wraps around the fibular neck and is vulnerable to injury there. Results in foot drop (loss of dorsiflexion), steppage gait. Sensory loss over anterolateral leg and dorsum of foot. Deep peroneal: dorsiflexion. Superficial peroneal: eversion.",
+    explanationZh: "腓总神经绕行腓骨颈，此处易受伤。导致足下垂（背屈丧失）、跨阈步态。小腿前外侧和足背感觉丧失。腓深神经：背屈。腓浅神经：外翻。",
+    explanationEs: "Nervio peroneo comun: vulnerable en cuello de perone. Pie caido.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 950, step: 'step1', subject: 'Anatomy',
+    question: "During a thyroidectomy, a patient develops hoarseness post-operatively. Which nerve was most likely injured?",
+    options: ["Superior laryngeal nerve (external branch)", "Superior laryngeal nerve (internal branch)", "Recurrent laryngeal nerve", "Glossopharyngeal nerve", "Hypoglossal nerve"],
+    correctAnswer: 2,
+    explanationEn: "Recurrent laryngeal nerve (RLN) injury causes hoarseness (unilateral) or stridor/respiratory distress (bilateral). RLN innervates all intrinsic laryngeal muscles except cricothyroid (external branch of superior laryngeal nerve).",
+    explanationZh: "喉返神经损伤导致声音嘶哑（单侧）或喘鸣/呼吸困难（双侧）。喉返神经支配除环甲肌（喉上神经外支）外的所有喉内肌。",
+    explanationEs: "Nervio laringeo recurrente: ronquera unilateral, estridor bilateral.",
+    highYieldTag: 'Thyroid surgery complication',
+    difficulty: 'Medium'
+  },
+  {
+    id: 951, step: 'step1', subject: 'Pathology',
+    question: "A 70-year-old male presents with bone pain, fatigue, and recurrent infections. Labs: Hb 8 g/dL, calcium 12 mg/dL, creatinine 2.5 mg/dL. Serum protein electrophoresis shows an M-spike in the gamma region. Urine Bence Jones protein is positive. Bone marrow biopsy shows >20% plasma cells. Diagnosis?",
+    options: ["Monoclonal gammopathy of undetermined significance (MGUS)", "Multiple myeloma", "Waldenstrom macroglobulinemia", "Primary amyloidosis", "Smoldering myeloma"],
+    correctAnswer: 1,
+    explanationEn: "Multiple myeloma: CRAB criteria (HyperCalcemia, Renal insufficiency, Anemia, Bone lesions). M-spike, Bence Jones protein (free light chains in urine), >10% clonal plasma cells in bone marrow. MGUS: <10% plasma cells, no CRAB.",
+    explanationZh: "多发性骨髓瘤：CRAB标准（高钙血症、肾功能不全、贫血、骨病变）。M蛋白峰、本周蛋白（尿游离轻链）、骨髓>10%克隆浆细胞。MGUS：<10%浆细胞，无CRAB。",
+    explanationEs: "Mieloma multiple: criterios CRAB. Pico M, proteinuria Bence Jones.",
+    highYieldTag: 'CRAB criteria',
+    difficulty: 'Medium'
+  },
+  {
+    id: 952, step: 'step1', subject: 'Pathology',
+    question: "A kidney biopsy from a patient with nephrotic syndrome shows normal glomeruli on light microscopy but diffuse effacement of foot processes on electron microscopy. Immunofluorescence is negative. Diagnosis?",
+    options: ["Focal segmental glomerulosclerosis (FSGS)", "Membranous nephropathy", "Minimal change disease", "Membranoproliferative GN", "IgA nephropathy"],
+    correctAnswer: 2,
+    explanationEn: "Minimal change disease: normal light microscopy, foot process effacement on EM, negative IF. Most common cause of nephrotic syndrome in children. Responds to corticosteroids. Selective proteinuria (mostly albumin).",
+    explanationZh: "微小病变病：光镜正常、电镜足突融合、免疫荧光阴性。儿童肾病综合征最常见病因。对糖皮质激素敏感。选择性蛋白尿（以白蛋白为主）。",
+    explanationEs: "Enfermedad de cambios minimos: ME con fusion podocitaria. Corticosensibles.",
+    highYieldTag: 'Nephrotic syndrome',
+    difficulty: 'Medium'
+  },
+  {
+    id: 953, step: 'step1', subject: 'Physiology',
+    question: "A patient with hyperaldosteronism would be expected to have which set of laboratory findings?",
+    options: ["Hypernatremia, hypokalemia, metabolic alkalosis", "Hyponatremia, hyperkalemia, metabolic acidosis", "Hypernatremia, hyperkalemia, metabolic acidosis", "Hyponatremia, hypokalemia, metabolic alkalosis", "Normonatremia, hyperkalemia, metabolic acidosis"],
+    correctAnswer: 0,
+    explanationEn: "Aldosterone increases Na+ reabsorption (leading to hypernatremia) and K+/H+ secretion (leading to hypokalemia and metabolic alkalosis) in the distal tubule/collecting duct. \"Aldosterone escape\" prevents severe edema.",
+    explanationZh: "醛固酮增多：Na+重吸收↑（高钠血症）、K+/H+分泌↑（低钾血症和代谢性碱中毒）。\"醛固酮逃逸\"防止严重水肿。",
+    explanationEs: "Hiperaldosteronismo: hipernatremia, hipokalemia, alcalosis metabolica.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 954, step: 'step1', subject: 'Physiology',
+    question: "In the cardiac cycle, the dicrotic notch on the aortic pressure tracing corresponds to which event?",
+    options: ["Opening of the aortic valve", "Closing of the aortic valve", "Opening of the mitral valve", "Closing of the mitral valve", "Peak systolic pressure"],
+    correctAnswer: 1,
+    explanationEn: "The dicrotic notch (incisura) represents aortic valve closure, causing a brief backward flow that produces a small pressure rise in the aorta. This marks the end of systole and beginning of diastole.",
+    explanationZh: "重搏切迹（降中峡）代表主动脉瓣关闭，导致短暂回流在主动脉产生小幅压力上升。标志收缩期结束、舒张期开始。",
+    explanationEs: "Escotadura dicrota: cierre de valvula aortica. Fin de sistole.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 955, step: 'step1', subject: 'Pharmacology',
+    question: "A patient on lithium for bipolar disorder develops polyuria, polydipsia, and dilute urine with low specific gravity. Which of the following best explains this adverse effect?",
+    options: ["Lithium blocks ADH receptors on collecting duct", "Lithium downregulates aquaporin-2 expression in collecting duct", "Lithium stimulates ANP secretion", "Lithium directly inhibits thirst center", "Lithium increases GFR"],
+    correctAnswer: 1,
+    explanationEn: "Lithium causes nephrogenic diabetes insipidus by reducing aquaporin-2 expression in the collecting duct, impairing the kidney's response to ADH. Patients produce large volumes of dilute urine despite normal/high ADH levels. Amiloride can help.",
+    explanationZh: "锂剂通过降低集合管水通道蛋白2表达导致肾性尿崩症，肾脏对ADH反应受损。尽管ADH水平正常或偏高，产生大量稀释尿。阿米洛利可帮助。",
+    explanationEs: "Litio: diabetes insipida nefrogenica. Reduce acuaporina-2 en tubulo colector.",
+    highYieldTag: 'Lithium ADR',
+    difficulty: 'Medium'
+  },
+  {
+    id: 956, step: 'step1', subject: 'Biochemistry',
+    question: "A patient presents with orange-red tonsils and decreased plasma HDL levels. Which condition is most likely?",
+    options: ["Familial hypercholesterolemia", "Tangier disease", "Abetalipoproteinemia", "LCAT deficiency", "Niemann-Pick disease type C"],
+    correctAnswer: 1,
+    explanationEn: "Tangier disease: ABCA1 transporter mutation. Defect in cholesterol efflux from cells to nascent HDL → low/absent HDL, orange tonsils (cholesterol ester deposits), hepatosplenomegaly, peripheral neuropathy. Increased risk of premature CAD.",
+    explanationZh: "Tangier病：ABCA1转运蛋白突变。胆固醇从细胞流出至新生HDL缺陷→HDL低/缺失、橙色扁桃体（胆固醇酯沉积）、肝脾肿大、周围神经病变。早发冠心病风险增加。",
+    explanationEs: "Enfermedad de Tangier: mutacion ABCA1. HDL bajo, amigdalas anaranjadas.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 957, step: 'step1', subject: 'Microbiology',
+    question: "A patient who recently traveled to Southeast Asia presents with fever, chills, and cyclic fevers every 48 hours. Which Plasmodium species is most likely?",
+    options: ["Plasmodium falciparum", "Plasmodium vivax/Plasmodium ovale", "Plasmodium malariae", "Plasmodium knowlesi", "Plasmodium berghei"],
+    correctAnswer: 1,
+    explanationEn: "P. vivax and P. ovale cause tertian malaria (fever every 48 hours). P. malariae: quartan (every 72h). P. falciparum: irregular/daily. P. vivax/ovale have hypnozoites in liver that cause relapse; treat with primaquine for liver stage.",
+    explanationZh: "间日疟原虫和卵形疟原虫引起间日疟（每48小时发热）。三日疟原虫：三日疟（每72小时）。恶性疟原虫：不规则/每日。间日疟/卵形疟在肝脏有休眠体可复发；伯氨喹治疗肝期。",
+    explanationEs: "P. vivax/ovale: fiebre terciana (cada 48h). Hipnozoitos hepaticos.",
+    highYieldTag: 'Malaria periodicity',
+    difficulty: 'Medium'
+  },
+  {
+    id: 958, step: 'step1', subject: 'Immunology',
+    question: "Which complement component deficiency is associated with recurrent Neisseria infections?",
+    options: ["C1q deficiency", "C3 deficiency", "C5-C9 (MAC) deficiency", "C1 esterase inhibitor deficiency", "Factor H deficiency"],
+    correctAnswer: 2,
+    explanationEn: "Deficiency of terminal complement components (C5, C6, C7, C8, C9) forming the Membrane Attack Complex (MAC) predisposes to recurrent Neisseria infections (N. meningitidis, N. gonorrhoeae). MAC is essential for killing gram-negative diplococci.",
+    explanationZh: "末端补体成分（C5-C9）形成膜攻击复合物（MAC）缺乏易导致复发性奈瑟菌感染（脑膜炎奈瑟菌、淋病奈瑟菌）。MAC是杀灭革兰阴性双球菌的关键。",
+    explanationEs: "Deficiencia C5-C9 (MAC): infecciones recurrentes por Neisseria.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 959, step: 'step2', subject: 'Internal Medicine',
+    question: "A 65-year-old male with CAD, HFrEF (EF 30%), and HTN is on lisinopril, carvedilol, and furosemide. Despite optimal medical therapy, he has NYHA Class III symptoms. Which additional medication has shown mortality benefit in this population?",
+    options: ["Digoxin", "Spironolactone (MRA)", "Hydralazine plus isosorbide dinitrate", "Ivabradine", "Amlodipine"],
+    correctAnswer: 1,
+    explanationEn: "RALES trial: spironolactone (MRA) reduced mortality in HFrEF NYHA III-IV. Current guidelines: MRA (spironolactone or eplerenone) for all HFrEF with EF <=35%. Monitor potassium and creatinine.",
+    explanationZh: "RALES试验：螺内酯（MRA）降低HFrEF NYHA III-IV死亡率。当前指南：所有EF<=35%的HFrEF患者使用MRA。监测血钾和肌酐。",
+    explanationEs: "RALES: espironolactona reduce mortalidad en IC NYHA III-IV. MRA para FEVI <=35%.",
+    highYieldTag: 'HFrEF GDMT',
+    difficulty: 'Medium'
+  },
+  {
+    id: 960, step: 'step2', subject: 'Internal Medicine',
+    question: "A 55-year-old female on metformin and glipizide for T2DM presents with confusion and sweating. Fingerstick glucose is 45 mg/dL. She is alert and able to swallow. Best management?",
+    options: ["IV 50% dextrose (D50)", "IM glucagon", "15-20 g oral glucose (e.g., 4 oz juice, glucose tablets)", "Octreotide SC", "Observation and repeat glucose in 15 min"],
+    correctAnswer: 2,
+    explanationEn: "Hypoglycemia in a conscious patient: Rule of 15 — give 15-20 g of fast-acting carbohydrate (oral glucose preferred), recheck in 15 minutes. Repeat if still <70. IV dextrose only if altered mental status or unable to take PO. IM glucagon if no IV access.",
+    explanationZh: "清醒患者低血糖：15法则——给予15-20克速效碳水化合物，15分钟后复查。若仍<70重复。IV葡萄糖仅用于意识改变或无法口服者。IM胰高血糖素用于无静脉通路时。",
+    explanationEs: "Hipoglucemia paciente consciente: regla de 15. 15-20g carbohidratos rapidos.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 961, step: 'step2', subject: 'Internal Medicine',
+    question: "A 72-year-old male with COPD presents with increased dyspnea, purulent sputum, and wheezing. ABG: pH 7.28, PaCO2 70, PaO2 55, HCO3 32. What is the acid-base disorder?",
+    options: ["Acute respiratory acidosis", "Chronic respiratory acidosis", "Acute on chronic respiratory acidosis", "Metabolic acidosis with respiratory compensation", "Mixed respiratory and metabolic acidosis"],
+    correctAnswer: 2,
+    explanationEn: "COPD patients have chronic CO2 retention with compensatory metabolic alkalosis (elevated HCO3). An acute exacerbation further increases PaCO2. pH <7.35 + elevated PaCO2 + elevated HCO3 = acute on chronic respiratory acidosis. Expected HCO3 compensation in chronic: ~4 mEq/L per 10 mmHg PaCO2.",
+    explanationZh: "COPD患者有慢性CO2潴留伴代偿性代谢性碱中毒（HCO3升高）。急性加重使PaCO2进一步升高。pH<7.35 + PaCO2↑ + HCO3↑ = 慢性呼酸急性加重。",
+    explanationEs: "EPOC con exacerbacion: acidosis respiratoria aguda sobre cronica.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 962, step: 'step2', subject: 'Internal Medicine',
+    question: "A 45-year-old African American female presents with dyspnea on exertion, bilateral hilar lymphadenopathy on CXR, and non-caseating granulomas on transbronchial biopsy. Serum ACE level is elevated. What is the first-line treatment if she is symptomatic?",
+    options: ["Methotrexate", "Prednisone (corticosteroids)", "Infliximab (anti-TNF)", "Hydroxychloroquine", "Observation without treatment"],
+    correctAnswer: 1,
+    explanationEn: "Sarcoidosis: non-caseating granulomas, bilateral hilar lymphadenopathy, elevated ACE. First-line for symptomatic pulmonary disease: corticosteroids (prednisone 0.5 mg/kg/day). Methotrexate is second-line/steroid-sparing.",
+    explanationZh: "结节病：非干酪样肉芽肿、双侧肺门淋巴结肿大、ACE升高。有症状肺病一线治疗：糖皮质激素。甲氨蝶呤为二线/激素节省治疗。",
+    explanationEs: "Sarcoidosis: granulomas no caseificantes. Tratamiento: prednisona.",
+    highYieldTag: 'Sarcoidosis treatment',
+    difficulty: 'Medium'
+  },
+  {
+    id: 963, step: 'step2', subject: 'Internal Medicine',
+    question: "A 50-year-old male with cirrhosis presents with increasing abdominal girth. Paracentesis reveals ascitic fluid with PMN count of 350 cells/mm3. He is afebrile. Diagnosis?",
+    options: ["Secondary bacterial peritonitis", "Spontaneous bacterial peritonitis (SBP)", "Tuberculous peritonitis", "Malignant ascites", "Pancreatic ascites"],
+    correctAnswer: 1,
+    explanationEn: "SBP diagnosis: ascitic fluid PMN >=250 cells/mm3 WITHOUT an intra-abdominal surgical source. Treat with IV cefotaxime or ceftriaxone + albumin (reduces hepatorenal syndrome risk). SBP prophylaxis: norfloxacin or TMP-SMX if prior SBP or ascitic protein <1.5.",
+    explanationZh: "SBP诊断：腹水PMN>=250个/mm3且无腹腔内手术源。IV头孢噻肟或头孢曲松+白蛋白（降低肝肾综合征风险）。SBP预防：既往SBP或腹水蛋白<1.5。",
+    explanationEs: "PBE: PMN >=250 en ascitis. Cefotaxima + albumina.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 964, step: 'step2', subject: 'Internal Medicine',
+    question: "Wells criteria are used to determine the pre-test probability of which condition?",
+    options: ["Deep vein thrombosis (DVT)", "Pulmonary embolism (PE)", "Acute coronary syndrome", "Aortic dissection", "Heart failure exacerbation"],
+    correctAnswer: 1,
+    explanationEn: "Wells criteria for PE: clinical signs of DVT (3 pts), PE as likely or more likely than alternative dx (3), HR >100 (1.5), immobilization/surgery <4 wks (1.5), prior DVT/PE (1.5), hemoptysis (1), malignancy (1). Score >4 = PE likely → CT pulmonary angiogram.",
+    explanationZh: "PE Wells标准：DVT临床体征（3分）、PE可能性大于其他诊断（3分）、HR>100（1.5分）、制动/手术<4周（1.5分）、既往DVT/PE（1.5分）、咯血（1分）、恶性肿瘤（1分）。>4分→CT肺血管造影。",
+    explanationEs: "Criterios de Wells para EP. >4 puntos = EP probable → angioTAC.",
+    highYieldTag: 'Wells criteria',
+    difficulty: 'Medium'
+  },
+  {
+    id: 965, step: 'step2', subject: 'Internal Medicine',
+    question: "A 28-year-old female with SLE on hydroxychloroquine presents with pleuritic chest pain, fever, and a friction rub on auscultation. EKG shows diffuse ST elevation and PR depression. Troponin is normal. Diagnosis?",
+    options: ["Myocardial infarction", "Acute pericarditis", "Pulmonary embolism", "Myocarditis", "Costochondritis"],
+    correctAnswer: 1,
+    explanationEn: "Acute pericarditis: pleuritic chest pain (worse lying flat, better leaning forward), pericardial friction rub, diffuse ST elevation with PR depression on EKG. Normal troponin distinguishes from myocarditis (troponin elevated). SLE increases risk.",
+    explanationZh: "急性心包炎：胸膜炎性胸痛（平卧加重、前倾减轻）、心包摩擦音、弥漫性ST抬高伴PR压低。肌钙蛋白正常区别于心肌炎（肌钙蛋白升高）。SLE增加风险。",
+    explanationEs: "Pericarditis aguda: dolor pleuritico, frote pericardico, ST difuso.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 966, step: 'step2', subject: 'Surgery',
+    question: "A 65-year-old male presents with RLQ abdominal pain, fever, and leukocytosis. CT shows a thickened, dilated appendix with surrounding fat stranding. No perforation or abscess. Management?",
+    options: ["IV antibiotics alone", "Laparoscopic appendectomy", "CT-guided percutaneous drainage", "Colonoscopy", "Observation and serial abdominal exams"],
+    correctAnswer: 1,
+    explanationEn: "Acute appendicitis without perforation/abscess: urgent appendectomy (laparoscopic preferred). IV antibiotics alone may be considered in select uncomplicated cases but surgery remains standard. Percutaneous drainage for abscess, followed by interval appendectomy.",
+    explanationZh: "急性阑尾炎无穿孔/脓肿：紧急阑尾切除术（首选腹腔镜）。单纯IV抗生素可用于特定非复杂性病例，但手术仍为标准。经皮引流用于脓肿，之后择期阑尾切除。",
+    explanationEs: "Apendicitis aguda no complicada: apendicectomia laparoscopica urgente.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 967, step: 'step2', subject: 'Surgery',
+    question: "A patient is post-operative day 3 after an open cholecystectomy. She develops fever to 38.8C, tachycardia, and purulent drainage from the incision site. The wound is opened and there is erythema extending 2 cm beyond the wound edges. What is the most appropriate classification?",
+    options: ["Superficial surgical site infection (SSI)", "Deep incisional SSI", "Organ/space SSI", "Wound dehiscence only", "Seroma"],
+    correctAnswer: 1,
+    explanationEn: "Deep incisional SSI: involves deep soft tissues (fascia/muscle), occurs within 30 days (or 90 days if implant), purulent drainage from deep incision, wound dehiscence or deliberate opening with fever/pain. Superficial SSI: skin/subcutaneous only.",
+    explanationZh: "深部切口SSI：累及深部软组织（筋膜/肌肉），术后30天内（有植入物90天），深部切口脓性引流、伤口裂开或故意开放伴发热/疼痛。浅表SSI：仅皮肤/皮下。",
+    explanationEs: "ISQ incisional profunda: fascias/musculo, drenaje purulento profundo.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 968, step: 'step2', subject: 'Surgery',
+    question: "A 60-year-old female on warfarin for atrial fibrillation sustains a ground-level fall. CT head shows a 15 mm acute subdural hematoma with 8 mm midline shift. INR is 3.5. Management?",
+    options: ["Immediate craniotomy for evacuation", "Reverse anticoagulation with 4-factor PCC + vitamin K, then surgery", "Observation with serial CT scans", "Burr hole drainage at bedside", "Mannitol and hyperventilation only"],
+    correctAnswer: 1,
+    explanationEn: "Subdural hematoma with significant mass effect (midline shift >5 mm) requires surgical evacuation. However, INR must be reversed first: 4-factor PCC (rapid reversal) + IV vitamin K (sustained reversal) + FFP if PCC unavailable. Fresh frozen plasma alone is slower.",
+    explanationZh: "硬膜下血肿伴明显占位效应（中线移位>5mm）需手术清除。但先逆转INR：4因子PCC+IV维生素K。单纯新鲜冰冻血浆较慢。",
+    explanationEs: "Hematoma subdural con efecto de masa: revertir INR con PCC 4F + vit K. Luego cirugia.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 969, step: 'step2', subject: 'Surgery',
+    question: "A 70-year-old male presents with acute-onset severe abdominal pain out of proportion to physical exam findings. He has a history of atrial fibrillation (not on anticoagulation). CT angiography shows superior mesenteric artery occlusion. Lactate is 6 mmol/L. Best management?",
+    options: ["IV heparin and observation", "Catheter-directed thrombolysis", "Emergent laparotomy with embolectomy", "IV antibiotics and bowel rest", "Papaverine infusion"],
+    correctAnswer: 2,
+    explanationEn: "Acute mesenteric ischemia from SMA embolism (classic: Afib, pain out of proportion, elevated lactate): emergent laparotomy with embolectomy is standard. If bowel is necrotic, resection is needed. \"Time is bowel\" — irreversible ischemia in 6 hours.",
+    explanationZh: "急性肠系膜缺血（SMA栓塞，典型：房颤、与体征不成比例的疼痛、乳酸升高）：紧急剖腹探查取栓。坏死肠管需切除。\"时间就是肠道\"——6小时内不可逆缺血。",
+    explanationEs: "Isquemia mesenterica aguda: laparotomia urgente + embolectomia. Lactato elevado.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 970, step: 'step2', subject: 'Pediatrics',
+    question: "A 2-week-old infant presents with projectile non-bilious vomiting after every feed, visible gastric peristaltic waves, and an olive-shaped mass in the epigastrium. Labs show hypochloremic, hypokalemic metabolic alkalosis. Diagnosis?",
+    options: ["Gastroesophageal reflux disease (GERD)", "Pyloric stenosis", "Duodenal atresia", "Malrotation with volvulus", "Intussusception"],
+    correctAnswer: 1,
+    explanationEn: "Hypertrophic pyloric stenosis: 2-8 weeks old, first-born males, projectile non-bilious vomiting, \"olive\" mass in epigastrium. Labs: hypochloremic, hypokalemic metabolic alkalosis (paradoxical aciduria). Diagnosis: ultrasound (pyloric thickness >3-4 mm, length >15 mm). Treatment: pyloromyotomy.",
+    explanationZh: "肥厚性幽门狭窄：2-8周龄、头胎男性、喷射性非胆汁性呕吐、上腹部\"橄榄\"肿块。化验：低氯低钾代谢性碱中毒（反常性酸性尿）。超声诊断。幽门肌切开术治疗。",
+    explanationEs: "Estenosis pilorica: vomito proyectil no bilioso, masa en \"oliva\". Alcalosis hipocloremica.",
+    highYieldTag: 'Pyloric stenosis',
+    difficulty: 'Medium'
+  },
+  {
+    id: 971, step: 'step2', subject: 'Pediatrics',
+    question: "A 3-year-old child presents with colicky abdominal pain, \"currant jelly\" stools, and a sausage-shaped mass in the right upper quadrant on exam. Best next diagnostic step?",
+    options: ["Abdominal X-ray", "Abdominal ultrasound", "Barium enema", "CT abdomen", "Diagnostic laparoscopy"],
+    correctAnswer: 1,
+    explanationEn: "Intussusception: ileocolic telescoping, children 3 months-3 years. Classic triad: colicky pain, currant jelly stools, sausage mass (only in <50%). Diagnosis: ultrasound (target/doughnut sign). Treatment: air or contrast enema reduction (success 80-90%).",
+    explanationZh: "肠套叠：回结肠套叠，3个月-3岁儿童。典型三联征：绞痛、果酱样便、腊肠样肿块（仅<50%出现）。超声诊断（靶征/甜甜圈征）。空气或造影灌肠复位（成功率80-90%）。",
+    explanationEs: "Intususcepcion: dolor colico, heces en jalea. Ecografia: signo en diana.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 972, step: 'step2', subject: 'Pediatrics',
+    question: "A 5-year-old unvaccinated child presents with fever, sore throat, and a gray pseudomembrane on the tonsils that bleeds when scraped. Which finding is most concerning?",
+    options: ["Cervical lymphadenopathy", "Cardiac arrhythmia or myocarditis", "Acute glomerulonephritis", "Arthritis", "Encephalopathy"],
+    correctAnswer: 1,
+    explanationEn: "Diphtheria (Corynebacterium diphtheriae): pseudomembrane, bull neck. Exotoxin causes myocarditis (most common cause of death) and neuritis (palatal paralysis, cranial nerve palsies). Treat with antitoxin + antibiotics (erythromycin/penicillin). Prevent with DTaP/Tdap.",
+    explanationZh: "白喉（白喉棒状杆菌）：伪膜、牛颈。外毒素引起心肌炎（最常见死因）和神经炎（腭麻痹、颅神经麻痹）。抗毒素+抗生素治疗。DTaP/Tdap预防。",
+    explanationEs: "Difteria: pseudomembrana, miocarditis por exotoxina. Antitoxina + antibioticos.",
+    highYieldTag: 'Diphtheria complication',
+    difficulty: 'Medium'
+  },
+  {
+    id: 973, step: 'step2', subject: 'Obstetrics & Gynecology',
+    question: "A 28-year-old G1P0 at 32 weeks gestation presents with severe headache, epigastric pain, and visual disturbances. BP is 170/110 mmHg. Urine dipstick shows 3+ protein. Platelets are 90,000/microliter and AST is 120 U/L. Diagnosis?",
+    options: ["Gestational hypertension", "Preeclampsia without severe features", "Preeclampsia with severe features", "Eclampsia", "HELLP syndrome"],
+    correctAnswer: 3,
+    explanationEn: "This patient meets criteria for preeclampsia with severe features (BP >=160/110, thrombocytopenia, elevated AST, severe headache, epigastric pain). Management: IV magnesium sulfate (seizure prophylaxis), antihypertensives (labetalol/hydralazine), delivery planning.",
+    explanationZh: "重度子痫前期（BP>=160/110、血小板减少、肝酶升高、严重头痛、上腹痛）。处理：IV硫酸镁（预防子痫发作）、降压药、计划分娩。",
+    explanationEs: "Preeclampsia severa: PAS>=160 mmHg. Sulfato de magnesio IV, antihipertensivos.",
+    highYieldTag: 'Severe preeclampsia',
+    difficulty: 'Medium'
+  },
+  {
+    id: 974, step: 'step2', subject: 'Obstetrics & Gynecology',
+    question: "A 32-year-old female presents with irregular heavy menstrual bleeding and an enlarged, irregularly shaped uterus on bimanual exam. Pelvic ultrasound shows multiple well-circumscribed hypoechoic masses within the myometrium. Diagnosis?",
+    options: ["Endometrial polyps", "Uterine leiomyomas (fibroids)", "Adenomyosis", "Endometrial hyperplasia", "Uterine sarcoma"],
+    correctAnswer: 1,
+    explanationEn: "Uterine leiomyomas (fibroids): most common benign uterine tumor. Well-circumscribed, hypoechoic on ultrasound. Symptoms: menorrhagia, pelvic pressure/pain, reproductive issues. Degeneration can cause acute pain. Treatment: medical (NSAIDs, OCPs, GnRH agonists) or surgical (myomectomy, hysterectomy).",
+    explanationZh: "子宫平滑肌瘤（肌瘤）：最常见良性子宫肿瘤。超声边界清楚、低回声。症状：月经过多、盆腔压迫/疼痛、生育问题。变性可致急性疼痛。治疗：药物或手术。",
+    explanationEs: "Leiomiomas uterinos: tumor benigno mas comun. Hipocoicos en ecografia.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 975, step: 'step2', subject: 'Obstetrics & Gynecology',
+    question: "A 25-year-old G1P0 at 39 weeks in active labor. Cervical exam is 6 cm dilated, 100% effaced, 0 station. Fetal heart tracing shows late decelerations with each contraction. What is the most likely cause?",
+    options: ["Cord compression", "Head compression", "Uteroplacental insufficiency", "Maternal fever", "Fetal sleep cycle"],
+    correctAnswer: 2,
+    explanationEn: "Late decelerations: gradual decrease in FHR starting after contraction peak, returning to baseline after contraction ends. Caused by uteroplacental insufficiency (reduced oxygen delivery to fetus). Management: maternal repositioning, O2, IV fluids, reduce contractions. If persistent, expedite delivery.",
+    explanationZh: "晚期减速：宫缩高峰后FHR逐渐下降，宫缩结束后恢复正常。由子宫胎盘功能不全（胎儿氧供减少）导致。处理：母体体位、吸氧、IV液体、减少宫缩。持续存在则加速分娩。",
+    explanationEs: "Desaceleraciones tardias: insuficiencia uteroplacentaria. Reposicion materna, O2.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 976, step: 'step2', subject: 'Psychiatry',
+    question: "A 22-year-old male presents with 2 weeks of elevated mood, decreased need for sleep (3 hours/night feels rested), racing thoughts, pressured speech, and impulsive spending of $10,000. He has no prior psychiatric history. What is the diagnosis?",
+    options: ["Bipolar I disorder, manic episode", "Bipolar II disorder, hypomanic episode", "Schizoaffective disorder", "ADHD", "Substance-induced mood disorder"],
+    correctAnswer: 0,
+    explanationEn: "Bipolar I manic episode: >=7 days (or any duration if hospitalized) of elevated/irritable mood + >=3 of: grandiosity, decreased need for sleep, pressured speech, flight of ideas, distractibility, increased goal-directed activity, risky behavior. Causes marked functional impairment (spending $10,000).",
+    explanationZh: "双相I型躁狂发作：>=7天情绪高涨/易激惹 + >=3症状：夸大、睡眠需求减少、言语急促、思维奔逸、注意力分散、目标导向活动增加、冒险行为。导致显著功能损害。",
+    explanationEs: "Trastorno bipolar I, episodio maniaco: >=7 dias, >=3 criterios.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 977, step: 'step2', subject: 'Psychiatry',
+    question: "A 35-year-old female presents with a 6-month history of low mood, anhedonia, weight gain, hypersomnia, and leaden paralysis. She reports that positive events can temporarily lift her mood. Which subtype of depression does this describe?",
+    options: ["Melancholic depression", "Atypical depression", "Catatonic depression", "Psychotic depression", "Postpartum depression"],
+    correctAnswer: 1,
+    explanationEn: "Atypical depression: mood reactivity (mood brightens with positive events), hyperphagia/weight gain, hypersomnia, leaden paralysis (heavy feeling in limbs), rejection sensitivity. Responds better to MAOIs than tricyclics. Contrast with melancholic: anhedonia, worse in morning, early awakening, weight loss.",
+    explanationZh: "非典型抑郁：情绪反应性、食欲亢进/体重增加、嗜睡、铅样麻痹（肢体沉重感）、拒绝敏感性。MAOIs优于三环类。对比忧郁型：快感缺乏、晨重夜轻、早醒、体重减轻。",
+    explanationEs: "Depresion atipica: reactividad animica, hiperfagia, hipersomnia, paralisis plomiza.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 978, step: 'step2', subject: 'Emergency Medicine',
+    question: "A 45-year-old male presents with sudden-onset \"thunderclap\" headache, described as the worst headache of his life, during sexual activity. Non-contrast CT head is normal. Next best step?",
+    options: ["MRI brain", "Lumbar puncture", "CT angiography", "Discharge with migraine treatment", "Transcranial Doppler"],
+    correctAnswer: 1,
+    explanationEn: "Thunderclap headache: subarachnoid hemorrhage until proven otherwise. CT normal in up to 6% within 24 hours. LP is required to detect xanthochromia (RBC breakdown products, takes 6-12 hours to develop). CT angiography can detect aneurysm but LP is the standard next step when CT is negative.",
+    explanationZh: "雷击样头痛：SAH排除前不能排除。24小时内CT正常率可达6%。LP检测黄变症（RBC分解产物，需6-12小时）。CTA可检测动脉瘤，但CT阴性时LP为标准下一步。",
+    explanationEs: "Cefalea en trueno: HSA hasta demostrar lo contrario. TAC normal → PL.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 979, step: 'step2', subject: 'Emergency Medicine',
+    question: "A 22-year-old male is brought to the ED after a motorcycle accident. He is unresponsive, pupils are unequal (right 5 mm fixed, left 3 mm reactive), and he has decerebrate posturing. BP is 190/100, HR 50. What is the immediate management priority?",
+    options: ["CT head without contrast", "Hyperventilation to PaCO2 30 mmHg", "Mannitol 1 g/kg IV or hypertonic saline", "Neurosurgery consult for craniotomy", "Phenytoin loading dose"],
+    correctAnswer: 2,
+    explanationEn: "Signs of transtentorial herniation (Cushing triad: HTN, bradycardia, irregular breathing; fixed dilated pupil; decerebrate posturing). Immediate management: elevate head of bed, hyperosmolar therapy (mannitol 1 g/kg or hypertonic saline), brief hyperventilation (PaCO2 30-35). Then CT and neurosurgery.",
+    explanationZh: "经天幕疝体征（库欣三联征：高血压、心动过缓、不规则呼吸；固定散大瞳孔；去大脑强直）。紧急处理：抬高床头、高渗治疗、短暂过度通气。然后CT和神经外科。",
+    explanationEs: "Herniacion transtentorial: manitol/hipertonica, hiperventilacion breve. Luego TAC.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 980, step: 'step2', subject: 'Internal Medicine',
+    question: "A 70-year-old female with a history of CHF and HTN presents with acute dyspnea, bilateral crackles, and an S3 gallop. CXR shows pulmonary edema. She is on lisinopril 20 mg daily. BP is 160/95. What is the initial IV medication for this acute decompensated heart failure?",
+    options: ["IV furosemide", "IV metoprolol", "IV digoxin", "IV milrinone", "IV dopamine"],
+    correctAnswer: 0,
+    explanationEn: "ADHF with volume overload: IV loop diuretic (furosemide) is first-line. Vasodilators (nitroglycerin IV) if hypertensive. Non-invasive positive pressure ventilation (CPAP/BiPAP) if respiratory distress. Avoid beta blockers and calcium channel blockers in acute setting.",
+    explanationZh: "ADHF伴容量过负荷：IV袢利尿剂（呋塞米）一线。高血压可加血管扩张剂（硝酸甘油IV）。呼吸窘迫可无创正压通气。急性期避免β受体阻滞剂和钙通道阻滞剂。",
+    explanationEs: "ICAD aguda con congestion: furosemida IV. Vasodilatadores si HTA.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 981, step: 'step2', subject: 'Internal Medicine',
+    question: "A 55-year-old female with recently diagnosed T2DM (A1c 9.5%) is asymptomatic. She has no known ASCVD, CKD, or HF. Which first-line medication is recommended by ADA guidelines?",
+    options: ["Insulin glargine", "Metformin + comprehensive lifestyle modification", "SGLT2 inhibitor (empagliflozin)", "GLP-1 receptor agonist", "Sulfonylurea"],
+    correctAnswer: 1,
+    explanationEn: "ADA first-line for T2DM: metformin + lifestyle modification. SGLT2i or GLP-1 RA added if ASCVD, CKD, or HF (regardless of A1c). Insulin if severely uncontrolled (A1c >10% or symptomatic hyperglycemia). Target A1c: <7% for most adults.",
+    explanationZh: "ADA T2DM一线：二甲双胍+生活方式。如有ASCVD/CKD/HF加SGLT2i或GLP-1RA。严重未控制（A1c>10%或有症状）加胰岛素。A1c目标：大多数成人<7%。",
+    explanationEs: "ADA: metformina + cambios estilo de vida primera linea.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 982, step: 'step2', subject: 'Internal Medicine',
+    question: "A 65-year-old male with cirrhosis presents with confusion, asterixis, and fetor hepaticus. He is arousable but disoriented. What is the first-line pharmacologic treatment?",
+    options: ["Rifaximin", "Lactulose", "Neomycin", "L-ornithine L-aspartate (LOLA)", "Flumazenil"],
+    correctAnswer: 1,
+    explanationEn: "Hepatic encephalopathy: lactulose (non-absorbable disaccharide) is first-line. Acidifies colon → converts NH3 to NH4+ (non-absorbable), also cathartic effect. Rifaximin is added as second-line for recurrent episodes. Goals: 2-3 soft bowel movements/day.",
+    explanationZh: "肝性脑病：乳果糖一线。酸化结肠→NH3转化为NH4+（不可吸收），兼有导泻作用。利福昔明作为二线用于反复发作。目标：每日2-3次软便。",
+    explanationEs: "Encefalopatia hepatica: lactulosa primera linea. Acidifica colon.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 983, step: 'step2', subject: 'Surgery',
+    question: "A patient develops fever, tachycardia, and increased wound pain on post-op day 1 after an emergency appendectomy for perforated appendicitis. The wound appears erythematous with crepitus on palpation. Gram stain shows gram-positive rods. What is the most feared complication?",
+    options: ["Necrotizing fasciitis (Clostridium perfringens)", "Superficial wound infection", "Dehiscence", "Seroma", "Hematoma"],
+    correctAnswer: 0,
+    explanationEn: "Necrotizing fasciitis: surgical emergency. Pain out of proportion, crepitus (gas in tissues), rapidly spreading. Organisms: Type I (polymicrobial), Type II (Group A Strep), Clostridium (gas gangrene). Treatment: emergent surgical debridement + broad-spectrum IV antibiotics.",
+    explanationZh: "坏死性筋膜炎：外科急症。疼痛与体征不成比例、捻发音（组织内气体）、迅速扩散。细菌：I型（多种菌）、II型（A组链球菌）、梭菌（气性坏疽）。治疗：紧急清创+广谱IV抗生素。",
+    explanationEs: "Fascitis necrotizante: dolor desproporcionado, crepitacion. Desbridamiento urgente.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 984, step: 'step2', subject: 'Pediatrics',
+    question: "A 6-month-old infant presents with \"cold-like\" symptoms for 2 days, now with wheezing, tachypnea, and nasal flaring. CXR shows hyperinflation with peribronchial cuffing. Nasopharyngeal swab is positive for RSV. Which treatment is indicated for this otherwise healthy infant?",
+    options: ["Ribavirin", "Systemic corticosteroids", "Nebulized albuterol", "Supportive care (suctioning, hydration, oxygen if needed)", "Palivizumab"],
+    correctAnswer: 3,
+    explanationEn: "Bronchiolitis (RSV is most common cause) in healthy infants: supportive care only — nasal suctioning, hydration, supplemental oxygen if SpO2 <90%. Bronchodilators and corticosteroids are NOT routinely recommended (AAP guidelines). Palivizumab is for prophylaxis in high-risk infants.",
+    explanationZh: "健康婴儿毛细支气管炎（RSV最常见）：仅支持治疗——吸鼻、补液、必要时吸氧。不常规推荐支气管扩张剂和糖皮质激素（AAP指南）。帕利珠单抗用于高危婴儿预防。",
+    explanationEs: "Bronquiolitis por VRS: cuidados de soporte solamente. Sin broncodilatadores.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 985, step: 'step2', subject: 'Pediatrics',
+    question: "A 2-year-old presents with fever for 5 days, bilateral non-purulent conjunctivitis, strawberry tongue, cervical lymphadenopathy, and a polymorphous rash. Which serious complication must be screened for?",
+    options: ["Acute glomerulonephritis", "Coronary artery aneurysms", "Retropharyngeal abscess", "Acute rheumatic fever", "Encephalitis"],
+    correctAnswer: 1,
+    explanationEn: "Kawasaki disease: fever >=5 days + >=4 of: conjunctivitis, oral changes, rash, extremity changes, cervical lymphadenopathy. Treat with IVIG + high-dose aspirin within 10 days to prevent coronary artery aneurysms (risk 25% if untreated, 5% if treated).",
+    explanationZh: "川崎病：发热>=5天+>=4项。IVIG+大剂量阿司匹林10天内治疗预防冠状动脉瘤（未治疗25%、治疗5%风险）。",
+    explanationEs: "Kawasaki: fiebre >=5 dias + 4 criterios. IGIV + aspirina. Aneurismas coronarios.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 986, step: 'step2', subject: 'Obstetrics & Gynecology',
+    question: "A 35-year-old G3P2 at 12 weeks presents with vaginal bleeding and an open cervical os on speculum exam. Products of conception are seen at the os. Ultrasound shows no fetal cardiac activity. Diagnosis?",
+    options: ["Threatened abortion", "Inevitable abortion", "Incomplete abortion", "Complete abortion", "Missed abortion"],
+    correctAnswer: 1,
+    explanationEn: "Inevitable abortion: vaginal bleeding + open cervical os but products NOT yet passed. Incomplete: some products passed. Complete: all products passed, os closed. Missed: fetal demise without symptoms, os closed. Threatened: bleeding with closed os.",
+    explanationZh: "难免流产：阴道出血+宫口开大但组织未排出。不全流产：部分组织排出。完全流产：全部排出、宫口闭合。稽留流产：胎儿死亡无症状、宫口闭合。先兆流产：出血伴宫口闭。",
+    explanationEs: "Aborto inevitable: sangrado + cuello abierto, productos no expulsados.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 987, step: 'step2', subject: 'Psychiatry',
+    question: "A 45-year-old male with a history of alcohol use disorder presents with confusion, nystagmus, and ataxia 2 days after admission. He has been receiving IV fluids with dextrose. Which vitamin deficiency is most likely?",
+    options: ["Vitamin B12", "Thiamine (Vitamin B1)", "Pyridoxine (Vitamin B6)", "Folate (Vitamin B9)", "Niacin (Vitamin B3)"],
+    correctAnswer: 1,
+    explanationEn: "Wernicke encephalopathy: acute thiamine deficiency. Classic triad: confusion, ataxia, nystagmus/ophthalmoplegia (only ~16% have all 3). High-dose IV thiamine BEFORE glucose (glucose can precipitate/worsen). Untreated can progress to Korsakoff syndrome (irreversible anterograde amnesia, confabulation).",
+    explanationZh: "Wernicke脑病：急性硫胺素缺乏。经典三联征：意识模糊、共济失调、眼震/眼肌麻痹。IV大剂量硫胺素优于葡萄糖（葡萄糖可诱发/加重）。未治疗进展为Korsakoff综合征。",
+    explanationEs: "Encefalopatia de Wernicke: deficit de tiamina. Confusion, ataxia, nistagmo.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 988, step: 'step2', subject: 'Emergency Medicine',
+    question: "An 18-year-old male is brought to the ED after a high-speed MVA. He is hypotensive (80/50), tachycardic (130), and has distended neck veins with muffled heart sounds. FAST exam shows pericardial fluid. Diagnosis and immediate management?",
+    options: ["Tension pneumothorax — needle decompression", "Cardiac tamponade — pericardiocentesis", "Massive hemothorax — chest tube", "Aortic rupture — emergent thoracotomy", "Neurogenic shock — IV fluids"],
+    correctAnswer: 1,
+    explanationEn: "Beck triad (hypotension, distended neck veins, muffled heart sounds) = cardiac tamponade. Immediate treatment: pericardiocentesis (subxiphoid approach). Pulsus paradoxus >10 mmHg is also characteristic. FAST exam confirms pericardial fluid.",
+    explanationZh: "Beck三联征（低血压、颈静脉怒张、心音遥远）=心脏压塞。紧急处理：心包穿刺（剑突下入路）。奇脉>10mmHg亦为特征。FAST检查确认心包积液。",
+    explanationEs: "Taponamiento cardiaco: triada de Beck. Pericardiocentesis urgente.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 989, step: 'step2', subject: 'Internal Medicine',
+    question: "A 60-year-old male with T2DM and HTN develops new-onset gross hematuria. Urinalysis shows dysmorphic RBCs and RBC casts. Serum creatinine has risen from 1.0 to 1.8 mg/dL over 3 weeks. C3 and C4 levels are low. Anti-nuclear antibody is positive. What is the most likely diagnosis?",
+    options: ["Post-streptococcal glomerulonephritis", "IgA nephropathy", "Lupus nephritis", "Granulomatosis with polyangiitis", "Goodpasture syndrome"],
+    correctAnswer: 2,
+    explanationEn: "Lupus nephritis: dysmorphic RBCs + RBC casts (glomerular source), rising creatinine, low complement (C3/C4 — immune complex consumption), ANA positive. Post-streptococcal GN: low C3 but normal C4, history of pharyngitis/impetigo. IgA nephropathy: normal complement.",
+    explanationZh: "狼疮性肾炎：变形RBC+红细胞管型（肾小球来源）、肌酐升高、低补体（C3/C4——免疫复合物消耗）、ANA阳性。链球菌感染后GN：C3低但C4正常、咽炎/脓疱疮史。IgA肾病：补体正常。",
+    explanationEs: "Nefritis lupica: hematies dismorficos, cilindros hematicos, C3/C4 bajos.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 990, step: 'step2', subject: 'Internal Medicine',
+    question: "A 70-year-old female presents with progressive dysphagia to both solids and liquids, regurgitation of undigested food, and weight loss. Barium swallow shows dilated esophagus with a \"bird's beak\" narrowing at the gastroesophageal junction. Manometry shows incomplete LES relaxation and absent peristalsis. Diagnosis?",
+    options: ["Achalasia", "Esophageal carcinoma", "Scleroderma esophagus", "Diffuse esophageal spasm", "Esophageal stricture"],
+    correctAnswer: 0,
+    explanationEn: "Achalasia: degeneration of myenteric (Auerbach) plexus. Incomplete LES relaxation + absent peristalsis on manometry. Barium: \"bird's beak\" at GEJ + dilated esophagus. Treatment: pneumatic dilation, Heller myotomy, or POEM. Increased risk of esophageal SCC.",
+    explanationZh: "贲门失弛缓症：肠肌（Auerbach）丛变性。测压：LES不完全松弛+蠕动缺失。钡餐：GEJ\"鸟嘴征\"+食管扩张。治疗：气囊扩张、Heller肌切开术或POEM。食管鳞癌风险增加。",
+    explanationEs: "Acalasia: pico de pajaro en esofagograma. Manometria: relajacion incompleta EEI.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 991, step: 'step2', subject: 'Surgery',
+    question: "A 75-year-old male with ASCVD is found to have a 5.8 cm infrarenal abdominal aortic aneurysm on screening ultrasound. He is asymptomatic. Management?",
+    options: ["Observation with annual ultrasound", "Elective surgical repair (open or EVAR)", "Serial ultrasound every 6 months", "Beta blocker therapy only", "Statin therapy only"],
+    correctAnswer: 1,
+    explanationEn: "AAA repair thresholds: >=5.5 cm in men, >=5.0 cm in women, or rapid growth >1 cm/year. Options: open repair or EVAR (endovascular aneurysm repair). EVAR has lower perioperative mortality but requires lifelong surveillance. Continue medical optimization (statin, antiplatelet).",
+    explanationZh: "AAA修复阈值：男性>=5.5cm、女性>=5.0cm或快速增长>1cm/年。选择：开放修复或EVAR（腔内修复）。EVAR围手术期死亡率低但需终身监测。继续药物优化。",
+    explanationEs: "AAA >=5.5cm hombres: reparacion electiva (abierta o EVAR).",
+    difficulty: 'Medium'
+  },
+  {
+    id: 992, step: 'step2', subject: 'Pediatrics',
+    question: "A 4-year-old presents with a limp and refuses to bear weight on the right leg. There is no history of trauma. He is afebrile. Hip ultrasound shows a joint effusion. Labs including WBC, ESR, and CRP are normal. What is the most likely diagnosis?",
+    options: ["Septic arthritis", "Transient synovitis", "Legg-Calve-Perthes disease", "Slipped capital femoral epiphysis", "Osteomyelitis"],
+    correctAnswer: 1,
+    explanationEn: "Transient synovitis: most common cause of acute hip pain in children 3-8 years, often post-viral. Afebrile, normal labs. Differentiate from septic arthritis using Kocher criteria: fever (non-weight bearing, ESR >40, WBC >12,000, fever >38.5). >=4 criteria = septic arthritis until proven otherwise.",
+    explanationZh: "暂时性滑膜炎：3-8岁儿童急性髋痛最常见原因，常病毒感染后。无发热、实验室正常。Kocher标准鉴别化脓性关节炎。>=4项=化脓性关节炎可能。",
+    explanationEs: "Sinovitis transitoria: dolor de cadera agudo, afebril, laboratorios normales.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 993, step: 'step2', subject: 'Emergency Medicine',
+    question: "A patient presents after a bee sting with urticaria, angioedema of the lips, and stridor. BP is 80/50. What is the first-line medication — and the route of administration?",
+    options: ["IM epinephrine 0.3-0.5 mg (1:1000)", "IV epinephrine 0.1 mg (1:10,000)", "IV diphenhydramine", "IV methylprednisolone", "IM diphenhydramine"],
+    correctAnswer: 0,
+    explanationEn: "Anaphylaxis with hypotension and stridor: IM epinephrine 0.3-0.5 mg (EpiPen 0.3 mg) in the anterolateral thigh — NO contraindications. IV epinephrine reserved for refractory shock in ICU setting. Adjuncts: H1/H2 blockers, corticosteroids (prevent biphasic reaction, NOT acute treatment).",
+    explanationZh: "过敏性休克伴低血压和喘鸣：IM肾上腺素0.3-0.5mg（大腿前外侧）——无禁忌证。IV肾上腺素仅用于ICU难治性休克。辅助：H1/H2拮抗剂、糖皮质激素（预防双相反应，非急性治疗）。",
+    explanationEs: "Anafilaxia con hipotension: adrenalina IM 0.3-0.5 mg. Sin contraindicaciones.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 994, step: 'step2', subject: 'Obstetrics & Gynecology',
+    question: "A 29-year-old female with PCOS presents with infertility. She has oligomenorrhea, hirsutism, and BMI 32 kg/m2. Labs: LH elevated, FSH normal, testosterone mildly elevated. Pelvic ultrasound shows polycystic ovaries. What is the first-line treatment to induce ovulation?",
+    options: ["Clomiphene citrate", "Letrozole (aromatase inhibitor)", "Metformin", "Gonadotropins", "Laparoscopic ovarian drilling"],
+    correctAnswer: 1,
+    explanationEn: "PCOS infertility: Letrozole is now first-line for ovulation induction (superior to clomiphene: higher live birth rate, lower multiple pregnancy). Lifestyle modification (weight loss 5-10%) can restore ovulation. Metformin may help metabolic aspects but less effective alone for ovulation.",
+    explanationZh: "PCOS不孕症：来曲唑现为诱导排卵一线（优于氯米芬：活产率更高、多胎率更低）。生活方式改善（减重5-10%）可恢复排卵。二甲双胍对代谢有帮助但单独促排卵效果差。",
+    explanationEs: "Infertilidad SOP: letrozol primera linea. Perdida de peso 5-10%.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 995, step: 'step2', subject: 'Psychiatry',
+    question: "A 50-year-old male with a 30-year history of alcohol abuse presents with tactile hallucinations (feeling bugs crawling on skin), autonomic hyperactivity, and generalized tonic-clonic seizure. He is 48 hours after his last drink. What is the diagnosis?",
+    options: ["Alcohol withdrawal (delirium tremens)", "Alcoholic hallucinosis", "Wernicke encephalopathy", "Alcohol-induced psychotic disorder", "Hepatic encephalopathy"],
+    correctAnswer: 0,
+    explanationEn: "Delirium tremens (DT): peak 48-96 hours after last drink. Triad: altered mental status, autonomic hyperactivity (tachycardia, HTN, diaphoresis), hallucinations (classically tactile — formication). Seizures peak at 24-48h. CIWA-Ar scoring guides treatment. Benzodiazepines are first-line.",
+    explanationZh: "震颤谵妄（DT）：末次饮酒后48-96小时达峰。三联征：意识改变、自主神经亢进、幻觉（典型触幻觉——蚁走感）。CIWA-Ar评分指导治疗。苯二氮卓一线。",
+    explanationEs: "Delirium tremens: 48-96h post-alcohol. Benzodiazepinas primera linea.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 996, step: 'step2', subject: 'Internal Medicine',
+    question: "A patient with known HIV (CD4 count 25 cells/mm3, not on ART) presents with progressive dyspnea, dry cough, and diffuse bilateral interstitial infiltrates on CXR. LDH is markedly elevated. Induced sputum with silver stain shows cup-shaped organisms. What is the most likely pathogen?",
+    options: ["Mycobacterium tuberculosis", "Pneumocystis jirovecii", "Cytomegalovirus", "Cryptococcus neoformans", "Histoplasma capsulatum"],
+    correctAnswer: 1,
+    explanationEn: "Pneumocystis jirovecii pneumonia (PJP/PCP): CD4 <200 (especially <50), diffuse interstitial infiltrates, elevated LDH. Diagnosis: silver stain of induced sputum or BAL showing cysts. Treatment: TMP-SMX (first-line). Prophylaxis: TMP-SMX when CD4 <200.",
+    explanationZh: "肺孢子菌肺炎（PJP）：CD4<200（尤其<50）、弥漫性间质浸润、LDH升高。诊断：诱导痰或BAL银染显示包囊。治疗：TMP-SMX（一线）。预防：CD4<200时TMP-SMX。",
+    explanationEs: "Neumonia por P. jirovecii: CD4 <200. TMP-SMX tratamiento y profilaxis.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 997, step: 'step2', subject: 'Internal Medicine',
+    question: "A 55-year-old smoker presents with cough, hemoptysis, and weight loss. CXR shows a right upper lobe cavitary lesion. Sputum AFB smear is positive. The patient lives alone. What is the next step in management?",
+    options: ["Start RIPE therapy (rifampin, isoniazid, pyrazinamide, ethambutol)", "Admit for airborne isolation and start RIPE", "Await culture and sensitivity", "Treat with fluoroquinolone monotherapy", "Bronchoscopy for diagnosis"],
+    correctAnswer: 1,
+    explanationEn: "Active pulmonary TB with positive AFB smear: admit for airborne isolation (negative pressure room, N95). Start empiric RIPE therapy. Do NOT wait for culture. Report to public health. Directly observed therapy (DOT) recommended. Check baseline LFTs, visual acuity (ethambutol), platelets.",
+    explanationZh: "活动性肺结核AFB涂片阳性：收入院空气隔离（负压病房、N95）。开始经验性RIPE治疗。不等培养。报告公共卫生。推荐DOT。检查基线肝功、视力（乙胺丁醇）、血小板。",
+    explanationEs: "TB pulmonar activa BAAR+: aislamiento aereo + RIPE empirico.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 998, step: 'step2', subject: 'Emergency Medicine',
+    question: "An 80-year-old female from a nursing home presents with confusion, fever (39.0C), and hypotension (85/50). She has an indwelling Foley catheter. Urine is cloudy with positive leukocyte esterase and nitrite. Lactate is 4 mmol/L. After IV fluids (30 mL/kg), she remains hypotensive. Next vasopressor?",
+    options: ["Dopamine", "Norepinephrine", "Epinephrine", "Vasopressin", "Phenylephrine"],
+    correctAnswer: 1,
+    explanationEn: "Sepsis/septic shock with persistent hypotension after fluid resuscitation: norepinephrine is first-line vasopressor (Surviving Sepsis Guidelines). Add vasopressin as second agent if refractory. Source control: remove/replace Foley. Broad-spectrum antibiotics within 1 hour.",
+    explanationZh: "脓毒症/感染性休克液体复苏后仍低血压：去甲肾上腺素一线升压药。无效加血管加压素二线。感染源控制：更换尿管。1小时内使用广谱抗生素。",
+    explanationEs: "Shock septico: norepinefrina primera linea. Vasopresina segunda linea.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 999, step: 'step3', subject: 'Primary Care',
+    question: "A 50-year-old female presents for a routine health maintenance visit. She is asymptomatic. She had a normal screening colonoscopy at age 50. When should her next colonoscopy be performed according to USPSTF?",
+    options: ["1 year", "3 years", "5 years", "10 years", "No further screening needed"],
+    correctAnswer: 3,
+    explanationEn: "USPSTF: screening colonoscopy every 10 years starting at age 45 (recently lowered from 50) through age 75. After a normal colonoscopy, repeat in 10 years. FIT annually or FIT-DNA every 3 years are alternatives. Age 76-85: individualized decision.",
+    explanationZh: "USPSTF：45岁起每10年结肠镜筛查（最近从50岁下调）至75岁。正常结肠镜后10年复查。FIT每年或FIT-DNA每3年为替代选项。76-85岁：个体化决策。",
+    explanationEs: "USPSTF: colonoscopia cada 10 anos desde los 45.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1000, step: 'step3', subject: 'Primary Care',
+    question: "A 55-year-old male smoker (35 pack-years) asks about lung cancer screening. He quit smoking 5 years ago. According to USPSTF guidelines, what should be recommended?",
+    options: ["Annual low-dose CT chest", "Chest X-ray annually", "No screening needed", "Annual sputum cytology", "Annual PET-CT"],
+    correctAnswer: 0,
+    explanationEn: "USPSTF: annual low-dose CT for lung cancer screening in adults aged 50-80 with >=20 pack-year smoking history who currently smoke or quit within the past 15 years. This patient qualifies (55 years, 35 pack-years, quit 5 years ago).",
+    explanationZh: "USPSTF：50-80岁、>=20包年吸烟史、目前吸烟或戒烟15年内，每年低剂量CT肺癌筛查。该患者符合条件。",
+    explanationEs: "USPSTF: TAC baja dosis anual pulmon 50-80 anos, >=20 paq-ano.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1001, step: 'step3', subject: 'Primary Care',
+    question: "A 65-year-old female with osteoporosis is being treated with alendronate 70 mg weekly. She has been on therapy for 5 years without fractures. BMD is stable. What is the appropriate next step?",
+    options: ["Continue alendronate indefinitely", "Consider bisphosphonate holiday after 5 years", "Switch to denosumab", "Switch to teriparatide", "Stop all treatment permanently"],
+    correctAnswer: 1,
+    explanationEn: "Bisphosphonate holiday: after 5 years of oral (alendronate) or 3 years of IV (zoledronic acid) in low-risk patients, consider a drug holiday. High-risk patients (prior fractures, very low BMD) may continue up to 10 years. Reassess BMD after 1-2 years of holiday.",
+    explanationZh: "双膦酸盐假期：低风险患者口服5年或IV 3年后考虑药物假期。高风险患者可继续至10年。假期1-2年后重新评估BMD。",
+    explanationEs: "Bifosfonatos: vacaciones despues de 5 anos en riesgo bajo.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1002, step: 'step3', subject: 'Primary Care',
+    question: "A 48-year-old female with obesity (BMI 34), HTN, and T2DM presents for routine follow-up. She smokes 1 pack/day and drinks 2 glasses of wine nightly. She asks about the most impactful lifestyle change for her health. What is the single most beneficial intervention?",
+    options: ["Smoking cessation", "Weight loss", "Alcohol reduction", "Starting a statin", "Glycemic control"],
+    correctAnswer: 0,
+    explanationEn: "Smoking cessation is the single most impactful modifiable risk factor for reducing cardiovascular and all-cause mortality. While all listed interventions are important, smoking cessation provides the greatest absolute risk reduction. Brief intervention (5As: Ask, Advise, Assess, Assist, Arrange) is effective.",
+    explanationZh: "戒烟是降低心血管和全因死亡率最重要的可改变危险因素。虽然所有列出的干预措施都重要，但戒烟提供最大的绝对风险降低。简短干预（5A：询问、建议、评估、协助、安排随访）有效。",
+    explanationEs: "Cese de tabaquismo: intervencion mas impactante. Modelo 5A.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1003, step: 'step3', subject: 'Ethics',
+    question: "A 75-year-old patient with advanced dementia has no advance directive. His daughter and son disagree about continuing tube feeding. The daughter wants to continue; the son wants to withdraw. The patient has no appointed health care proxy. According to standard hierarchy for surrogate decision-making, who decides?",
+    options: ["The daughter as the eldest child", "Both children must agree or go to ethics committee", "The spouse, then adult children by majority", "The attending physician", "Court-appointed guardian"],
+    correctAnswer: 2,
+    explanationEn: "Surrogate decision-making hierarchy (most states): 1) Court-appointed guardian, 2) Spouse, 3) Adult children (majority rules), 4) Parents, 5) Adult siblings. If no surrogate available and no advance directive, treating physician may make decisions in consultation with ethics committee.",
+    explanationZh: "代理决策层级：1）法院指定监护人，2）配偶，3）成年子女（多数决定），4）父母，5）成年兄弟姐妹。无代理人和预先指示时，主治医生可与伦理委员会协商决策。",
+    explanationEs: "Toma de decisiones subrogada: conyuge > hijos adultos (mayoria).",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1004, step: 'step3', subject: 'Patient Safety',
+    question: "A nurse reports that she almost administered IV potassium chloride to a patient instead of the ordered IV normal saline due to a look-alike label. The error was caught before administration. According to patient safety frameworks, how should this be classified?",
+    options: ["Adverse event", "Sentinel event", "Near miss (close call)", "Preventable adverse event", "Negligence"],
+    correctAnswer: 2,
+    explanationEn: "Near miss (close call): an error that did not reach the patient because it was caught before causing harm. Sentinel event: unexpected death or serious physical/psychological injury. Root cause analysis should be performed to prevent future occurrences. Focus on systems, not individual blame.",
+    explanationZh: "近似错误：未到达患者的错误（在造成伤害前被发现）。警讯事件：意外死亡或严重伤害。应进行根本原因分析防止再次发生。关注系统而非个人指责。",
+    explanationEs: "Casi error (near miss): error detectado antes de alcanzar al paciente.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1005, step: 'step3', subject: 'Emergency Medicine',
+    question: "You are the only physician in a rural ED when two patients arrive simultaneously from a MVA: Patient A is a 20-year-old with a tension pneumothorax who will die without immediate intervention. Patient B is a 40-year-old with an open femur fracture. You can only treat one at a time. Which ethical principle guides treating Patient A first?",
+    options: ["Triage (maximize overall survival/best outcomes)", "Justice (treat equally)", "Autonomy (patient choice)", "Beneficence (do good)", "Non-maleficence (do no harm)"],
+    correctAnswer: 0,
+    explanationEn: "Disaster/mass casualty triage: treat those with the best chance of survival with immediate intervention (Patient A: tension pneumothorax = immediate life-saving intervention; Patient B: open femur fracture = delayed, survivable without immediate care). START triage system categorizes patients by urgency.",
+    explanationZh: "灾难/大规模伤亡分诊：优先治疗最有可能通过立即干预存活的（A：张力性气胸=立即救命；B：开放性股骨骨折=延迟处理可存活）。START分诊系统按紧急程度分类。",
+    explanationEs: "Triage: priorizar mejor pronostico con intervencion inmediata.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1006, step: 'step3', subject: 'Primary Care',
+    question: "A 62-year-old male with BPH presents with urinary frequency, nocturia, and weak stream. He has been on tamsulosin for 2 years with some improvement. PSA is 3.5 ng/mL. He now has incomplete emptying and a post-void residual of 200 mL. Which medication class can be added to improve symptoms?",
+    options: ["5-alpha reductase inhibitor (finasteride)", "Anticholinergic (oxybutynin)", "PDE5 inhibitor (tadalafil)", "Beta-3 agonist (mirabegron)", "Switch to terazosin"],
+    correctAnswer: 0,
+    explanationEn: "BPH with large prostate, high PVR, or PSA >1.5: add 5-alpha reductase inhibitor (finasteride/dutasteride). 5-ARI reduces prostate size by ~25%, lowers PSA by ~50%. Takes 6-12 months for full effect. MTOPS trial: combination (alpha blocker + 5-ARI) superior to either alone.",
+    explanationZh: "BPH前列腺大、PVR高或PSA>1.5：加5α-还原酶抑制剂（非那雄胺/度他雄胺）。缩小前列腺~25%、降低PSA~50%。6-12个月起效。MTOPS试验：联合优于单药。",
+    explanationEs: "BPH con PVR elevado: agregar inhibidor 5-alfa reductasa.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1007, step: 'step3', subject: 'Primary Care',
+    question: "A 30-year-old female on combined OCPs presents with sudden-onset pleuritic chest pain and dyspnea. She has been on the OCP for 5 years and smokes 1 pack/day. Vitals: HR 110, RR 24, SpO2 94%, BP 120/80. What is the next diagnostic test?",
+    options: ["D-dimer", "CT pulmonary angiogram (CTPA)", "V/Q scan", "Chest X-ray", "Lower extremity ultrasound"],
+    correctAnswer: 0,
+    explanationEn: "PE in a low-to-intermediate pre-test probability (Wells criteria): start with D-dimer. If positive → CTPA. High pre-test probability: skip D-dimer, go directly to CTPA. OCPs + smoking increase VTE risk synergistically. CXR is often normal in PE.",
+    explanationZh: "PE低中预测概率（Wells标准）：从D-二聚体开始。阳性→CTPA。高预测概率：跳过D-二聚体直接CTPA。OCP+吸烟协同增加VTE风险。PE胸片常正常。",
+    explanationEs: "Probabilidad baja-intermedia TEP: dimero-D primero. Positivo → angioTAC.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1008, step: 'step3', subject: 'Emergency Medicine',
+    question: "A 70-year-old male presents with acute-onset severe low back pain and a pulsatile abdominal mass on exam. He is hypotensive (80/60) and tachycardic. He has a known AAA. What is the immediate next step in management?",
+    options: ["CT angiogram of the abdomen", "Immediate operative intervention (no CT)", "Ultrasound for diagnosis", "IV fluids and serial exams", "MRI angiography"],
+    correctAnswer: 1,
+    explanationEn: "Ruptured AAA with hypotension: immediate operative intervention WITHOUT preoperative imaging if the diagnosis is certain. Emergency US can be done at bedside to confirm but should not delay OR. Permissive hypotension (SBP 80-90) to avoid disrupting the clot. Mortality of ruptured AAA is >50%.",
+    explanationZh: "AAA破裂伴低血压：诊断明确时立即手术干预，无需影像学。允许性低血压（SBP 80-90）避免破坏凝血块。破裂AAA死亡率>50%。",
+    explanationEs: "AAA roto con hipotension: cirugia inmediata, sin imagen.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1009, step: 'step3', subject: 'Ethics',
+    question: "A competent adult patient with end-stage cancer refuses life-saving treatment. The family demands that you treat the patient against his wishes. What is the ethically correct action?",
+    options: ["Treat the patient as the family requests", "Respect the patient's autonomous decision to refuse treatment", "Consult the hospital ethics committee", "Obtain a court order to treat", "Transfer care to another physician"],
+    correctAnswer: 1,
+    explanationEn: "Autonomy: a competent adult patient has the right to refuse any treatment, even life-saving. This is a fundamental ethical and legal principle. Assess for depression or coercion, but if none, respect the decision. Advance directives and DNR orders must be honored.",
+    explanationZh: "自主权：有能力的成年患者有权拒绝任何治疗，即使可挽救生命。这是基本伦理和法律原则。评估抑郁或胁迫，如无则尊重决定。必须遵守预先指示和DNR医嘱。",
+    explanationEs: "Autonomia: paciente competente puede rechazar tratamiento.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1010, step: 'step3', subject: 'Patient Safety',
+    question: "A hospitalized patient develops a stage 3 pressure ulcer on the sacrum during a 2-week admission for pneumonia. Which intervention has the strongest evidence for prevention?",
+    options: ["Repositioning every 2 hours and pressure-reducing support surface", "Topical antibiotic ointment", "Frequent dressing changes", "High-protein diet alone", "Massaging bony prominences"],
+    correctAnswer: 0,
+    explanationEn: "Pressure ulcer prevention: repositioning every 2 hours + pressure-reducing mattress/surface are the most evidence-based interventions. Braden scale assesses risk. Avoid massaging bony prominences (increases tissue damage). Nutritional support is adjunctive.",
+    explanationZh: "压疮预防：每2小时翻身+减压床垫/表面是最循证的干预措施。Braden量表评估风险。避免按摩骨突（增加组织损伤）。营养支持为辅。",
+    explanationEs: "Prevencion ulceras por presion: reposicionamiento c/2h + superficie reductora presion.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1011, step: 'step3', subject: 'Primary Care',
+    question: "A 40-year-old female with obesity, acanthosis nigricans, and fasting glucose of 118 mg/dL on two occasions. Her A1c is 6.4%. What is the most appropriate diagnosis?",
+    options: ["Type 2 diabetes mellitus", "Prediabetes", "Metabolic syndrome", "Insulin resistance only", "Type 1 diabetes"],
+    correctAnswer: 1,
+    explanationEn: "Prediabetes: IFG (fasting glucose 100-125), IGT (2-hr OGTT 140-199), or A1c 5.7-6.4%. This patient meets 2 criteria (IFG + A1c). Management: intensive lifestyle intervention (DPP study: 7% weight loss + 150 min/week exercise reduced progression to DM by 58%). Consider metformin if BMI >35 or age <60.",
+    explanationZh: "糖尿病前期：IFG、IGT或A1c 5.7-6.4%。管理：强化生活方式干预。考虑二甲双胍。",
+    explanationEs: "Prediabetes: IFG 100-125, A1c 5.7-6.4%. Intervencion estilo de vida.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1012, step: 'step3', subject: 'Primary Care',
+    question: "A 68-year-old male with HTN, T2DM, and CKD stage 3a (eGFR 50) on lisinopril. His potassium is 5.6 mmol/L (previously 4.2). He is asymptomatic. ECG is normal. What is the first step in management?",
+    options: ["Discontinue lisinopril", "Start sodium polystyrene sulfonate (Kayexalate)", "Low-potassium diet and repeat labs", "IV calcium gluconate", "Emergent dialysis"],
+    correctAnswer: 2,
+    explanationEn: "Mild asymptomatic hyperkalemia (5.5-6.0, normal ECG): dietary counseling (low K+ diet) + repeat labs. Discontinue potassium supplements, review medications (NSAIDs, K-sparing diuretics). If persistent, can consider patiromer or sodium zirconium cyclosilicate. Life-threatening (ECG changes): IV calcium gluconate.",
+    explanationZh: "轻度无症状高钾血症：低钾饮食+复查。停钾补充剂、审查药物。持续可考虑新型钾结合剂。危及生命（ECG改变）：IV葡萄糖酸钙。",
+    explanationEs: "Hiperkalemia leve asintomatica: dieta baja K+ y repetir labs.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1013, step: 'step3', subject: 'Emergency Medicine',
+    question: "A patient presents 30 minutes after ingesting an unknown quantity of acetaminophen in a suicide attempt. He is alert and hemodynamically stable. Acetaminophen level returned at 4 hours is 180 mcg/mL. According to the Rumack-Matthew nomogram, treatment is indicated. What is the antidote?",
+    options: ["N-acetylcysteine (NAC)", "Flumazenil", "Naloxone", "Fomepizole", "Atropine"],
+    correctAnswer: 0,
+    explanationEn: "Acetaminophen toxicity: NAC is the antidote, most effective within 8 hours of ingestion. MOA: replenishes glutathione stores. Rumack-Matthew nomogram used for single acute ingestion (plot at 4+ hrs). NAC can be given IV (21-hour protocol) or PO (72-hour protocol).",
+    explanationZh: "对乙酰氨基酚中毒：NAC为解毒剂，8小时内最有效。机制：补充谷胱甘肽储备。Rumack-Matthew列线图用于单次急性摄入（4小时后标绘）。可IV或PO给药。",
+    explanationEs: "Toxicidad por acetaminofeno: N-acetilcisteina (NAC). Nomograma Rumack-Matthew.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1014, step: 'step3', subject: 'Ethics',
+    question: "A 14-year-old female requests contraception without parental knowledge. She is sexually active and does not want her parents to know. In most US states, what is the appropriate course of action?",
+    options: ["Refuse unless parents consent", "Provide contraception without parental consent", "Notify child protective services", "Require parental consent but not notification", "Refer to another provider"],
+    correctAnswer: 1,
+    explanationEn: "Minor consent laws: most states allow minors to consent to contraceptive services, STI testing/treatment, and prenatal care without parental involvement. Title X federal program provides confidential family planning services to all, including minors.",
+    explanationZh: "未成年人同意法：大多数州允许未成年人无需父母参与即可同意避孕服务、性病检测/治疗和产前护理。Title X联邦计划向所有人（含未成年人）提供保密计划生育服务。",
+    explanationEs: "Menores: servicios anticonceptivos confidenciales en mayoria de estados.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1015, step: 'step3', subject: 'Patient Safety',
+    question: "A patient is scheduled for a right knee replacement. In the pre-op holding area, the surgeon marks the left knee. The nurse notices the discrepancy but says nothing, assuming the surgeon knows best. The wrong knee is operated on. This is best addressed through which approach?",
+    options: ["Individual punishment for the surgeon", "Mandatory retraining for the nurse", "Implementing a universal protocol with \"time-out\" and team empowerment to speak up", "Firing the entire surgical team", "Legal action against the hospital"],
+    correctAnswer: 2,
+    explanationEn: "Wrong-site surgery is a sentinel event prevented by implementing the Universal Protocol: pre-procedure verification, site marking by the person performing the procedure, and \"time-out\" immediately before incision. ALL team members must feel empowered to speak up (crew resource management).",
+    explanationZh: "错误部位手术是警讯事件，通过实施通用协议预防：术前验证、术者标记部位、切皮前\"暂停\"确认。所有团队成员必须有权提出异议（机组资源管理）。",
+    explanationEs: "Cirugia sitio equivocado: protocolo universal (marcar sitio + time-out).",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1016, step: 'step3', subject: 'Primary Care',
+    question: "A 58-year-old female with a 40-pack-year smoking history and COPD (FEV1 55% predicted, frequent exacerbations) is on LAMA/LABA inhaler. She still has 2 exacerbations per year requiring prednisone bursts. What should be added?",
+    options: ["Inhaled corticosteroid (ICS) added to LAMA/LABA", "Theophylline", "Roflumilast (PDE4 inhibitor)", "Chronic azithromycin prophylaxis", "Long-term oxygen therapy"],
+    correctAnswer: 0,
+    explanationEn: "GOLD guidelines for COPD: if LAMA/LABA still has exacerbations + blood eosinophils >=100, escalate to triple therapy (LAMA/LABA/ICS). Roflumilast: severe FEV1 <50% + chronic bronchitis + frequent exacerbations. Azithromycin: ex-smokers only, risk of hearing loss/QTc prolongation.",
+    explanationZh: "GOLD指南：LAMA/LABA仍频繁加重且血嗜酸性粒细胞>=100→升级三联（LAMA/LABA/ICS）。罗氟司特：FEV1<50%+慢性支气管炎+频繁加重。阿奇霉素：仅已戒烟者。",
+    explanationEs: "GOLD: triple terapia (LAMA/LABA/ICS) si eosinofilos >=100.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1017, step: 'step3', subject: 'Primary Care',
+    question: "A 72-year-old female presents with progressive memory loss over 2 years, getting lost in familiar places, and difficulty naming objects. MMSE score is 22/30. Head CT shows diffuse cortical atrophy with prominent hippocampal atrophy. What is the first-line pharmacological treatment?",
+    options: ["Donepezil (acetylcholinesterase inhibitor)", "Memantine", "Donepezil + memantine combination", "Rivastigmine patch", "Vitamin E 2000 IU daily"],
+    correctAnswer: 0,
+    explanationEn: "Alzheimer disease (mild-moderate MMSE 10-26): acetylcholinesterase inhibitors (donepezil, rivastigmine, galantamine) are first-line. Memantine (NMDA antagonist) for moderate-severe or as add-on. Combination modestly superior. Vitamin E not recommended. Manage behavioral symptoms non-pharmacologically first.",
+    explanationZh: "阿尔茨海默病轻度-中度：乙酰胆碱酯酶抑制剂（多奈哌齐等）一线。美金刚用于中重度或联合用药。维生素E不推荐。行为症状首选非药物管理。",
+    explanationEs: "Alzheimer leve-moderado: donepezilo (inhibidor acetilcolinesterasa).",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1018, step: 'step3', subject: 'Emergency Medicine',
+    question: "A 25-year-old male presents with acute scrotal pain for 4 hours, nausea, and vomiting. On exam, the left testicle is tender, swollen, and has a high-riding, horizontal lie. Cremasteric reflex is absent on the left. What is the next step?",
+    options: ["Ultrasound with Doppler of the scrotum", "Immediate surgical exploration without imaging", "Urinalysis and culture", "CT scan of the pelvis", "Manual detorsion and discharge"],
+    correctAnswer: 1,
+    explanationEn: "Testicular torsion: acute scrotal pain, high-riding horizontal testicle, absent cremasteric reflex. Time is testicle: viability drops after 6 hours. If classic presentation: immediate surgical exploration (do NOT delay for ultrasound). If uncertain: rapid Doppler US first. Manual detorsion can be attempted (open book, \"like twisting a bell clapper\").",
+    explanationZh: "睾丸扭转：急性阴囊痛、睾丸高位横位、提睾反射消失。时间就是睾丸：6小时后存活率下降。典型表现：立即手术探查（不等超声）。不确定时快速多普勒超声。可尝试手法复位。",
+    explanationEs: "Torsion testicular: exploracion quirurgica inmediata. Tiempo = viabilidad.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1019, step: 'step3', subject: 'Primary Care',
+    question: "A 62-year-old male with HTN and dyslipidemia on atorvastatin complains of muscle aches and weakness. CK is 850 U/L (<200 normal). What is the most appropriate management?",
+    options: ["Continue atorvastatin at same dose and monitor CK", "Reduce atorvastatin dose or switch to alternate statin (pravastatin/fluvastatin)", "Discontinue all statin therapy permanently", "Add coenzyme Q10 supplementation", "Switch to ezetimibe monotherapy"],
+    correctAnswer: 1,
+    explanationEn: "Statin-associated muscle symptoms (SAMS): if CK <10x ULN and tolerable, try dose reduction or switch to hydrophilic statin (pravastatin, rosuvastatin) or alternate-day dosing. If CK >10x ULN: discontinue, rule out rhabdomyolysis. If truly intolerant: ezetimibe, PCSK9 inhibitor.",
+    explanationZh: "他汀相关肌肉症状：CK<10倍正常上限且可耐受→减量或换亲水性他汀。CK>10倍→停药排查横纹肌溶解。确实不耐受：依折麦布或PCSK9抑制剂。",
+    explanationEs: "SAMS: CK <10x → reducir dosis o cambiar a estatina hidrofilica.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1020, step: 'step3', subject: 'Ethics',
+    question: "A patient with terminal cancer is in severe pain despite escalating doses of opioids. The physician administers a high dose of morphine, knowing it may also suppress respiration and hasten death, with the primary intent to relieve suffering. This is consistent with which ethical principle?",
+    options: ["Euthanasia", "Physician-assisted suicide", "Principle of double effect", "Palliative sedation", "Medical futility"],
+    correctAnswer: 2,
+    explanationEn: "Principle of double effect: an action with both good (pain relief) and potentially harmful (respiratory depression/death) effects is ethically permissible if: 1) action itself is good/neutral, 2) intent is the good effect, 3) good effect not achieved through the bad, 4) proportionality (benefit outweighs risk). Distinct from euthanasia.",
+    explanationZh: "双重效应原则：同时有良好（镇痛）和潜在有害（呼吸抑制/死亡）效果的行为在伦理上可允许，如果意图是良好效果、良好效果不通过恶劣效果实现、收益大于风险。与安乐死不同。",
+    explanationEs: "Principio del doble efecto: intencion de aliviar dolor, no causar muerte.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1021, step: 'step3', subject: 'Patient Safety',
+    question: "During morning rounds, a medical student observes a resident fail to wash hands between examining two patients with C. difficile. The best approach for the student based on patient safety principles is:",
+    options: ["Report the resident to the program director anonymously", "Speak up immediately and remind the resident about hand hygiene", "Do nothing — it is not the student's role", "Document the event in the patient's chart", "Report to the state medical board"],
+    correctAnswer: 1,
+    explanationEn: "Patient safety culture: all team members (including students) have a responsibility to speak up about safety concerns. This is \"crew resource management\" — immediate, respectful verbal intervention. C. difficile requires soap and water (not alcohol-based hand rub). Anonymous reporting is less effective for immediate action.",
+    explanationZh: "患者安全文化：所有团队成员（包括学生）有责任对安全问题发声。这是\"机组资源管理\"——立即、尊重的口头干预。艰难梭菌需肥皂和水（非酒精洗手液）。匿名报告即时效果差。",
+    explanationEs: "Seguridad: hablar inmediatamente. C. difficile requiere agua y jabon.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1022, step: 'step3', subject: 'Primary Care',
+    question: "A 55-year-old male with HIV on ART (CD4 400, undetectable viral load) requests the herpes zoster vaccine. Which vaccine should be administered?",
+    options: ["Live zoster vaccine (Zostavax)", "Recombinant zoster vaccine (Shingrix) — 2 doses", "No vaccine needed with CD4 >200", "Varicella vaccine", "Acyclovir prophylaxis instead"],
+    correctAnswer: 1,
+    explanationEn: "Shingrix (RZV): non-live recombinant vaccine, 2 doses 2-6 months apart. Recommended for all >=50 years and immunocompromised >=19 years. Zostavax (live) is no longer available in the US and was contraindicated in immunocompromised. Shingrix is safe regardless of CD4 count.",
+    explanationZh: "Shingrix（RZV）：非活重组疫苗，2剂间隔2-6个月。推荐所有>=50岁及>=19岁免疫功能低下者。Zostavax（活疫苗）美国已停用，免疫功能低下禁用。Shingrix不论CD4均安全。",
+    explanationEs: "Shingrix: vacuna recombinante, 2 dosis. Segura en inmunocomprometidos.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1023, step: 'step3', subject: 'Emergency Medicine',
+    question: "A 45-year-old female presents with sudden onset of the \"worst headache of her life\" that reached maximum intensity within 60 seconds. She is alert and oriented. Non-contrast CT head is negative. What is the most appropriate next step?",
+    options: ["Lumbar puncture (LP) to evaluate for xanthochromia", "CT angiogram of the head", "MRI brain with contrast", "Discharge with neurologist follow-up", "MRA of the head and neck"],
+    correctAnswer: 0,
+    explanationEn: "Subarachnoid hemorrhage (SAH) with negative CT: LP is the next step. Xanthochromia takes 6-12 hours after bleed onset; if LP <12 hours and negative, consider CTA/MRA to rule out aneurysm. If >2 weeks, MRI may be more sensitive than LP. Revised SAH rule: Ottawa SAH Rule.",
+    explanationZh: "SAH CT阴性：LP为下一步。黄变症需出血后6-12小时出现。LP<12小时且阴性可考虑CTA/MRA排除动脉瘤。>2周MRI可能更敏感。",
+    explanationEs: "HSA con TAC negativa: PL para xantocromia.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1024, step: 'step3', subject: 'Primary Care',
+    question: "A 49-year-old female presents for her annual well-woman exam. She has no breast symptoms and no family history of breast cancer. According to USPSTF guidelines, when should routine screening mammography begin?",
+    options: ["Age 40", "Age 45", "Age 50", "Age 55", "Age 35"],
+    correctAnswer: 0,
+    explanationEn: "USPSTF 2024: biennial screening mammography for women aged 40-74 years (grade B). Previously started at age 50 (2009) then 40 (2023 draft). The update reflects evidence of mortality benefit and higher breast cancer rates in younger women, especially Black women.",
+    explanationZh: "USPSTF 2024：40-74岁女性每两年筛查乳腺X线（B级推荐）。此更新反映了年轻女性（尤其黑人女性）死亡率获益和乳腺癌发病率升高的证据。",
+    explanationEs: "USPSTF: mamografia cada 2 anos desde los 40.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1025, step: 'step3', subject: 'Patient Safety',
+    question: "In a root cause analysis (RCA) following a serious medication error, which of the following is the most productive approach to prevent future errors?",
+    options: ["Identify the individual who made the error and provide remediation", "Analyze system-level factors that contributed to the error and implement safeguards", "Require all staff to complete mandatory retraining", "Increase documentation requirements", "Implement zero-tolerance policy for errors"],
+    correctAnswer: 1,
+    explanationEn: "RCA: focuses on systems and processes, NOT individual blame. Identifies underlying system failures (latent errors) that allowed the active error to reach the patient. \"Swiss cheese model\": multiple layers of defense with holes aligning. Solutions: forcing functions, standardization, checklists.",
+    explanationZh: "根本原因分析：关注系统和流程而非个人责备。识别潜在的系统故障。\"瑞士奶酪模型\"：多层防御孔洞对齐。解决方案：强制功能、标准化、检查清单。",
+    explanationEs: "RCA: enfocada en sistemas, no culpa individual. Modelo queso suizo.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1026, step: 'step3', subject: 'Ethics',
+    question: "A Jehovah's Witness patient with Hb 5.5 g/dL after a GI bleed refuses blood transfusion. She is fully alert and has clearly stated her wishes. Her husband pleads with you to transfuse her against her will. What should you do?",
+    options: ["Transfuse per the husband's request to save her life", "Respect her refusal and provide alternative treatments (iron, erythropoietin)", "Obtain emergency court order to transfuse", "Consult psychiatry for capacity evaluation", "Transfer to another facility"],
+    correctAnswer: 1,
+    explanationEn: "Competent adults have absolute right to refuse treatment, even life-saving, based on religious or personal beliefs. Alternative management: IV iron, erythropoietin, minimize phlebotomy, consider hyperbaric oxygen, prohemostatic agents. Document the informed refusal thoroughly.",
+    explanationZh: "有能力的成人有绝对权利基于宗教或个人信仰拒绝治疗。替代管理：IV铁剂、促红细胞生成素、减少抽血、考虑高压氧、止血药物。充分记录知情拒绝。",
+    explanationEs: "Testigo Jehova: respetar rechazo. Alternativas: hierro IV, eritropoyetina.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1027, step: 'step3', subject: 'Primary Care',
+    question: "A 50-year-old male with recently diagnosed T2DM (A1c 8.5%) also has ASCVD (previous MI 2 years ago). He is already on metformin. Which additional medication class has proven cardiovascular mortality benefit?",
+    options: ["Sulfonylurea", "SGLT2 inhibitor (empagliflozin or dapagliflozin)", "DPP-4 inhibitor", "Thiazolidinedione", "Meglitinide"],
+    correctAnswer: 1,
+    explanationEn: "ADA/EASD: T2DM + ASCVD → SGLT2i (empagliflozin, dapagliflozin) or GLP-1 RA (liraglutide, semaglutide, dulaglutide) with proven CV benefit. EMPA-REG: empagliflozin reduced CV death 38%. LEADER: liraglutide reduced CV death 22%. DPP-4i are CV-neutral.",
+    explanationZh: "ADA/EASD：T2DM+ASCVD→SGLT2i或GLP-1RA有心血管获益证据。EMPA-REG：恩格列净降低CV死亡38%。LEADER：利拉鲁肽降低CV死亡22%。DPP-4i为CV中性。",
+    explanationEs: "DM2 + EASCVA: iSGLT2 o aGLP-1 con beneficio CV demostrado.",
+    difficulty: 'Medium'
+  },
+  {
+    id: 1028, step: 'step3', subject: 'Emergency Medicine',
+    question: "A patient presents with acute opioid overdose: unresponsive, pinpoint pupils, respiratory rate 4/min. The nurse is preparing naloxone. What is the appropriate initial dose and route?",
+    options: ["Naloxone 0.04 mg IV", "Naloxone 0.4-2 mg IV/IM/IN", "Naloxone 10 mg IV", "Naloxone 0.4 mg PO", "Flumazenil 0.2 mg IV"],
+    correctAnswer: 1,
+    explanationEn: "Opioid overdose: naloxone 0.4-2 mg IV/IM/IN (intranasal) every 2-3 minutes. Goal: restore adequate respirations (NOT full consciousness, which can precipitate acute withdrawal). Half-life of naloxone (30-90 min) is shorter than most opioids — observe for re-sedation. May need continuous infusion.",
+    explanationZh: "阿片类药物过量：纳洛酮0.4-2mg IV/IM/IN，每2-3分钟。目标：恢复足够呼吸（非完全清醒，可诱发急性戒断）。纳洛酮半衰期短于大多数阿片类——观察再镇静。可能需持续输注。",
+    explanationEs: "Sobredosis opioides: naloxona 0.4-2 mg IV/IM/IN. Restaurar respiracion.",
+    difficulty: 'Medium'
+  }]
 
 export const subjects: Record<string, string[]> = {
   step1: ['Pathology', 'Physiology', 'Pharmacology', 'Internal Medicine', 'Anatomy', 'Biochemistry', 'Microbiology', 'Immunology', 'Genetics', 'Neurology'],
