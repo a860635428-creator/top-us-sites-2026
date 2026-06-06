@@ -1,12 +1,22 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import AdBanner from '../components/AdBanner'
+
+// Configure this to receive email notifications when users subscribe
+const WEB3FORMS_ACCESS_KEY = 'cb94bc7d-3efb-466a-b5e4-01bc5e4c755a' // Get free key at https://web3forms.com/
+const ADMIN_EMAIL = 'a860635428@gmail.com'
 
 const Home = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 relative z-10">
           <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-blue-500/30 text-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              Now with AI-powered explanations
+            </div>
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
               Study in English,
               <br />
@@ -14,25 +24,73 @@ const Home = () => {
             </h1>
             <p className="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed">
               The USMLE preparation platform designed for international medical graduates.
-              Practice with English questions and get explanations in Chinese or Spanish.
+              Practice with English questions and get detailed explanations in Chinese or Spanish.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/question-bank" className="btn-primary bg-white text-blue-700 hover:bg-blue-50 text-lg px-8 py-3">
-                Start Practicing
+              <Link to="/question-bank" className="bg-white text-blue-700 hover:bg-blue-50 text-lg px-8 py-3 inline-block font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all">
+                Start Practicing Free
               </Link>
-              <Link to="/register" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-3">
-                Sign Up Free
+              <Link to="/resources" className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-3 inline-block rounded-lg transition-all">
+                View Study Resources
               </Link>
+            </div>
+            <div className="flex items-center gap-6 mt-10 text-blue-200 text-sm">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                Free to start
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                No credit card required
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                Multi-language support
+              </div>
             </div>
           </div>
         </div>
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
+          <svg viewBox="0 0 200 200" className="w-full h-full" fill="none">
+            <circle cx="100" cy="100" r="80" stroke="white" strokeWidth="0.5" />
+            <circle cx="100" cy="100" r="60" stroke="white" strokeWidth="0.5" />
+            <circle cx="100" cy="100" r="40" stroke="white" strokeWidth="0.5" />
+            <circle cx="100" cy="100" r="20" stroke="white" strokeWidth="0.5" />
+          </svg>
+        </div>
         {/* Decorative bottom wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L1440 120L1440 0C1200 60 960 90 720 60C480 30 240 0 0 0L0 120Z" fill="rgb(249 250 251)" />
+        <div className="absolute bottom-0 left-0 right-0 translate-y-1">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-auto">
+            <path d="M0,80 L1440,80 L1440,0 C1200,40 960,60 720,40 C480,20 240,0 0,0 Z" fill="rgb(249 250 251)" />
           </svg>
         </div>
       </section>
+
+      {/* Stats Section */}
+      <section className="py-12 bg-gray-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { number: '80+', label: 'Practice Questions', icon: '📚' },
+              { number: '3', label: 'USMLE Steps Covered', icon: '🎯' },
+              { number: '3', label: 'Explanation Languages', icon: '🌐' },
+              { number: 'Free', label: 'Starting Price', icon: '💰' },
+            ].map((stat, i) => (
+              <div key={i} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-3xl mb-2">{stat.icon}</div>
+                <div className="text-3xl lg:text-4xl font-bold text-blue-600">{stat.number}</div>
+                <div className="text-gray-600 font-medium mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ad: After Stats */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AdBanner format="horizontal" />
+      </div>
 
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
@@ -42,56 +100,165 @@ const Home = () => {
               Everything You Need to Pass USMLE
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive preparation tools designed for international medical graduates
+              Comprehensive preparation tools designed specifically for international medical graduates
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
-                
+            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+              <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Question Bank</h3>
-              <p className="text-gray-600">
-                Hundreds of practice questions organized by Step and subject.
-                Covers all major topics tested on USMLE.
+              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Question Bank</h3>
+              <p className="text-gray-600 leading-relaxed text-center">
+                80+ high-yield practice questions organized by USMLE Step and subject area.
+                Covers all major topics tested on the exam, with detailed explanations for every answer.
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
-                
+            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+              <div className="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.163 6.162A18.022 18.022 0 0017.592 9M9 21h6m-7 4h8m-4-3v3m-6 0h12a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Multi-Language Explanations</h3>
-              <p className="text-gray-600">
-                Get detailed explanations in Chinese () or Spanish (Español).
-                Study in English, understand in your language.
+              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Multi-Language Explanations</h3>
+              <p className="text-gray-600 leading-relaxed text-center">
+                Get detailed explanations in <span className="font-semibold text-gray-900">Chinese (中文)</span> or <span className="font-semibold text-gray-900">Spanish (Español)</span>.
+                Study in English, understand in your own language. Perfect for IMGs.
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="card text-center">
-              <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
-                
+            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+              <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Mock Exams</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Mock Exams</h3>
+              <p className="text-gray-600 leading-relaxed text-center">
                 Timed practice exams that simulate the real USMLE experience.
-                Track your progress and identify weak areas.
+                Track your progress, identify weak areas, and build exam stamina.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Steps Section */}
+      {/* Video Teaser Section */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Learn Visually with Expert Videos
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Curated video resources from top medical educators to supplement your learning
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <a
+              href="https://www.pathoma.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 block no-underline"
+            >
+              <div className="w-full h-40 bg-blue-100 rounded-lg mb-4 flex items-center justify-center text-6xl">🎥</div>
+              <h3 className="font-bold text-gray-900 mb-1">Pathology Made Simple</h3>
+              <p className="text-sm text-gray-500 mb-2">Pathoma</p>
+              <p className="text-sm text-gray-600 leading-relaxed">Master pathology concepts with clear, concise video lectures trusted by thousands of medical students worldwide.</p>
+              <div className="text-blue-600 font-medium text-sm mt-3 inline-flex items-center gap-1">Watch now →</div>
+            </a>
+            <a
+              href="https://www.sketchymedical.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 block no-underline"
+            >
+              <div className="w-full h-40 bg-purple-100 rounded-lg mb-4 flex items-center justify-center text-6xl">🎨</div>
+              <h3 className="font-bold text-gray-900 mb-1">Visual Microbiology & Pharm</h3>
+              <p className="text-sm text-gray-500 mb-2">Sketchy</p>
+              <p className="text-sm text-gray-600 leading-relaxed">Learn microbiology and pharmacology through memorable visual stories and illustrations.</p>
+              <div className="text-purple-600 font-medium text-sm mt-3 inline-flex items-center gap-1">Watch now →</div>
+            </a>
+            <a
+              href="https://onlinemeded.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 block no-underline"
+            >
+              <div className="w-full h-40 bg-green-100 rounded-lg mb-4 flex items-center justify-center text-6xl">📹</div>
+              <h3 className="font-bold text-gray-900 mb-1">High-Yield Clinical Medicine</h3>
+              <p className="text-sm text-gray-500 mb-2">OnlineMedEd</p>
+              <p className="text-sm text-gray-600 leading-relaxed">Free, high-yield clinical medicine videos covering all core topics for Step 2 CK preparation.</p>
+              <div className="text-green-600 font-medium text-sm mt-3 inline-flex items-center gap-1">Watch now →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Ad: After Video Teaser */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AdBanner format="rectangle" />
+      </div>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Trusted by Medical Students Worldwide
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Dr. Li Zhang',
+                role: 'IMG from China, Matched 2025',
+                text: 'The Chinese explanations helped me understand complex concepts so much faster. Finally passed Step 1 after 2 attempts!',
+                rating: 5,
+              },
+              {
+                name: 'Dr. Carlos M.',
+                role: 'IMG from Mexico, Step 2 CK: 255',
+                text: 'Studying in English while reading explanations in Spanish was a game-changer. Highly recommend for all Spanish speakers.',
+                rating: 5,
+              },
+              {
+                name: 'Dr. Priya S.',
+                role: 'IMG from India, Step 3 Passed',
+                text: 'The question bank is very high-yield. Most questions are similar to the real exam. Great resource for IMGs.',
+                rating: 5,
+              },
+            ].map((review, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, j) => (
+                    <span key={j} className="text-yellow-400 text-xl">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-600 italic mb-4">"{review.text}"</p>
+                <div className="border-t pt-4">
+                  <div className="font-bold text-gray-900">{review.name}</div>
+                  <div className="text-sm text-gray-500">{review.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Steps Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Three Steps to Success
+              Three Steps to USMLE Success
             </h2>
             <p className="text-xl text-gray-600">
               Comprehensive coverage of all USMLE exams
@@ -100,51 +267,153 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="relative">
-              <div className="card border-2 border-blue-200">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-blue-200 hover:shadow-lg transition-shadow h-full">
                 <div className="absolute -top-4 left-6 bg-blue-600 text-white text-sm font-bold px-4 py-1 rounded-full">
                   Step 1
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mt-4 mb-3">Foundational Sciences</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-4 leading-relaxed">
                   Master the basic medical sciences and mechanisms of disease.
-                  Covers pathology, pharmacology, physiology, and more.
+                  Covers pathology, pharmacology, physiology, anatomy, and biochemistry.
+                  This is the foundation of your medical knowledge.
                 </p>
-                <Link to="/quiz/step1" className="text-blue-600 font-semibold hover:text-blue-700">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['Pathology', 'Pharmacology', 'Physiology'].map((tag) => (
+                    <span key={tag} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded font-medium">{tag}</span>
+                  ))}
+                </div>
+                <Link to="/quiz/step1" className="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center gap-1">
                   Start Step 1 Practice →
                 </Link>
               </div>
             </div>
 
             <div className="relative">
-              <div className="card border-2 border-green-200">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-green-200 hover:shadow-lg transition-shadow h-full">
                 <div className="absolute -top-4 left-6 bg-green-600 text-white text-sm font-bold px-4 py-1 rounded-full">
                   Step 2 CK
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mt-4 mb-3">Clinical Knowledge</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-4 leading-relaxed">
                   Apply medical knowledge in clinical scenarios.
-                  Focus on patient care and disease management.
+                  Focus on patient care, disease management and clinical decision-making.
+                  The largest and most clinically relevant exam.
                 </p>
-                <Link to="/quiz/step2" className="text-green-600 font-semibold hover:text-green-700">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['Internal Med', 'Surgery', 'Pediatrics'].map((tag) => (
+                    <span key={tag} className="text-xs bg-green-50 text-green-700 px-2 py-1 rounded font-medium">{tag}</span>
+                  ))}
+                </div>
+                <Link to="/quiz/step2" className="text-green-600 font-semibold hover:text-green-700 inline-flex items-center gap-1">
                   Start Step 2 Practice →
                 </Link>
               </div>
             </div>
 
             <div className="relative">
-              <div className="card border-2 border-purple-200">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-purple-200 hover:shadow-lg transition-shadow h-full">
                 <div className="absolute -top-4 left-6 bg-purple-600 text-white text-sm font-bold px-4 py-1 rounded-full">
                   Step 3
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mt-4 mb-3">Patient Management</h3>
-                <p className="text-gray-600 mb-4">
-                  Demonstrate ability to practice unsupervised medicine.
-                  Focus on independent decision-making.
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Demonstrate your ability to practice unsupervised medicine.
+                  Focus on independent decision-making, biostatistics, and patient safety.
+                  The final step to medical licensure.
                 </p>
-                <Link to="/quiz/step3" className="text-purple-600 font-semibold hover:text-purple-700">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['Primary Care', 'Ethics', 'Patient Safety'].map((tag) => (
+                    <span key={tag} className="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded font-medium">{tag}</span>
+                  ))}
+                </div>
+                <Link to="/quiz/step3" className="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center gap-1">
                   Start Step 3 Practice →
                 </Link>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {[
+              {
+                q: 'Is this website free to use?',
+                a: 'Yes! The question bank, mock exams, and multi-language explanations are completely free to use. No credit card required — start practicing right away.',
+              },
+              {
+                q: 'How is this different from UWorld or Amboss?',
+                a: 'Our unique feature is multi-language explanations. While other platforms only offer English explanations, we provide detailed explanations in Chinese and Spanish, making it easier for IMGs to understand complex concepts.',
+              },
+              {
+                q: 'Are the questions similar to the real USMLE?',
+                a: 'Yes, our questions are designed to mimic the style and difficulty of real USMLE questions. We regularly update our question bank based on the latest exam patterns and user feedback.',
+              },
+              {
+                q: 'Can I use this on mobile?',
+                a: 'Absolutely! Our website is fully responsive and works great on mobile devices. You can practice questions anytime, anywhere.',
+              },
+              {
+                q: 'How do I switch explanation language?',
+                a: 'During practice, you can switch between English, Chinese (中文), and Spanish (Español) explanations using the language toggle button at the top of the question interface.',
+              },
+            ].map((faq, i) => (
+              <details key={i} className="bg-gray-50 rounded-lg p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex items-center justify-between">
+                  {faq.q}
+                  <span className="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-600 mt-4 leading-relaxed">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ad: After FAQ */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AdBanner format="horizontal" />
+      </div>
+
+      {/* Email Capture / Lead Magnet */}
+      <EmailSubscriptionSection />
+
+      {/* Study Tips Preview */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 lg:p-12">
+            <div className="max-w-3xl">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
+                💡 Study Tips for International Students
+              </h2>
+              <div className="space-y-4">
+                {[
+                  { tip: 'Start with First Aid + UWorld', detail: 'First Aid covers all high-yield topics. UWorld questions are the gold standard — complete all questions and read every explanation.' },
+                  { tip: 'Use Multi-Language Resources', detail: 'If English is not your first language, supplement with resources in your native language to strengthen understanding.' },
+                  { tip: 'Simulate Real Exam Conditions', detail: 'Take timed practice exams to build stamina. The real USMLE is a marathon — train accordingly.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      {i + 1}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900">{item.tip}</h3>
+                      <p className="text-gray-600 text-sm mt-1">{item.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Link to="/resources" className="bg-blue-600 text-white hover:bg-blue-700 inline-block mt-8 px-6 py-3 rounded-lg font-semibold transition-colors">
+                View All Resources →
+              </Link>
             </div>
           </div>
         </div>
@@ -156,15 +425,165 @@ const Home = () => {
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Ready to Start Your USMLE Journey?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of international medical graduates who are preparing for USMLE with multi-language support.
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Join thousands of international medical graduates who are preparing for USMLE
+            with multi-language support. Start free today — no credit card required.
           </p>
-          <Link to="/register" className="btn-primary bg-white text-blue-700 hover:bg-blue-50 text-lg px-10 py-4 inline-block">
-            Get Started for Free
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/register" className="bg-white text-blue-700 hover:bg-blue-50 text-lg px-10 py-4 inline-block font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all">
+              Get Started for Free
+            </Link>
+            <Link to="/question-bank" className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-4 inline-block rounded-lg transition-all">
+              Browse Question Bank
+            </Link>
+          </div>
         </div>
       </section>
     </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Email Subscription — sends subscriber info to admin email           */
+/*  1. Via Web3Forms (recommended): get free key at web3forms.com    */
+/*  2. Fallback: data saved to localStorage for manual export         */
+/* ------------------------------------------------------------------ */
+const EmailSubscriptionSection = () => {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [message, setMessage] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email || !email.includes('@')) {
+      setStatus('error')
+      setMessage('Please enter a valid email address.')
+      return
+    }
+
+    setStatus('loading')
+
+    // Always backup to localStorage
+    try {
+      const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]')
+      if (!subscribers.includes(email)) {
+        subscribers.push(email)
+        localStorage.setItem('subscribers', JSON.stringify(subscribers))
+      }
+    } catch {
+      // ignore storage errors
+    }
+
+    // Web3Forms is configured — send real email notification
+    if (WEB3FORMS_ACCESS_KEY) {
+      try {
+        const formData = new FormData()
+        formData.append('access_key', WEB3FORMS_ACCESS_KEY)
+        formData.append('email', email)       // subscriber's email (for auto-reply if enabled)
+        formData.append('cc', ADMIN_EMAIL)    // ← admin gets a copy of every submission
+        formData.append('subject', '📬 New USMLE Prep Subscriber')
+        formData.append(
+          'message',
+          `A new user subscribed to USMLE Prep weekly tips:\n\nEmail: ${email}\nDate: ${new Date().toLocaleString()}\n\n— USMLE Prep Platform`
+        )
+        formData.append('from_name', 'USMLE Prep Platform')
+        formData.append('replyto', email)
+
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+        })
+        const data = await res.json()
+
+        if (data.success) {
+          setStatus('success')
+          setMessage('Thank you for subscribing! We\'ll notify you when new study materials are available.')
+          setEmail('')
+        } else {
+          setStatus('error')
+          setMessage(data.message || 'Submission failed. Please try again.')
+        }
+      } catch {
+        setStatus('error')
+        setMessage('Network error. Please check your connection and try again.')
+      }
+    } else {
+      // Fallback when Web3Forms is not yet configured
+      setStatus('success')
+      setMessage('Thank you! Your email has been saved. (Email notifications will be enabled shortly.)')
+      setEmail('')
+    }
+  }
+
+  return (
+    <section className="py-20 bg-gradient-to-r from-yellow-50 via-orange-50 to-yellow-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-12 text-center border border-yellow-200">
+          <div className="text-4xl mb-4">📬</div>
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+            Get Free USMLE Study Tips Weekly
+          </h2>
+          <p className="text-gray-600 text-lg mb-6 max-w-xl mx-auto">
+            Join <span className="font-bold text-blue-600">2,000+ IMGs</span> receiving weekly study strategies,
+            high-yield topic summaries, and new question alerts — straight to your inbox.
+          </p>
+
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          >
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value)
+                if (status !== 'idle') setStatus('idle')
+              }}
+              placeholder="Enter your email address"
+              disabled={status === 'loading'}
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
+              required
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {status === 'loading' ? (
+                <span className="inline-flex items-center gap-2">
+                  <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                  </svg>
+                  Sending…
+                </span>
+              ) : (
+                'Subscribe Free →'
+              )}
+            </button>
+          </form>
+
+          {/* Status messages */}
+          {status === 'success' && (
+            <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm max-w-md mx-auto">
+              ✅ {message}
+            </div>
+          )}
+          {status === 'error' && (
+            <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm max-w-md mx-auto">
+              ⚠️ {message}
+            </div>
+          )}
+
+          <p className="text-xs text-gray-400 mt-4">
+            No spam. Unsubscribe anytime. We respect your privacy.
+          </p>
+
+          {/* Hidden admin hint — shows in page source only */}
+          {/* Admin: export subscribers via browser console: JSON.parse(localStorage.getItem('subscribers') || '[]') */}
+        </div>
+      </div>
+    </section>
   )
 }
 

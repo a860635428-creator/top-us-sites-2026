@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { steps, subjects } from '../data/questions'
+import AdBanner from '../components/AdBanner'
 
 const QuestionBank = () => {
   const [selectedStep, setSelectedStep] = useState<string>('step1')
@@ -67,11 +68,12 @@ const QuestionBank = () => {
           <div className="mt-6">
             <Link
               to={`/quiz/${step.id}`}
-              className="btn-primary inline-block"
+              className="btn-primary inline-block mb-6"
             >
               Practice All {step.label} Questions
             </Link>
           </div>
+          <AdBanner format="horizontal" className="!mt-2" />
         </div>
       ))}
     </div>

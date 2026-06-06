@@ -1,0 +1,81 @@
+import { Link } from 'react-router-dom'
+
+const Privacy = () => {
+  return (
+    <div className="bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
+        <p className="text-gray-500 mb-10">Last updated: June 5, 2026</p>
+
+        <div className="space-y-8 text-gray-700 leading-relaxed">
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">1. Information We Collect</h2>
+            <p>When you use USMLE Prep Platform, we may collect:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li><strong>Account information:</strong> email address and username when you register</li>
+              <li><strong>Usage data:</strong> questions attempted, scores, study time, and progress tracking</li>
+              <li><strong>Device information:</strong> browser type, IP address, and device type for analytics</li>
+              <li><strong>Cookies:</strong> to remember your preferences and login session</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">2. How We Use Your Data</h2>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>To provide and improve our USMLE preparation services</li>
+              <li>To personalize your learning experience and track progress</li>
+              <li>To send important updates about your account or our platform</li>
+              <li>To display relevant advertisements (via Google AdSense)</li>
+              <li>To analyze usage patterns and improve content quality</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">3. Google AdSense & Third-Party Advertising</h2>
+            <p>We use Google AdSense to display advertisements. Google uses cookies to serve ads based on your prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our sites and/or other sites on the Internet.</p>
+            <p className="mt-2">You may opt out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Google Ads Settings</a>.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">4. Third-Party Services</h2>
+            <p>We use the following third-party services that may collect data:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li><strong>Google Analytics:</strong> for website traffic analysis</li>
+              <li><strong>Google AdSense:</strong> for displaying advertisements</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">5. Data Security</h2>
+            <p>We implement appropriate security measures to protect your personal information. However, no method of transmission over the Internet is 100% secure.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">6. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>Access your personal data</li>
+              <li>Request correction or deletion of your data</li>
+              <li>Opt out of email communications</li>
+              <li>Delete your account at any time</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">7. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <p className="mt-2"><a href="mailto:a860635428@gmail.com" className="text-blue-600 hover:underline">a860635428@gmail.com</a></p>
+          </section>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <Link to="/" className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-1">
+            ← Back to Home
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Privacy

@@ -1,22 +1,100 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { setUser, isLoggedIn, verifyLogin, sendPasswordReset } from '../utils/auth'
 
 const Login = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [info, setInfo] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [checking, setChecking] = useState(true)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const check = async () => {
+      if (await isLoggedIn()) {
+        navigate('/question-bank', { replace: true })
+      }
+      setChecking(false)
+    }
+    check()
+  }, [navigate])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError('')
+
     if (!email || !password) {
       setError('Please fill in all fields.')
       return
     }
-    // Mock login - in real app, this would call an API
+    if (!email.includes('@') || !email.includes('.')) {
+      setError('Please enter a valid email address.')
+      return
+    }
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters.')
+      return
+    }
+
+    setLoading(true)
+
+    const result = await verifyLogin(email, password)
+    setLoading(false)
+
+    if (!result.success) {
+      setError(result.message)
+      return
+    }
+
+    setSuccess(true)
+    setUser(result.user!)
+
+    setTimeout(() => navigate('/question-bank', { replace: true }), 1200)
+  }
+
+  const handleForgotPassword = async () => {
+    if (!email) {
+      setError('Please enter your email address first.')
+      return
+    }
+    setLoading(true)
     setError('')
-    alert('Login successful! (This is a demo - no backend connected)')
-    navigate('/question-bank')
+    setInfo('')
+    const result = await sendPasswordReset(email)
+    setLoading(false)
+    if (result.success) {
+      setInfo(result.message)
+    } else {
+      setError(result.message)
+    }
+  }
+
+  if (checking) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+      </div>
+    )
+  }
+
+  if (success) {
+    return (
+      <div className="min-h-screen flex items-center justify-center py-12 px-4">
+        <div className="max-w-md w-full text-center">
+          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Login Successful!</h2>
+          <p className="text-gray-600 mb-6">Redirecting to Question Bank...</p>
+          <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto" />
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -37,10 +115,15 @@ const Login = () => {
         </div>
 
         {/* Form */}
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="mt-6 space-y-6" onSubmit={handleSubmit}>
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
               {error}
+            </div>
+          )}
+          {info && (
+            <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-sm">
+              {info}
             </div>
           )}
 
@@ -75,43 +158,41 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
-                placeholder="Enter your password"
+                placeholder="At least 6 characters"
               />
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-              />
-              <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                Remember me
-              </label>
-            </div>
-
-            <div className="text-sm">
-              <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
-                Forgot your password?
-              </a>
-            </div>
+          <div className="flex items-center justify-end">
+            <button
+              type="button"
+              onClick={handleForgotPassword}
+              className="text-sm font-medium text-blue-600 hover:text-blue-500 bg-transparent border-none cursor-pointer p-0"
+            >
+              Forgot your password?
+            </button>
           </div>
 
           <button
             type="submit"
-            className="w-full btn-primary py-3 text-lg"
+            disabled={loading}
+            className="w-full btn-primary py-3 text-lg disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Sign in
+            {loading ? (
+              <span className="inline-flex items-center gap-2">
+                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                Signing in...
+              </span>
+            ) : (
+              'Sign in'
+            )}
           </button>
         </form>
 
-        {/* Demo Notice */}
+        {/* Info Notice */}
         <div className="text-center text-sm text-gray-500 bg-gray-50 p-4 rounded-lg">
-          <p>📝 This is a demo version. No backend is connected.</p>
-          <p>Click "Sign in" to proceed to the question bank.</p>
+          <p>Your account is now backed by a real database. Sign in on any device.</p>
+          <p className="mt-1">New user? <Link to="/register" className="text-blue-600 hover:underline">Create a free account</Link> to track your progress.</p>
         </div>
       </div>
     </div>

@@ -4,7 +4,136 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>usmle-prep</title>
+
+    <!-- Primary SEO -->
+    <title>Free USMLE Step 1 & Step 2 Practice | USMLE Prep for IMGs</title>
+    <meta name="description" content="Free USMLE Step 1 and Step 2 CK practice questions with clear explanations. Built for international medical graduates (IMGs). No signup required — start practicing now." />
+    <meta name="keywords" content="USMLE, USMLE Step 1, USMLE Step 2 CK, USMLE practice questions, USMLE prep, IMG, international medical graduate, free USMLE questions, medical board exam, ECFMG, residency match" />
+    <meta name="author" content="USMLE Prep Platform" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <link rel="canonical" href="https://hebin.fun/" />
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="USMLE Prep Platform" />
+    <meta property="og:title" content="Free USMLE Step 1 & Step 2 Practice Questions" />
+    <meta property="og:description" content="Free USMLE Step 1 and Step 2 CK practice questions with clear explanations. Designed for IMGs preparing for the match. Start free today." />
+    <meta property="og:url" content="https://hebin.fun/" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Free USMLE Step 1 & Step 2 Practice | USMLE Prep" />
+    <meta name="twitter:description" content="Free practice questions for USMLE Step 1 and Step 2 CK. No registration required. Start studying now." />
+
+    <!-- Structured Data: Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "USMLE Prep Platform",
+      "url": "https://hebin.fun/",
+      "description": "Free USMLE practice questions with multi-language explanations in Chinese and Spanish for international medical graduates.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://hebin.fun/question-bank?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQ Page (helps appear in Google "People Also Ask") -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this USMLE prep website free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! The question bank, mock exams, and multi-language explanations are completely free to use. No credit card required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from UWorld or Amboss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our unique feature is multi-language explanations in Chinese and Spanish, making it easier for international medical graduates to understand complex USMLE concepts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do the questions match the real USMLE exam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our questions are designed to mimic the style and difficulty of real USMLE questions across Step 1, Step 2 CK, and Step 3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this USMLE prep site on mobile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! Our website is fully responsive and works great on mobile devices. Practice USMLE questions anytime, anywhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I switch the explanation language?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "During practice, you can switch between English, Chinese (中文), and Spanish (Español) explanations using the language toggle at the top of the question interface."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: EducationalOrganization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalApplication",
+      "name": "USMLE Prep Platform",
+      "url": "https://hebin.fun/",
+      "operatingSystem": "Web",
+      "applicationCategory": "EducationalApplication",
+      "description": "Free USMLE exam preparation platform with multi-language explanations in Chinese and Spanish for international medical graduates.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8671364989340299" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics: Replace G-YOUR-ID with your actual Measurement ID -->
+    <!-- Get it from https://analytics.google.com → Admin → Data Streams → Web -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YOUR-ID');
+    </script>
+
+    <!-- SPA 路由修复 -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.getItem('spa_redirect');
+        if (redirect) {
+          sessionStorage.removeItem('spa_redirect');
+          var url = new URL(redirect);
+          history.replaceState(null, null, url.pathname + url.search + url.hash);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

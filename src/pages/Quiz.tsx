@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { questions, steps } from '../data/questions'
+import { addWrongAnswer } from '../utils/storage'
+import AdBanner from '../components/AdBanner'
 
 type Lang = 'en' | 'zh' | 'es'
 
@@ -37,12 +39,13 @@ const Quiz = () => {
     setShowResult(false)
   }, [step, subject])
 
-  const handleAnswer = (index: number) => {
+  const handleAnswer = async (index: number) => {
     if (showResult) return
     setSelectedAnswer(index)
     setShowResult(true)
     if (index !== currentQuestion.correctAnswer) {
       setWrongAnswers(prev => [...prev, currentQuestion.id])
+      await addWrongAnswer(currentQuestion.id, index)
     }
   }
 
@@ -203,6 +206,11 @@ const Quiz = () => {
           </h3>
           <p className="text-gray-700 leading-relaxed">{getExplanation()}</p>
         </div>
+      )}
+
+      {/* Ad: Every 4th question, between explanation and nav */}
+      {selectedAnswer !== null && currentIndex > 0 && currentIndex % 4 === 0 && (
+        <AdBanner format="horizontal" className="!my-6" />
       )}
 
       {/* Navigation */}

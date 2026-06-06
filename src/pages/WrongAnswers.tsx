@@ -1,16 +1,52 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { questions } from '../data/questions'
-
-// Mock wrong answers - in real app this would come from localStorage or backend
-const mockWrongIds = [1, 3, 7]
+import { getWrongAnswers, removeWrongAnswer } from '../utils/storage'
 
 const WrongAnswers = () => {
-  const [reviewedIds, setReviewedIds] = useState<number[]>([])
-  const wrongQuestions = questions.filter(q => mockWrongIds.includes(q.id) && !reviewedIds.includes(q.id))
+  const [wrongQuestionIds, setWrongQuestionIds] = useState<number[]>([])
+  const [reviewingId, setReviewingId] = useState<number | null>(null)
+  const [showingAnswer, setShowingAnswer] = useState<number | null>(null)
+  const [loading, setLoading] = useState(true)
 
-  const handleMarkReviewed = (id: number) => {
-    setReviewedIds(prev => [...prev, id])
+  const loadData = async () => {
+    setLoading(true)
+    const ids = await getWrongAnswers()
+    setWrongQuestionIds(ids)
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    loadData()
+  }, [])
+
+  const wrongQuestions = questions.filter(q => wrongQuestionIds.includes(q.id))
+
+  const handleRemove = async (id: number) => {
+    await removeWrongAnswer(id)
+    setWrongQuestionIds(prev => prev.filter(qid => qid !== id))
+    if (reviewingId === id) setReviewingId(null)
+    if (showingAnswer === id) setShowingAnswer(null)
+  }
+
+  const handleClearAll = async () => {
+    if (window.confirm('Are you sure you want to clear all wrong answers?')) {
+      for (const id of wrongQuestionIds) {
+        await removeWrongAnswer(id)
+      }
+      setWrongQuestionIds([])
+      setReviewingId(null)
+      setShowingAnswer(null)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-16 text-center">
+        <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto" />
+        <p className="mt-4 text-gray-500">Loading your wrong answers...</p>
+      </div>
+    )
   }
 
   return (
@@ -18,19 +54,19 @@ const WrongAnswers = () => {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Wrong Answers</h1>
         <p className="text-gray-600">
-          Review questions you've answered incorrectly. Focus on your weak areas.
+          Review questions you've answered incorrectly. Learn from mistakes to build stronger knowledge.
         </p>
       </div>
 
       {wrongQuestions.length === 0 ? (
         <div className="card text-center py-16">
           <div className="text-6xl mb-4">🎉</div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">No Wrong Answers!</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">No Wrong Answers Yet!</h2>
           <p className="text-gray-600 mb-8">
-            You've reviewed all your incorrect answers. Keep up the great work!
+            Start practicing questions — any incorrect answers will appear here for review.
           </p>
           <Link to="/question-bank" className="btn-primary">
-            Continue Practicing
+            Start Practicing
           </Link>
         </div>
       ) : (
@@ -39,16 +75,19 @@ const WrongAnswers = () => {
             <span className="text-sm text-gray-600">
               {wrongQuestions.length} question{wrongQuestions.length > 1 ? 's' : ''} to review
             </span>
-            <span className="text-sm text-gray-500">
-              {reviewedIds.length} reviewed
-            </span>
+            <button
+              onClick={handleClearAll}
+              className="text-sm text-red-600 hover:text-red-700 font-medium"
+            >
+              Clear All
+            </button>
           </div>
 
           <div className="space-y-4">
             {wrongQuestions.map((q) => (
               <div key={q.id} className="card border-l-4 border-red-500">
                 <div className="flex items-start justify-between mb-3">
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     <span className="text-xs font-semibold bg-red-100 text-red-700 px-2 py-1 rounded">
                       {q.step.toUpperCase()}
                     </span>
@@ -56,29 +95,41 @@ const WrongAnswers = () => {
                       {q.subject}
                     </span>
                   </div>
+                  <button
+                    onClick={() => handleRemove(q.id)}
+                    className="text-gray-400 hover:text-red-500 transition-colors text-sm"
+                    title="Remove from wrong answers"
+                  >
+                    ✕
+                  </button>
                 </div>
-                <p className="text-gray-900 font-medium mb-4 line-clamp-2">
-                  {q.question}
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-green-600 font-semibold">
-                    Correct Answer: {String.fromCharCode(65 + q.correctAnswer)}
-                  </span>
-                  <div className="flex gap-2">
-                    <Link
-                      to={`/quiz/${q.step}`}
-                      className="text-sm text-blue-600 hover:text-blue-700 font-medium"
-                    >
-                      Practice Again
-                    </Link>
-                    <button
-                      onClick={() => handleMarkReviewed(q.id)}
-                      className="text-sm bg-green-50 text-green-700 px-3 py-1 rounded-lg hover:bg-green-100 transition-colors"
-                    >
-                      Mark as Reviewed ✓
-                    </button>
+
+                <p className="text-gray-900 font-medium mb-3">{q.question}</p>
+
+                {/* Toggle: Show Answer */}
+                <div className="flex flex-wrap items-center gap-3">
+                  <button
+                    onClick={() => setShowingAnswer(showingAnswer === q.id ? null : q.id)}
+                    className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    {showingAnswer === q.id ? 'Hide Answer' : 'Show Correct Answer'}
+                  </button>
+                  <Link
+                    to={`/quiz/${q.step}`}
+                    className="text-sm text-gray-600 hover:text-gray-900"
+                  >
+                    Practice Again →
+                  </Link>
+                </div>
+
+                {showingAnswer === q.id && (
+                  <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg">
+                    <p className="text-sm text-green-800">
+                      <span className="font-bold">Correct Answer: {String.fromCharCode(65 + q.correctAnswer)}</span>
+                      {' — '}{q.options[q.correctAnswer]}
+                    </p>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>

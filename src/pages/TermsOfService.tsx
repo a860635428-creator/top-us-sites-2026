@@ -1,0 +1,100 @@
+import { Link } from 'react-router-dom'
+
+const TermsOfService = () => {
+  return (
+    <div className="bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
+        <p className="text-gray-500 mb-10">Last updated: June 5, 2026</p>
+
+        <div className="space-y-8 text-gray-700 leading-relaxed">
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">1. Acceptance of Terms</h2>
+            <p>
+              By accessing or using the USMLE Prep Platform ("the Service"), you agree to be bound by these Terms of Service.
+              If you do not agree to these terms, please do not use the Service.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">2. Description of Service</h2>
+            <p>
+              USMLE Prep Platform provides practice questions, study materials, and exam preparation tools for the USMLE Step 1,
+              Step 2 CK, and Step 3 examinations. The Service is intended for educational purposes only.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">3. User Accounts</h2>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>You must provide accurate and complete information when creating an account.</li>
+              <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+              <li>You are responsible for all activities that occur under your account.</li>
+              <li>You must notify us immediately of any unauthorized use of your account.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">4. Intellectual Property</h2>
+            <p>
+              All content on this website, including but not limited to text, graphics, logos, and software, is the property
+              of USMLE Prep Platform and is protected by intellectual property laws. You may not reproduce, distribute, or
+              create derivative works without express written permission.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">5. Prohibited Conduct</h2>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>You may not use the Service for any unlawful purpose.</li>
+              <li>You may not attempt to gain unauthorized access to any part of the Service.</li>
+              <li>You may not use automated tools to scrape or collect data from the Service.</li>
+              <li>You may not share your account credentials with third parties.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">6. Disclaimer of Warranties</h2>
+            <p>
+              The Service is provided on an "as is" and "as available" basis. We make no warranties, expressed or implied,
+              regarding the accuracy, completeness, or reliability of the content. USMLE Prep Platform is not affiliated with
+              the National Board of Medical Examiners (NBME) or the United States Medical Licensing Examination (USMLE).
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">7. Limitation of Liability</h2>
+            <p>
+              In no event shall USMLE Prep Platform be liable for any indirect, incidental, special, consequential, or punitive
+              damages arising out of your use of the Service.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">8. Changes to Terms</h2>
+            <p>
+              We reserve the right to modify these Terms at any time. Continued use of the Service after changes are posted
+              constitutes acceptance of the revised Terms.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">9. Contact Us</h2>
+            <p>If you have any questions about these Terms, please contact us at:</p>
+            <p className="mt-2">
+              <a href="mailto:a860635428@gmail.com" className="text-blue-600 hover:underline">a860635428@gmail.com</a>
+            </p>
+          </section>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <Link to="/" className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-1">
+            ← Back to Home
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default TermsOfService
