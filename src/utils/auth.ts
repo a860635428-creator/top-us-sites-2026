@@ -45,12 +45,16 @@ function saveLocalUsers(users: Record<string, { password: string; name: string; 
 }
 
 function isNetworkError(msg: string): boolean {
+  const m = msg.toLowerCase()
   return (
-    msg === 'Failed to fetch' ||
-    msg.includes('fetch') ||
-    msg.includes('network') ||
-    msg.includes('timeout') ||
-    msg.includes('abort')
+    m === 'failed to fetch' ||
+    m.includes('fetch') ||
+    m.includes('network') ||
+    m.includes('timeout') ||
+    m.includes('abort') ||
+    m.includes('unreachable') ||
+    m.includes('connection') ||
+    m.includes('offline')
   )
 }
 
@@ -70,6 +74,27 @@ export async function registerUser(
     })
 
     if (error) {
+      // Network error → fallback to localStorage so user can still use the app
+      if (isNetworkError(error.message)) {
+        const users = getLocalUsers()
+        if (users[email]) {
+          return { success: false, message: 'This email is already registered. Please log in instead.' }
+        }
+        users[email] = { password, name, language }
+        saveLocalUsers(users)
+        const user: User = {
+          id: 'local-' + email,
+          name,
+          email,
+          language,
+        }
+        saveLocalUser(user)
+        currentUser = user
+        return {
+          success: true,
+          message: 'Account created in offline mode. Your data is saved locally on this browser.',
+        }
+      }
       if (error.message.includes('already registered') || error.message.includes('already exists')) {
         return { success: false, message: 'This email is already registered. Please log in instead.' }
       }
@@ -122,6 +147,29 @@ export async function verifyLogin(
     const { data, error } = await supabase.auth.signInWithPassword({ email, password })
 
     if (error) {
+      // Network error → fallback to localStorage
+      if (isNetworkError(error.message)) {
+        const users = getLocalUsers()
+        if (!users[email]) {
+          return { success: false, message: 'Invalid email or password.' }
+        }
+        if (users[email].password !== password) {
+          return { success: false, message: 'Invalid email or password.' }
+        }
+        const user: User = {
+          id: 'local-' + email,
+          name: users[email].name,
+          email,
+          language: users[email].language,
+        }
+        saveLocalUser(user)
+        currentUser = user
+        return {
+          success: true,
+          message: 'Signed in (offline mode). Your progress is saved locally on this browser.',
+          user,
+        }
+      }
       if (error.message.includes('Invalid login')) {
         return { success: false, message: 'Invalid email or password.' }
       }
