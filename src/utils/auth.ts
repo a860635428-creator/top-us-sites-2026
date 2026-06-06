@@ -7,7 +7,52 @@ export interface User {
   language: 'en' | 'zh' | 'es'
 }
 
+const LOCAL_USER_KEY = 'usmle_auth_user'
+const LOCAL_USERS_KEY = 'usmle_auth_users'
+
 let currentUser: User | null = null
+
+// ── Helpers ───────────────────────────────────────────────
+
+function loadLocalUser(): User | null {
+  try {
+    const raw = localStorage.getItem(LOCAL_USER_KEY)
+    return raw ? JSON.parse(raw) : null
+  } catch {
+    return null
+  }
+}
+
+function saveLocalUser(user: User): void {
+  localStorage.setItem(LOCAL_USER_KEY, JSON.stringify(user))
+}
+
+function clearLocalUser(): void {
+  localStorage.removeItem(LOCAL_USER_KEY)
+}
+
+function getLocalUsers(): Record<string, { password: string; name: string; language: 'en' | 'zh' | 'es' }> {
+  try {
+    const raw = localStorage.getItem(LOCAL_USERS_KEY)
+    return raw ? JSON.parse(raw) : {}
+  } catch {
+    return {}
+  }
+}
+
+function saveLocalUsers(users: Record<string, { password: string; name: string; language: 'en' | 'zh' | 'es' }>): void {
+  localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(users))
+}
+
+function isNetworkError(msg: string): boolean {
+  return (
+    msg === 'Failed to fetch' ||
+    msg.includes('fetch') ||
+    msg.includes('network') ||
+    msg.includes('timeout') ||
+    msg.includes('abort')
+  )
+}
 
 // ── Register ──────────────────────────────────────────────
 export async function registerUser(
@@ -16,13 +61,12 @@ export async function registerUser(
   password: string,
   language: 'en' | 'zh' | 'es'
 ): Promise<{ success: boolean; message: string }> {
+  // Always try Supabase first
   try {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
-      options: {
-        data: { name, language },
-      },
+      options: { data: { name, language } },
     })
 
     if (error) {
@@ -32,11 +76,6 @@ export async function registerUser(
       return { success: false, message: error.message }
     }
 
-    if (data.user && !data.session) {
-      return { success: true, message: 'Account created! Check your inbox for a verification link, then log in.' }
-    }
-
-    // If auto-login (session present — email confirm turned off)
     if (data.user && data.session) {
       currentUser = {
         id: data.user.id,
@@ -46,10 +85,31 @@ export async function registerUser(
       }
       return { success: true, message: 'Registration successful!' }
     }
-
-    return { success: true, message: 'Registration successful!' }
+    return { success: true, message: 'Account created! Check your inbox for a verification link, then log in.' }
   } catch (err: any) {
-    return { success: false, message: err?.message || 'Network error. Please try again.' }
+    const msg = err?.message || ''
+    if (isNetworkError(msg)) {
+      // Fallback: register in localStorage
+      const users = getLocalUsers()
+      if (users[email]) {
+        return { success: false, message: 'This email is already registered. Please log in instead.' }
+      }
+      users[email] = { password, name, language }
+      saveLocalUsers(users)
+      const user: User = {
+        id: 'local-' + email,
+        name,
+        email,
+        language,
+      }
+      saveLocalUser(user)
+      currentUser = user
+      return {
+        success: true,
+        message: 'Account created in offline mode. Your data is saved locally on this browser.',
+      }
+    }
+    return { success: false, message: msg }
   }
 }
 
@@ -78,18 +138,48 @@ export async function verifyLogin(
       email: u.email!,
       language: (u.user_metadata?.language as 'en' | 'zh' | 'es') || 'en',
     }
-
     currentUser = user
+    // Clear any stale local user data when Supabase login succeeds
+    clearLocalUser()
     return { success: true, message: 'Login successful!', user }
   } catch (err: any) {
-    return { success: false, message: err?.message || 'Network error. Please try again.' }
+    const msg = err?.message || ''
+    if (isNetworkError(msg)) {
+      // Fallback: check localStorage
+      const users = getLocalUsers()
+      if (!users[email]) {
+        return { success: false, message: 'Invalid email or password.' }
+      }
+      if (users[email].password !== password) {
+        return { success: false, message: 'Invalid email or password.' }
+      }
+      const user: User = {
+        id: 'local-' + email,
+        name: users[email].name,
+        email,
+        language: users[email].language,
+      }
+      saveLocalUser(user)
+      currentUser = user
+      return {
+        success: true,
+        message: 'Signed in (offline mode). Your progress is saved locally on this browser.',
+        user,
+      }
+    }
+    return { success: false, message: msg }
   }
 }
 
 // ── Logout ────────────────────────────────────────────────
 export async function clearUser(): Promise<void> {
   currentUser = null
-  await supabase.auth.signOut()
+  clearLocalUser()
+  try {
+    await supabase.auth.signOut()
+  } catch {
+    // Supabase signOut failing is fine if we're offline
+  }
 }
 
 // ── Get User ──────────────────────────────────────────────
@@ -97,17 +187,31 @@ export async function getUser(): Promise<User | null> {
   // Prefer cached
   if (currentUser) return currentUser
 
-  const { data } = await supabase.auth.getSession()
-  if (!data.session) return null
-
-  const u = data.session.user
-  currentUser = {
-    id: u.id,
-    name: u.user_metadata?.name || u.email?.split('@')[0] || 'User',
-    email: u.email || '',
-    language: (u.user_metadata?.language as 'en' | 'zh' | 'es') || 'en',
+  // Try Supabase session first
+  try {
+    const { data } = await supabase.auth.getSession()
+    if (data.session) {
+      const u = data.session.user
+      const user: User = {
+        id: u.id,
+        name: u.user_metadata?.name || u.email?.split('@')[0] || 'User',
+        email: u.email || '',
+        language: (u.user_metadata?.language as 'en' | 'zh' | 'es') || 'en',
+      }
+      currentUser = user
+      return user
+    }
+  } catch {
+    // Supabase unreachable — fall through to localStorage
   }
-  return currentUser
+
+  // Fall back to localStorage
+  const localUser = loadLocalUser()
+  if (localUser) {
+    currentUser = localUser
+    return localUser
+  }
+  return null
 }
 
 export function getCurrentUser(): User | null {
@@ -121,6 +225,7 @@ export async function initAuth(): Promise<User | null> {
 // ── Set User ──────────────────────────────────────────────
 export function setUser(user: User): void {
   currentUser = user
+  if (user) saveLocalUser(user)
 }
 
 // ── Is Logged In ──────────────────────────────────────────
@@ -137,15 +242,22 @@ export function onAuthChange(callback: (user: User | null) => void): () => void 
   const { data } = supabase.auth.onAuthStateChange((_event, session) => {
     if (session) {
       const u = session.user
-      callback({
+      const user: User = {
         id: u.id,
         name: u.user_metadata?.name || u.email?.split('@')[0] || 'User',
         email: u.email || '',
         language: (u.user_metadata?.language as 'en' | 'zh' | 'es') || 'en',
-      })
+      }
+      currentUser = user
+      clearLocalUser() // Sync from Supabase overrides local
+      callback(user)
     } else {
-      currentUser = null
-      callback(null)
+      // Only clear if local user isn't present (don't clobber offline session)
+      const localUser = loadLocalUser()
+      if (!localUser) {
+        currentUser = null
+        callback(null)
+      }
     }
   })
 
@@ -165,8 +277,22 @@ export async function sendPasswordReset(email: string): Promise<{ success: boole
 
     return { success: true, message: 'Password reset link sent! Check your inbox (and spam folder).' }
   } catch (err: any) {
-    return { success: false, message: err?.message || 'Network error. Please try again.' }
+    const msg = err?.message || ''
+    if (isNetworkError(msg)) {
+      return {
+        success: false,
+        message: 'Cannot connect to server. Password reset is unavailable in offline mode. Please ensure you have a stable internet connection.',
+      }
+    }
+    return { success: false, message: msg }
   }
+}
+
+// ── Check if user is in offline mode ──────────────────────
+export function isOfflineMode(): boolean {
+  const user = currentUser
+  if (!user) return false
+  return user.id.startsWith('local-')
 }
 
 // ── Backward Compatibility ────────────────────────────────
@@ -177,6 +303,10 @@ export function getLocalUser(): { name: string; email: string } | null {
   return null
 }
 
-export function clearLocalUser(): void {
+export function clearLocalUserData(): void {
   currentUser = null
+  clearLocalUser()
+  try {
+    localStorage.removeItem(LOCAL_USERS_KEY)
+  } catch { /* ignore */ }
 }
