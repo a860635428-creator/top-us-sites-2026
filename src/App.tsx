@@ -1,21 +1,30 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Home from './pages/Home'
-import QuestionBank from './pages/QuestionBank'
-import Quiz from './pages/Quiz'
-import MockExam from './pages/MockExam'
-import WrongAnswers from './pages/WrongAnswers'
-import Resources from './pages/Resources'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import Privacy from './pages/Privacy'
-import TermsOfService from './pages/TermsOfService'
-import About from './pages/About'
-import ProgressDashboard from './pages/ProgressDashboard'
-import NotFound from './pages/NotFound'
+
+// Lazy-load all pages for route-based code splitting
+const Home = lazy(() => import('./pages/Home'))
+const QuestionBank = lazy(() => import('./pages/QuestionBank'))
+const Quiz = lazy(() => import('./pages/Quiz'))
+const MockExam = lazy(() => import('./pages/MockExam'))
+const WrongAnswers = lazy(() => import('./pages/WrongAnswers'))
+const Resources = lazy(() => import('./pages/Resources'))
+const Login = lazy(() => import('./pages/Login'))
+const Register = lazy(() => import('./pages/Register'))
+const Privacy = lazy(() => import('./pages/Privacy'))
+const TermsOfService = lazy(() => import('./pages/TermsOfService'))
+const About = lazy(() => import('./pages/About'))
+const ProgressDashboard = lazy(() => import('./pages/ProgressDashboard'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+
+// Loading fallback for lazy routes
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+  </div>
+)
 
 // Track page views for Google Analytics (SPA-friendly)
 const RouteTracker = () => {
@@ -62,21 +71,23 @@ function App() {
         <div className="min-h-screen flex flex-col bg-gray-50">
           <Navbar />
           <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/question-bank" element={<QuestionBank />} />
-              <Route path="/quiz/:step/:subject?" element={<Quiz />} />
-              <Route path="/mock-exam" element={<MockExam />} />
-              <Route path="/wrong-answers" element={<WrongAnswers />} />
-              <Route path="/resources" element={<Resources />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<TermsOfService />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/dashboard" element={<ProgressDashboard />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/question-bank" element={<QuestionBank />} />
+                <Route path="/quiz/:step/:subject?" element={<Quiz />} />
+                <Route path="/mock-exam" element={<MockExam />} />
+                <Route path="/wrong-answers" element={<WrongAnswers />} />
+                <Route path="/resources" element={<Resources />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<TermsOfService />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/dashboard" element={<ProgressDashboard />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
           </main>
           <Footer />
         </div>

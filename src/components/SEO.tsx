@@ -10,7 +10,7 @@ interface SEOProps {
 }
 
 const BASE_URL = 'https://hebin.fun'
-const OG_IMAGE = `${BASE_URL}/og-image.png`
+const OG_IMAGE = `${BASE_URL}/og-image.jpg`
 const SITE_NAME = 'USMLE Prep Platform'
 
 export default function SEO({
