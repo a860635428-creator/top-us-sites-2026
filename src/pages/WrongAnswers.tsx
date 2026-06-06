@@ -5,7 +5,6 @@ import { getWrongAnswers, removeWrongAnswer } from '../utils/storage'
 
 const WrongAnswers = () => {
   const [wrongQuestionIds, setWrongQuestionIds] = useState<number[]>([])
-  const [reviewingId, setReviewingId] = useState<number | null>(null)
   const [showingAnswer, setShowingAnswer] = useState<number | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -25,7 +24,6 @@ const WrongAnswers = () => {
   const handleRemove = async (id: number) => {
     await removeWrongAnswer(id)
     setWrongQuestionIds(prev => prev.filter(qid => qid !== id))
-    if (reviewingId === id) setReviewingId(null)
     if (showingAnswer === id) setShowingAnswer(null)
   }
 
@@ -35,7 +33,6 @@ const WrongAnswers = () => {
         await removeWrongAnswer(id)
       }
       setWrongQuestionIds([])
-      setReviewingId(null)
       setShowingAnswer(null)
     }
   }

@@ -316,11 +316,11 @@ const Resources = () => {
           <div className="bg-white p-4 rounded-lg border border-blue-100">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
-              <h3 className="font-bold text-gray-900">Start with First Aid + UWorld</h3>
+              <h3 className="font-bold text-gray-900">Start with Core Resources</h3>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Use First Aid as your primary outline. UWorld questions are the gold standard —
-              complete all questions and read every explanation carefully, even for questions you get right.
+              Use First Aid as your primary outline. Combine with practice questions —
+              our free question bank and mock exams give you the repetition you need.
             </p>
           </div>
           <div className="bg-white p-4 rounded-lg border border-blue-100">

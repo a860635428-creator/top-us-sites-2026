@@ -15,7 +15,7 @@ const Home = () => {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-blue-500/30 text-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-              Now with AI-powered explanations
+              Multi-language explanations: English · 中文 · Español
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
               Study in English,
@@ -207,46 +207,36 @@ const Home = () => {
         <AdBanner format="rectangle" />
       </div>
 
-      {/* Testimonials Section */}
+      {/* What Makes Us Different */}
       <section className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Trusted by Medical Students Worldwide
+              Why IMGs Choose This Platform
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Dr. Li Zhang',
-                role: 'IMG from China, Matched 2025',
-                text: 'The Chinese explanations helped me understand complex concepts so much faster. Finally passed Step 1 after 2 attempts!',
-                rating: 5,
+                icon: '🌐',
+                title: 'Multi-Language Explanations',
+                text: 'Unlike UWorld or Amboss, every explanation is available in English, Chinese, and Spanish — helping you grasp complex medical concepts in your native language.',
               },
               {
-                name: 'Dr. Carlos M.',
-                role: 'IMG from Mexico, Step 2 CK: 255',
-                text: 'Studying in English while reading explanations in Spanish was a game-changer. Highly recommend for all Spanish speakers.',
-                rating: 5,
+                icon: '💯',
+                title: 'Completely Free',
+                text: 'No subscriptions, no credit cards, no paywalls. All 80+ practice questions and mock exams are free. We believe test prep should be accessible to everyone.',
               },
               {
-                name: 'Dr. Priya S.',
-                role: 'IMG from India, Step 3 Passed',
-                text: 'The question bank is very high-yield. Most questions are similar to the real exam. Great resource for IMGs.',
-                rating: 5,
+                icon: '📱',
+                title: 'Mobile-Friendly Practice',
+                text: 'Study on the go with our fully responsive design. Practice questions during your commute, in the library, or between clinical rotations.',
               },
-            ].map((review, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(review.rating)].map((_, j) => (
-                    <span key={j} className="text-yellow-400 text-xl">★</span>
-                  ))}
-                </div>
-                <p className="text-gray-600 italic mb-4">"{review.text}"</p>
-                <div className="border-t pt-4">
-                  <div className="font-bold text-gray-900">{review.name}</div>
-                  <div className="text-sm text-gray-500">{review.role}</div>
-                </div>
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm text-center">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
@@ -396,7 +386,7 @@ const Home = () => {
               </h2>
               <div className="space-y-4">
                 {[
-                  { tip: 'Start with First Aid + UWorld', detail: 'First Aid covers all high-yield topics. UWorld questions are the gold standard — complete all questions and read every explanation.' },
+                  { tip: 'Start with Core Resources', detail: 'First Aid covers all high-yield topics. Our question bank provides free practice to reinforce concepts. Combine both for comprehensive preparation.' },
                   { tip: 'Use Multi-Language Resources', detail: 'If English is not your first language, supplement with resources in your native language to strengthen understanding.' },
                   { tip: 'Simulate Real Exam Conditions', detail: 'Take timed practice exams to build stamina. The real USMLE is a marathon — train accordingly.' },
                 ].map((item, i) => (
@@ -426,8 +416,8 @@ const Home = () => {
             Ready to Start Your USMLE Journey?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of international medical graduates who are preparing for USMLE
-            with multi-language support. Start free today — no credit card required.
+            Start your free USMLE preparation today with language support
+            that helps you understand medical concepts in your native tongue. No credit card required.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/register" className="bg-white text-blue-700 hover:bg-blue-50 text-lg px-10 py-4 inline-block font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all">
@@ -524,7 +514,7 @@ const EmailSubscriptionSection = () => {
             Get Free USMLE Study Tips Weekly
           </h2>
           <p className="text-gray-600 text-lg mb-6 max-w-xl mx-auto">
-            Join <span className="font-bold text-blue-600">2,000+ IMGs</span> receiving weekly study strategies,
+            Join <span className="font-bold text-blue-600">fellow IMGs</span> receiving weekly study strategies,
             high-yield topic summaries, and new question alerts — straight to your inbox.
           </p>
 

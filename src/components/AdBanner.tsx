@@ -69,14 +69,9 @@ const AdBanner = ({
 
   return (
     <div className={`ad-container my-10 ${className}`}>
-      <div className="text-center text-xs text-gray-400 mb-1 select-none">
-        {isMobile ? 'Ad • Mobile' : 'Advertisement'}
-      </div>
       <div
         ref={containerRef}
-        className={`flex items-center justify-center bg-gray-50/50 rounded-lg ${
-          isMobile ? 'min-h-[250px]' : 'min-h-[90px]'
-        }`}
+        className="flex items-center justify-center"
       />
     </div>
   )
