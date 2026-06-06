@@ -12,6 +12,7 @@ const Register = () => {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [successMsg, setSuccessMsg] = useState('')
   const [checking, setChecking] = useState(true)
 
   useEffect(() => {
@@ -51,18 +52,12 @@ const Register = () => {
     setLoading(false)
 
     if (!result.success) {
-      const msg = result.message
-      if (msg === 'Failed to fetch' || msg?.includes('fetch') || msg?.includes('network')) {
-        setError(
-          'Unable to connect to the server. If you are in a region that blocks Supabase (e.g., China, Saudi Arabia), please connect to a VPN (U.S. or Europe node) and try again.'
-        )
-      } else {
-        setError(msg)
-      }
+      setError(result.message)
       return
     }
 
     setSuccess(true)
+    setSuccessMsg(result.message)
   }
 
   if (checking) {
@@ -74,6 +69,7 @@ const Register = () => {
   }
 
   if (success) {
+    const isOffline = successMsg.includes('offline')
     return (
       <div className="min-h-screen flex items-center justify-center py-12 px-4">
         <div className="max-w-md w-full text-center">
@@ -83,12 +79,23 @@ const Register = () => {
             </svg>
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Registration Successful!</h2>
-          <p className="text-gray-600 mb-4">
-            Please check your email inbox for a verification link to activate your account.
-          </p>
-          <p className="text-gray-500 text-sm mb-6">
-            (You may need to check your spam folder.)
-          </p>
+          {isOffline ? (
+            <>
+              <p className="text-gray-600 mb-4">{successMsg}</p>
+              <p className="text-amber-600 text-sm mb-6 bg-amber-50 p-3 rounded-lg">
+                When your internet connection improves, you can create a new account with the same email and your data will sync to the cloud automatically.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-gray-600 mb-4">
+                Please check your email inbox for a verification link to activate your account.
+              </p>
+              <p className="text-gray-500 text-sm mb-6">
+                (You may need to check your spam folder.)
+              </p>
+            </>
+          )}
           <Link
             to="/login"
             className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"

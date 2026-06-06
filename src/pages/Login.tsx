@@ -10,6 +10,7 @@ const Login = () => {
   const [info, setInfo] = useState('')
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [successMsg, setSuccessMsg] = useState('')
   const [checking, setChecking] = useState(true)
 
   useEffect(() => {
@@ -45,19 +46,12 @@ const Login = () => {
     setLoading(false)
 
     if (!result.success) {
-      // Detect network issues and show helpful message
-      const msg = result.message
-      if (msg === 'Failed to fetch' || msg?.includes('fetch') || msg?.includes('network')) {
-        setError(
-          'Unable to connect to the server. If you are in a region that blocks Supabase (e.g., China, Saudi Arabia), please connect to a VPN (U.S. or Europe node) and try again.'
-        )
-      } else {
-        setError(msg)
-      }
+      setError(result.message)
       return
     }
 
     setSuccess(true)
+    setSuccessMsg(result.message)
     setUser(result.user!)
 
     setTimeout(() => navigate('/question-bank', { replace: true }), 1200)
@@ -89,6 +83,7 @@ const Login = () => {
   }
 
   if (success) {
+    const isOffline = successMsg.includes('offline')
     return (
       <div className="min-h-screen flex items-center justify-center py-12 px-4">
         <div className="max-w-md w-full text-center">
@@ -98,6 +93,11 @@ const Login = () => {
             </svg>
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Login Successful!</h2>
+          {isOffline && (
+            <p className="text-amber-600 text-sm mb-3 bg-amber-50 p-3 rounded-lg">
+              {successMsg}
+            </p>
+          )}
           <p className="text-gray-600 mb-6">Redirecting to Question Bank...</p>
           <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto" />
         </div>
