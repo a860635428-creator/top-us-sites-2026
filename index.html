@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Domain redirect: hebin.fun → stepprepare.com -->
+    <script>
+      if (window.location.hostname === 'hebin.fun' || window.location.hostname === 'www.hebin.fun') {
+        var url = new URL(window.location.href);
+        url.hostname = 'stepprepare.com';
+        url.protocol = 'https:';
+        window.location.replace(url.toString());
+      }
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
