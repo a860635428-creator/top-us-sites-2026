@@ -361,7 +361,7 @@ const MockExam = () => {
       : scorePercent >= 60 ? { emoji: '👍', text: 'Good job! Keep practicing to improve.' }
       : { emoji: '📚', text: 'Keep studying! Focus on weak areas.' }
 
-    const shareText = `I scored ${scorePercent}% on the USMLE ${selectedStep === 'step1' ? 'Step 1' : selectedStep === 'step2' ? 'Step 2 CK' : 'Step 3'} mock exam at hebin.fun! 🩺 Free practice for IMGs.`
+    const shareText = `I scored ${scorePercent}% on the USMLE ${selectedStep === 'step1' ? 'Step 1' : selectedStep === 'step2' ? 'Step 2 CK' : 'Step 3'} mock exam at stepprepare.com! 🩺 Free practice for IMGs.`
     const shareUrl = window.location.origin
 
     const handleShare = () => {

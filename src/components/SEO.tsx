@@ -9,7 +9,7 @@ interface SEOProps {
   ogDescription?: string
 }
 
-const BASE_URL = 'https://hebin.fun'
+const BASE_URL = 'https://stepprepare.com'
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`
 const SITE_NAME = 'USMLE Prep Platform'
 

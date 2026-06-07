@@ -1,8 +1,8 @@
 # robots.txt for USMLE Prep Platform
-# https://hebin.fun
+# https://stepprepare.com
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://hebin.fun/sitemap.xml
+Sitemap: https://stepprepare.com/sitemap.xml
