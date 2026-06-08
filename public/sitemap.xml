@@ -39,36 +39,34 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Step 1 Subjects (high-value SEO landing pages) -->
-  <url><loc>https://stepprepare.com/quiz/step1/Pathology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step1/Pharmacology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step1/Physiology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step1/Anatomy</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step1/Microbiology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step1/Biochemistry</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step1/Immunology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step1/Genetics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step1/Behavioral%20Science</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step1/Biostatistics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <!-- Step 1 Subjects (hyphen-format URLs, matching QuestionBank links) -->
+  <url><loc>https://stepprepare.com/quiz/step1/pathology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/pharmacology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/physiology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/anatomy</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/microbiology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/biochemistry</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/immunology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/genetics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/neurology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
 
   <!-- Step 2 CK Subjects -->
-  <url><loc>https://stepprepare.com/quiz/step2/Internal%20Medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step2/Surgery</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step2/Pediatrics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step2/OB%2FGYN</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step2/Psychiatry</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step2/Cardiology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step2/Neurology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step2/Gastroenterology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step2/Infectious%20Disease</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step2/Emergency%20Medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/internal-medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/surgery</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/pediatrics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/obstetrics-&-gynecology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/psychiatry</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/cardiology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/neurology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/emergency-medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
 
   <!-- Step 3 Subjects -->
-  <url><loc>https://stepprepare.com/quiz/step3/Internal%20Medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step3/Primary%20Care</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step3/Ethics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step3/Patient%20Safety</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://stepprepare.com/quiz/step3/Preventive%20Medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/internal-medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/primary-care</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/ethics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/patient-safety</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/preventive-medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/biostatistics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
 
   <!-- Blog / Content Pages -->
   <url>

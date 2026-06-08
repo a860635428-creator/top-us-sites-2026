@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>USMLE Prep Platform — Free Study Guides &amp; Practice Questions</title>
+    <link>https://stepprepare.com/</link>
+    <description>Free USMLE Step 1, Step 2 CK &amp; Step 3 practice questions with multi-language explanations in English, Chinese, and Spanish. Study guides, exam strategies, and tips for international medical graduates (IMGs).</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Jun 2026 22:30:00 +0800</lastBuildDate>
+    <atom:link href="https://stepprepare.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>USMLE Step 1 Study Plan for IMGs: Complete 6-Month Strategy Guide</title>
+      <link>https://stepprepare.com/blog</link>
+      <guid isPermaLink="false">stepprepare-step1-study-plan-2026</guid>
+      <description>Preparing for USMLE Step 1 as an international medical graduate? This comprehensive guide covers a 6-month study plan including recommended resources, daily schedules, and strategies for mastering basic sciences.</description>
+      <pubDate>Mon, 08 Jun 2026 22:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>USMLE Step 2 CK High-Yield Topics: What to Focus On for a 250+ Score</title>
+      <link>https://stepprepare.com/blog</link>
+      <guid isPermaLink="false">stepprepare-step2ck-highyield-2026</guid>
+      <description>Discover the highest-yield topics for USMLE Step 2 CK. Learn which clinical subjects deserve the most attention in your study plan and how to approach challenging question types.</description>
+      <pubDate>Mon, 08 Jun 2026 22:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Why Multi-Language USMLE Study Works: The Science Behind Bilingual Learning</title>
+      <link>https://stepprepare.com/blog</link>
+      <guid isPermaLink="false">stepprepare-multilang-learning-2026</guid>
+      <description>Research shows that studying in multiple languages enhances comprehension and retention. Learn why using Chinese and Spanish explanations alongside English can accelerate your USMLE preparation.</description>
+      <pubDate>Mon, 08 Jun 2026 22:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>USMLE Step 3 Complete Guide for IMG Residents: CCS Cases, Biostats &amp; Study Strategy</title>
+      <link>https://stepprepare.com/blog</link>
+      <guid isPermaLink="false">stepprepare-step3-guide-2026</guid>
+      <description>A complete guide to USMLE Step 3 for IMG residents. Learn how to tackle CCS (Computer-based Case Simulations), master biostatistics questions, and manage your study time during residency.</description>
+      <pubDate>Mon, 08 Jun 2026 22:00:00 +0800</pubDate>
+    </item>
+  </channel>
+</rss>

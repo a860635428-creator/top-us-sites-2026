@@ -10298,9 +10298,9 @@ export const questions: Question[] = [
   },
 ]
 export const subjects: Record<string, string[]> = {
-  step1: ['Pathology', 'Physiology', 'Pharmacology', 'Internal Medicine', 'Anatomy', 'Biochemistry', 'Microbiology', 'Immunology', 'Genetics', 'Neurology'],
-  step2: ['Internal Medicine', 'Surgery', 'Pediatrics', 'Obstetrics & Gynecology', 'Psychiatry', 'Pathology', 'Emergency Medicine', 'Neurology'],
-  step3: ['Primary Care', 'Internal Medicine', 'Emergency Medicine', 'Ethics', 'Patient Safety']
+  step1: ['Pathology', 'Physiology', 'Pharmacology', 'Internal Medicine', 'Anatomy', 'Biochemistry', 'Microbiology', 'Immunology', 'Genetics', 'Neurology', 'Behavioral Science', 'Biostatistics'],
+  step2: ['Internal Medicine', 'Surgery', 'Pediatrics', 'Obstetrics & Gynecology', 'Psychiatry', 'Pathology', 'Emergency Medicine', 'Neurology', 'Cardiology', 'Infectious Disease', 'Gastroenterology'],
+  step3: ['Primary Care', 'Internal Medicine', 'Emergency Medicine', 'Ethics', 'Patient Safety', 'Preventive Medicine', 'Biostatistics']
 }
 
 export const steps = [

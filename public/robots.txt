@@ -4,5 +4,12 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Disallow dynamic/filter params to avoid duplicate content
+Disallow: /*?*
+Disallow: /api/*
+
+# Sitemaps
 Sitemap: https://stepprepare.com/sitemap.xml
+
+# RSS Feed
+# Also indexed by Google via sitemap

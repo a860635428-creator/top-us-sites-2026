@@ -231,33 +231,33 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { step: 'Step 1', subjects: [
-                { name: 'Pathology', path: '/quiz/step1/Pathology', color: 'bg-red-50 text-red-700 border-red-200' },
-                { name: 'Pharmacology', path: '/quiz/step1/Pharmacology', color: 'bg-blue-50 text-blue-700 border-blue-200' },
-                { name: 'Physiology', path: '/quiz/step1/Physiology', color: 'bg-green-50 text-green-700 border-green-200' },
-                { name: 'Anatomy', path: '/quiz/step1/Anatomy', color: 'bg-purple-50 text-purple-700 border-purple-200' },
-                { name: 'Microbiology', path: '/quiz/step1/Microbiology', color: 'bg-yellow-50 text-yellow-700 border-yellow-200' },
-                { name: 'Biochemistry', path: '/quiz/step1/Biochemistry', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
+                { name: 'Pathology', path: '/quiz/step1/pathology', color: 'bg-red-50 text-red-700 border-red-200' },
+                { name: 'Pharmacology', path: '/quiz/step1/pharmacology', color: 'bg-blue-50 text-blue-700 border-blue-200' },
+                { name: 'Physiology', path: '/quiz/step1/physiology', color: 'bg-green-50 text-green-700 border-green-200' },
+                { name: 'Anatomy', path: '/quiz/step1/anatomy', color: 'bg-purple-50 text-purple-700 border-purple-200' },
+                { name: 'Microbiology', path: '/quiz/step1/microbiology', color: 'bg-yellow-50 text-yellow-700 border-yellow-200' },
+                { name: 'Biochemistry', path: '/quiz/step1/biochemistry', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
               ]},
               { step: 'Step 2 CK', subjects: [
-                { name: 'Internal Medicine', path: '/quiz/step2/Internal%20Medicine', color: 'bg-red-50 text-red-700 border-red-200' },
-                { name: 'Surgery', path: '/quiz/step2/Surgery', color: 'bg-blue-50 text-blue-700 border-blue-200' },
-                { name: 'Pediatrics', path: '/quiz/step2/Pediatrics', color: 'bg-green-50 text-green-700 border-green-200' },
-                { name: 'OB/GYN', path: '/quiz/step2/OB%2FGYN', color: 'bg-pink-50 text-pink-700 border-pink-200' },
-                { name: 'Psychiatry', path: '/quiz/step2/Psychiatry', color: 'bg-purple-50 text-purple-700 border-purple-200' },
-                { name: 'Cardiology', path: '/quiz/step2/Cardiology', color: 'bg-amber-50 text-amber-700 border-amber-200' },
+                { name: 'Internal Medicine', path: '/quiz/step2/internal-medicine', color: 'bg-red-50 text-red-700 border-red-200' },
+                { name: 'Surgery', path: '/quiz/step2/surgery', color: 'bg-blue-50 text-blue-700 border-blue-200' },
+                { name: 'Pediatrics', path: '/quiz/step2/pediatrics', color: 'bg-green-50 text-green-700 border-green-200' },
+                { name: 'Obstetrics & Gynecology', path: '/quiz/step2/obstetrics-&-gynecology', color: 'bg-pink-50 text-pink-700 border-pink-200' },
+                { name: 'Psychiatry', path: '/quiz/step2/psychiatry', color: 'bg-purple-50 text-purple-700 border-purple-200' },
+                { name: 'Cardiology', path: '/quiz/step2/cardiology', color: 'bg-amber-50 text-amber-700 border-amber-200' },
               ]},
               { step: 'Step 3', subjects: [
-                { name: 'Internal Medicine', path: '/quiz/step3/Internal%20Medicine', color: 'bg-red-50 text-red-700 border-red-200' },
-                { name: 'Ethics', path: '/quiz/step3/Ethics', color: 'bg-teal-50 text-teal-700 border-teal-200' },
-                { name: 'Patient Safety', path: '/quiz/step3/Patient%20Safety', color: 'bg-orange-50 text-orange-700 border-orange-200' },
-                { name: 'Preventive Medicine', path: '/quiz/step3/Preventive%20Medicine', color: 'bg-cyan-50 text-cyan-700 border-cyan-200' },
-                { name: 'Biostatistics', path: '/quiz/step3/Biostatistics', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
-                { name: 'Primary Care', path: '/quiz/step3/Primary%20Care', color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+                { name: 'Internal Medicine', path: '/quiz/step3/internal-medicine', color: 'bg-red-50 text-red-700 border-red-200' },
+                { name: 'Ethics', path: '/quiz/step3/ethics', color: 'bg-teal-50 text-teal-700 border-teal-200' },
+                { name: 'Patient Safety', path: '/quiz/step3/patient-safety', color: 'bg-orange-50 text-orange-700 border-orange-200' },
+                { name: 'Preventive Medicine', path: '/quiz/step3/preventive-medicine', color: 'bg-cyan-50 text-cyan-700 border-cyan-200' },
+                { name: 'Biostatistics', path: '/quiz/step3/biostatistics', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
+                { name: 'Primary Care', path: '/quiz/step3/primary-care', color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
               ]},
             ].map((group) => (
               <div key={group.step} className="bg-gray-50 rounded-2xl p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <Link to={`/quiz/${group.step.toLowerCase().replace(' ', '')}`} className="hover:text-blue-600 transition-colors">
+                  <Link to={`/quiz/${group.step.toLowerCase().replace(/\s+/g, '')}`} className="hover:text-blue-600 transition-colors">
                     {group.step}
                   </Link>
                   <span className="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-normal">Free</span>
