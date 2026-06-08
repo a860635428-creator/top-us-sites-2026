@@ -38,7 +38,7 @@ const Quiz = () => {
   // Filter questions by step and optional subject
   const filteredQuestions = questions.filter((q) => {
     if (subject) {
-      const subjectName = subject.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+      const subjectName = subject.replace(/-/g, ' ').replace(/\band\b/g, '&').replace(/\b\w/g, l => l.toUpperCase())
       return q.step === step && q.subject.toLowerCase() === subjectName.toLowerCase()
     }
     return q.step === step

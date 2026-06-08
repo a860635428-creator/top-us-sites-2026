@@ -242,7 +242,7 @@ const Home = () => {
                 { name: 'Internal Medicine', path: '/quiz/step2/internal-medicine', color: 'bg-red-50 text-red-700 border-red-200' },
                 { name: 'Surgery', path: '/quiz/step2/surgery', color: 'bg-blue-50 text-blue-700 border-blue-200' },
                 { name: 'Pediatrics', path: '/quiz/step2/pediatrics', color: 'bg-green-50 text-green-700 border-green-200' },
-                { name: 'Obstetrics & Gynecology', path: '/quiz/step2/obstetrics-&-gynecology', color: 'bg-pink-50 text-pink-700 border-pink-200' },
+                { name: 'Obstetrics & Gynecology', path: '/quiz/step2/obstetrics-and-gynecology', color: 'bg-pink-50 text-pink-700 border-pink-200' },
                 { name: 'Psychiatry', path: '/quiz/step2/psychiatry', color: 'bg-purple-50 text-purple-700 border-purple-200' },
                 { name: 'Cardiology', path: '/quiz/step2/cardiology', color: 'bg-amber-50 text-amber-700 border-amber-200' },
               ]},

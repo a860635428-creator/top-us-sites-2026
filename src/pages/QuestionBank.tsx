@@ -51,7 +51,7 @@ const QuestionBank = () => {
             {subjects[step.id as keyof typeof subjects]?.map((subject) => (
               <Link
                 key={subject}
-                to={`/quiz/${step.id}/${subject.replace(/\s+/g, '-').toLowerCase()}`}
+                to={`/quiz/${step.id}/${subject.replace(/\s+/g, '-').replace(/&/g, 'and').toLowerCase()}`}
                 className="card hover:border-blue-300 border-2 border-transparent group"
               >
                 <div className="flex items-center justify-between">

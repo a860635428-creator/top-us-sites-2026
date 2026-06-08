@@ -120,7 +120,7 @@ const blogPosts: BlogPost[] = [
             <strong>Internal Medicine (50-60%):</strong> This is the backbone of Step 2 CK. Focus on cardiology
             (ACS, heart failure, arrhythmias), pulmonology (COPD, asthma, pneumonia), gastroenterology (GI bleeding,
             IBD, liver disease), and infectious disease (HIV, sepsis, TB).{' '}
-            <Link to="/quiz/step2/Internal%20Medicine" className="text-blue-600 hover:underline font-semibold">
+            <Link to="/quiz/step2/internal-medicine" className="text-blue-600 hover:underline font-semibold">
               Practice Internal Medicine questions →
             </Link>
           </li>
