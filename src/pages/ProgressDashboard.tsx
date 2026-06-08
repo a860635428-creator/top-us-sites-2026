@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { questions, steps } from '../data/questions'
 import { getWrongAnswers } from '../utils/storage'
+import { getStreak, getActivityDates, isActiveToday } from '../utils/streak'
 import SEO from '../components/SEO'
 
 interface ExamHistoryEntry {
@@ -17,6 +18,8 @@ const ProgressDashboard = () => {
   const [wrongAnswerIds, setWrongAnswerIds] = useState<number[]>([])
   const [examHistory, setExamHistory] = useState<ExamHistoryEntry[]>([])
   const [activeTab, setActiveTab] = useState<'overview' | 'weak'>('overview')
+  const [streakState, setStreakState] = useState(getStreak())
+  const [todayActive, setTodayActive] = useState(isActiveToday())
 
   useEffect(() => {
     // Load wrong answers
@@ -29,6 +32,9 @@ const ProgressDashboard = () => {
     } catch {
       setExamHistory([])
     }
+    // Load streak
+    setStreakState(getStreak())
+    setTodayActive(isActiveToday())
   }, [])
 
   // Compute stats
@@ -115,6 +121,55 @@ const ProgressDashboard = () => {
           </div>
         )})}
       </div>
+
+      {/* Streak & Motivation Section */}
+      {streakState.currentStreak > 0 && (
+        <div className="mb-10 bg-gradient-to-r from-orange-50 via-amber-50 to-yellow-50 border border-orange-200 rounded-2xl p-6 shadow-sm">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:justify-between">
+            <div className="flex items-center gap-3">
+              <span className="text-4xl">🔥</span>
+              <div>
+                <div className="text-2xl font-bold text-orange-700">
+                  {streakState.currentStreak}-Day Streak!
+                </div>
+                <div className="text-sm text-orange-600 mt-0.5">
+                  {todayActive ? 'You\'ve studied today — keep it going!' : 'Come back today to keep your streak alive!'}
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-4 text-center">
+              <div className="bg-white rounded-xl px-4 py-3 shadow-sm border border-orange-100">
+                <div className="text-lg font-bold text-orange-600">{streakState.currentStreak}</div>
+                <div className="text-xs text-gray-500">Current</div>
+              </div>
+              <div className="bg-white rounded-xl px-4 py-3 shadow-sm border border-orange-100">
+                <div className="text-lg font-bold text-yellow-600">🏆 {streakState.longestStreak}</div>
+                <div className="text-xs text-gray-500">Best</div>
+              </div>
+              <div className="bg-white rounded-xl px-4 py-3 shadow-sm border border-orange-100">
+                <div className="text-lg font-bold">{getActivityDates().length}</div>
+                <div className="text-xs text-gray-500">Days Active</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {streakState.currentStreak === 0 && (
+        <div className="mb-10 bg-blue-50 border border-blue-200 rounded-2xl p-6 shadow-sm">
+          <div className="flex items-center gap-3">
+            <span className="text-3xl">📅</span>
+            <div>
+              <div className="text-lg font-bold text-blue-700">Start Your Study Streak!</div>
+              <div className="text-sm text-blue-600 mt-0.5">
+                Answer at least one question today to start building your daily practice habit. Consistent daily practice is the #1 predictor of USMLE success.
+              </div>
+            </div>
+            <Link to="/question-bank" className="ml-auto bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm whitespace-nowrap">
+              Practice Now →
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* Tabs */}
       <div className="flex gap-2 mb-6">

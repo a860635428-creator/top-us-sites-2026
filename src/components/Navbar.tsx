@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { getUser, clearUser, onAuthChange, isOfflineMode, type User } from '../utils/auth'
+import { getStreak } from '../utils/streak'
 
 const Navbar = () => {
   const location = useLocation()
@@ -10,6 +11,7 @@ const Navbar = () => {
   const [offline, setOffline] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [streak, setStreak] = useState(0)
 
   // Initial auth check + Supabase auth state listener
   useEffect(() => {
@@ -40,6 +42,8 @@ const Navbar = () => {
       setOffline(isOfflineMode())
     }
     check()
+    // Also refresh streak
+    setStreak(getStreak().currentStreak)
   }, [location.key])
 
   const checkActive = (path: string) => {
@@ -110,6 +114,12 @@ const Navbar = () => {
 
           {/* Desktop Auth */}
           <div className="hidden md:flex items-center gap-3">
+            {/* Streak Badge */}
+            {streak > 0 && (
+              <div className="flex items-center gap-1 px-2.5 py-1 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-orange-600" title={`${streak}-day study streak!`}>
+                🔥 {streak}
+              </div>
+            )}
             {loggedIn && user ? (
               <div className="relative">
                 <button
@@ -204,6 +214,11 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="border-t border-gray-100 pt-3 mt-3">
+              {streak > 0 && (
+                <div className="px-3 py-2 text-sm font-bold text-orange-600">
+                  🔥 {streak}-day streak!
+                </div>
+              )}
               {loggedIn && user ? (
                 <>
                   <div className="px-3 py-2 text-sm text-gray-500">

@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { questions, steps } from '../data/questions'
 import { addWrongAnswer } from '../utils/storage'
+import { recordActivity } from '../utils/streak'
 import AdBanner from '../components/AdBanner'
+import ConfettiCanvas from '../components/ConfettiCanvas'
 import SEO from '../components/SEO'
 
 type Lang = 'en' | 'zh' | 'es'
@@ -21,6 +23,10 @@ const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [showResult, setShowResult] = useState(false)
   const [wrongAnswers, setWrongAnswers] = useState<number[]>([])
+  const [timerOn, setTimerOn] = useState(false)
+  const [timeLeft, setTimeLeft] = useState(60)
+  const [showConfetti, setShowConfetti] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   // Report Error modal state
   const [showReport, setShowReport] = useState(false)
@@ -44,12 +50,60 @@ const Quiz = () => {
     setCurrentIndex(0)
     setSelectedAnswer(null)
     setShowResult(false)
+    setShowConfetti(false)
+    setTimeLeft(60)
+    stopTimer()
   }, [step, subject])
+
+  // Timer logic
+  const stopTimer = useCallback(() => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current)
+      timerRef.current = null
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!timerOn || showResult) {
+      stopTimer()
+      return
+    }
+    setTimeLeft(60)
+    timerRef.current = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          // Time's up — auto-reveal as wrong
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+    return () => stopTimer()
+  }, [currentIndex, timerOn, showResult, stopTimer])
+
+  // Auto-submit when timer hits 0
+  useEffect(() => {
+    if (timerOn && timeLeft === 0 && !showResult) {
+      setShowResult(true)
+      setSelectedAnswer(-1) // no answer selected = wrong
+      setWrongAnswers((prev) => [...prev, currentQuestion.id])
+      addWrongAnswer(currentQuestion.id, -1)
+    }
+  }, [timeLeft, timerOn, showResult, currentQuestion.id])
+
+  // Reset timer state on question change
+  useEffect(() => {
+    if (timerOn && !showResult) {
+      setTimeLeft(60)
+    }
+  }, [currentIndex, timerOn, showResult])
 
   const handleAnswer = async (index: number) => {
     if (showResult) return
     setSelectedAnswer(index)
     setShowResult(true)
+    // Record daily streak activity
+    recordActivity()
     if (index !== currentQuestion.correctAnswer) {
       setWrongAnswers(prev => [...prev, currentQuestion.id])
       await addWrongAnswer(currentQuestion.id, index)
@@ -118,6 +172,18 @@ const Quiz = () => {
             )}
           </div>
           <div className="flex items-center gap-2">
+            {/* Timer Toggle */}
+            <button
+              onClick={() => { setTimerOn(!timerOn); setTimeLeft(60) }}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                timerOn
+                  ? 'bg-amber-100 text-amber-700 border border-amber-300'
+                  : 'bg-gray-100 text-gray-500 border border-gray-200 hover:bg-gray-200'
+              }`}
+              title={timerOn ? 'Disable per-question timer' : 'Enable 60-second per-question timer'}
+            >
+              ⏱ {timerOn ? `${timeLeft}s` : 'Timer'}
+            </button>
             {/* Language Selector */}
             <div className="flex bg-gray-100 rounded-lg p-1">
               {(Object.keys(langLabels) as Lang[]).map((l) => (
@@ -154,6 +220,11 @@ const Quiz = () => {
         </div>
         <p className="text-sm text-gray-500 mt-2">
           Question {currentIndex + 1} of {filteredQuestions.length}
+          {timerOn && (
+            <span className={`ml-3 font-bold ${timeLeft <= 10 ? 'text-red-600 animate-pulse' : timeLeft <= 20 ? 'text-amber-600' : 'text-blue-600'}`}>
+              ⏱ {timeLeft}s
+            </span>
+          )}
         </p>
       </div>
 
@@ -285,10 +356,13 @@ const Quiz = () => {
           </button>
         ) : (
           <button
-            onClick={() => navigate('/question-bank')}
-            className="btn-primary bg-green-600 hover:bg-green-700"
+            onClick={() => {
+              setShowConfetti(true)
+              setTimeout(() => navigate('/question-bank'), 1800)
+            }}
+            className="btn-primary bg-green-600 hover:bg-green-700 animate-pulse"
           >
-            Finish ✓
+            🎉 Complete! View Results →
           </button>
         )}
       </div>
@@ -386,6 +460,9 @@ const Quiz = () => {
           </div>
         </div>
       )}
+
+      {/* Celebration confetti on completion */}
+      <ConfettiCanvas active={showConfetti} />
     </div>
   )
 }

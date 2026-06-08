@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import AdBanner from '../components/AdBanner'
+import QuickQuestion from '../components/QuickQuestion'
 import SEO from '../components/SEO'
 
 // Configure this to receive email notifications when users subscribe
@@ -93,7 +94,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Ad: After Stats */}
+      {/* Interactive: Try One Question Teaser */}
+      <QuickQuestion />
+
+      {/* Ad: After Quick Question */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AdBanner format="horizontal" />
       </div>
