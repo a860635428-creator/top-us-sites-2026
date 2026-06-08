@@ -3,76 +3,113 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Homepage -->
   <url>
     <loc>https://stepprepare.com/</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>1.0</priority>
   </url>
+
+  <!-- Core Practice Pages -->
   <url>
     <loc>https://stepprepare.com/question-bank</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://stepprepare.com/mock-exam</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.85</priority>
   </url>
+
+  <!-- Step Quiz Pages -->
   <url>
     <loc>https://stepprepare.com/quiz/step1</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://stepprepare.com/quiz/step2</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://stepprepare.com/quiz/step3</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.85</priority>
   </url>
+
+  <!-- Step 1 Subjects (high-value SEO landing pages) -->
+  <url><loc>https://stepprepare.com/quiz/step1/Pathology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/Pharmacology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/Physiology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/Anatomy</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/Microbiology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/Biochemistry</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/Immunology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/Genetics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/Behavioral%20Science</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step1/Biostatistics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+
+  <!-- Step 2 CK Subjects -->
+  <url><loc>https://stepprepare.com/quiz/step2/Internal%20Medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/Surgery</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/Pediatrics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/OB%2FGYN</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/Psychiatry</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/Cardiology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/Neurology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/Gastroenterology</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/Infectious%20Disease</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step2/Emergency%20Medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+
+  <!-- Step 3 Subjects -->
+  <url><loc>https://stepprepare.com/quiz/step3/Internal%20Medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/Primary%20Care</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/Ethics</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/Patient%20Safety</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://stepprepare.com/quiz/step3/Preventive%20Medicine</loc><lastmod>2026-06-08</lastmod><priority>0.8</priority></url>
+
+  <!-- Blog / Content Pages -->
   <url>
-    <loc>https://stepprepare.com/wrong-answers</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://stepprepare.com/blog</loc>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://stepprepare.com/dashboard</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- Resource & Info Pages -->
   <url>
     <loc>https://stepprepare.com/resources</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stepprepare.com/about</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.6</priority>
   </url>
+
+  <!-- Auth Pages (public landing) -->
+  <url>
+    <loc>https://stepprepare.com/login</loc>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://stepprepare.com/register</loc>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Legal Pages -->
   <url>
     <loc>https://stepprepare.com/terms</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://stepprepare.com/privacy</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.3</priority>
   </url>
 </urlset>

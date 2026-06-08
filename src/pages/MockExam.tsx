@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { questions, steps } from '../data/questions'
 import { addWrongAnswer } from '../utils/storage'
 import SEO from '../components/SEO'
+import Breadcrumb from '../components/Breadcrumb'
 
 type Question = typeof questions[number]
 type Lang = 'en' | 'zh' | 'es'
@@ -518,6 +519,7 @@ const MockExam = () => {
         description="Take a free, timed USMLE mock exam simulating the real test experience. Choose your Step (1, 2 CK, or 3), set question count and time limit. Track your score and review answers with multi-language explanations."
         canonicalPath="/mock-exam"
       />
+      <Breadcrumb items={[{ label: 'Home', path: '/' }, { label: 'Mock Exam', path: '/mock-exam' }]} />
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Mock Exam</h1>
         <p className="text-gray-600">

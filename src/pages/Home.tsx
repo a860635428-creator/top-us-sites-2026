@@ -217,6 +217,73 @@ const Home = () => {
         <AdBanner format="rectangle" />
       </div>
 
+      {/* Popular Topics Section — SEO-rich internal linking */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Popular USMLE Practice Topics
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Start practicing the most high-yield USMLE subjects right now — free for all IMGs
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { step: 'Step 1', subjects: [
+                { name: 'Pathology', path: '/quiz/step1/Pathology', color: 'bg-red-50 text-red-700 border-red-200' },
+                { name: 'Pharmacology', path: '/quiz/step1/Pharmacology', color: 'bg-blue-50 text-blue-700 border-blue-200' },
+                { name: 'Physiology', path: '/quiz/step1/Physiology', color: 'bg-green-50 text-green-700 border-green-200' },
+                { name: 'Anatomy', path: '/quiz/step1/Anatomy', color: 'bg-purple-50 text-purple-700 border-purple-200' },
+                { name: 'Microbiology', path: '/quiz/step1/Microbiology', color: 'bg-yellow-50 text-yellow-700 border-yellow-200' },
+                { name: 'Biochemistry', path: '/quiz/step1/Biochemistry', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
+              ]},
+              { step: 'Step 2 CK', subjects: [
+                { name: 'Internal Medicine', path: '/quiz/step2/Internal%20Medicine', color: 'bg-red-50 text-red-700 border-red-200' },
+                { name: 'Surgery', path: '/quiz/step2/Surgery', color: 'bg-blue-50 text-blue-700 border-blue-200' },
+                { name: 'Pediatrics', path: '/quiz/step2/Pediatrics', color: 'bg-green-50 text-green-700 border-green-200' },
+                { name: 'OB/GYN', path: '/quiz/step2/OB%2FGYN', color: 'bg-pink-50 text-pink-700 border-pink-200' },
+                { name: 'Psychiatry', path: '/quiz/step2/Psychiatry', color: 'bg-purple-50 text-purple-700 border-purple-200' },
+                { name: 'Cardiology', path: '/quiz/step2/Cardiology', color: 'bg-amber-50 text-amber-700 border-amber-200' },
+              ]},
+              { step: 'Step 3', subjects: [
+                { name: 'Internal Medicine', path: '/quiz/step3/Internal%20Medicine', color: 'bg-red-50 text-red-700 border-red-200' },
+                { name: 'Ethics', path: '/quiz/step3/Ethics', color: 'bg-teal-50 text-teal-700 border-teal-200' },
+                { name: 'Patient Safety', path: '/quiz/step3/Patient%20Safety', color: 'bg-orange-50 text-orange-700 border-orange-200' },
+                { name: 'Preventive Medicine', path: '/quiz/step3/Preventive%20Medicine', color: 'bg-cyan-50 text-cyan-700 border-cyan-200' },
+                { name: 'Biostatistics', path: '/quiz/step3/Biostatistics', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
+                { name: 'Primary Care', path: '/quiz/step3/Primary%20Care', color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+              ]},
+            ].map((group) => (
+              <div key={group.step} className="bg-gray-50 rounded-2xl p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <Link to={`/quiz/${group.step.toLowerCase().replace(' ', '')}`} className="hover:text-blue-600 transition-colors">
+                    {group.step}
+                  </Link>
+                  <span className="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-normal">Free</span>
+                </h3>
+                <div className="space-y-2">
+                  {group.subjects.map((subj) => (
+                    <Link
+                      key={subj.path}
+                      to={subj.path}
+                      className={`block px-4 py-2.5 rounded-lg border text-sm font-medium hover:shadow-sm transition-all hover:-translate-y-0.5 ${subj.color}`}
+                    >
+                      {subj.name} USMLE Practice Questions →
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/blog" className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-1">
+              📖 Read USMLE Study Guides & Tips →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* What Makes Us Different */}
       <section className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

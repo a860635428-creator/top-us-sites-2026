@@ -6,6 +6,7 @@ import { recordActivity } from '../utils/streak'
 import AdBanner from '../components/AdBanner'
 import ConfettiCanvas from '../components/ConfettiCanvas'
 import SEO from '../components/SEO'
+import Breadcrumb from '../components/Breadcrumb'
 
 type Lang = 'en' | 'zh' | 'es'
 
@@ -160,6 +161,12 @@ const Quiz = () => {
         description={`Free USMLE ${stepLabel} practice questions${subject ? ` focused on ${subject.replace(/-/g, ' ')}` : ''}. Interactive quiz with detailed explanations in English, Chinese and Spanish for IMGs.`}
         canonicalPath={`/quiz/${step}${subject ? `/${subject}` : ''}`}
       />
+      <Breadcrumb items={[
+        { label: 'Home', path: '/' },
+        { label: 'Question Bank', path: '/question-bank' },
+        { label: `${stepLabel}` },
+        ...(subject ? [{ label: subject.replace(/-/g, ' ') }] : []),
+      ]} />
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-2">

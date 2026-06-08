@@ -80,6 +80,7 @@ const Navbar = () => {
             {[
               { label: 'Question Bank', path: '/question-bank' },
               { label: 'Mock Exam', path: '/mock-exam' },
+              { label: 'Blog', path: '/blog' },
               { label: 'Wrong Answers', path: '/wrong-answers' },
               { label: 'Dashboard', path: '/dashboard' },
               { label: 'Resources', path: '/resources' },
@@ -196,6 +197,7 @@ const Navbar = () => {
             {[
               { label: 'Question Bank', path: '/question-bank' },
               { label: 'Mock Exam', path: '/mock-exam' },
+              { label: 'Blog', path: '/blog' },
               { label: 'Wrong Answers', path: '/wrong-answers' },
               { label: 'Dashboard', path: '/dashboard' },
               { label: 'Resources', path: '/resources' },

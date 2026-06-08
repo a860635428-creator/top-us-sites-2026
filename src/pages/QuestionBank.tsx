@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { steps, subjects } from '../data/questions'
 import AdBanner from '../components/AdBanner'
 import SEO from '../components/SEO'
+import Breadcrumb from '../components/Breadcrumb'
 
 const QuestionBank = () => {
   const [selectedStep, setSelectedStep] = useState<string>('step1')
@@ -14,6 +15,7 @@ const QuestionBank = () => {
         description="Browse 1069+ free USMLE practice questions organized by Step 1, Step 2 CK, and Step 3. Filter by subject area including Pathology, Pharmacology, Internal Medicine, and more. No signup required."
         canonicalPath="/question-bank"
       />
+      <Breadcrumb items={[{ label: 'Home', path: '/' }, { label: 'Question Bank', path: '/question-bank' }]} />
       {/* Page Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">USMLE Question Bank — Step 1, 2 & 3 Practice Questions</h1>

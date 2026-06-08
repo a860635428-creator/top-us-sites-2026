@@ -17,6 +17,7 @@ const Privacy = lazy(() => import('./pages/Privacy'))
 const TermsOfService = lazy(() => import('./pages/TermsOfService'))
 const About = lazy(() => import('./pages/About'))
 const ProgressDashboard = lazy(() => import('./pages/ProgressDashboard'))
+const Blog = lazy(() => import('./pages/Blog'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 // Loading fallback for lazy routes
@@ -85,6 +86,7 @@ function App() {
                 <Route path="/terms" element={<TermsOfService />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/dashboard" element={<ProgressDashboard />} />
+                <Route path="/blog" element={<Blog />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
