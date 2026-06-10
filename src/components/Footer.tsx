@@ -1,16 +1,24 @@
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
-  const buildDate = '2026-06-06'
+  const buildDate = '2026-06-10'
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* Global Disclaimer Banner */}
       <div className="bg-amber-900/40 border-b border-amber-700/50 px-4 py-3 text-center text-xs leading-relaxed text-amber-200">
-        <strong className="text-amber-100">Disclaimer / 免责声明：</strong>
-        This site is <strong>not affiliated</strong> with NBME, USMLE, or FSMB.
-        All practice questions are <strong>AI-generated</strong> for educational purposes only.
-        Accuracy is not guaranteed — please verify with official resources.
-        <span className="hidden sm:inline"> / 本网站与 NBME、USMLE 或 FSMB <strong>无关</strong>。所有练习题均为 <strong>AI 生成</strong>，仅供教育目的。准确性不予保证——请与官方资源核实。</span>
+        <p><strong className="text-amber-100">Disclaimer / 免责声明：</strong></p>
+        <p className="mt-1">
+          USMLE<strong>&reg;</strong> is a registered trademark of the National Board of Medical Examiners (NBME) and the Federation of State Medical Boards (FSMB).
+          This site is <strong>not affiliated</strong> with, endorsed by, or sponsored by NBME, USMLE, or FSMB.
+        </p>
+        <p className="mt-1">
+          Practice questions are <strong>AI-generated</strong> for educational reference only.
+          Content does <strong>NOT</strong> constitute medical advice, diagnosis, or treatment.
+          Accuracy is not guaranteed — please verify with official resources. Found an error? <a href="mailto:a860635428@gmail.com" className="text-amber-100 hover:text-white underline font-medium">Report it here</a>.
+        </p>
+        <p className="mt-1 hidden sm:block">
+          本网站与 NBME、USMLE 或 FSMB <strong>无关</strong>。练习题由 <strong>AI 生成</strong>，仅供学习参考，<strong>不构成医疗建议</strong>。准确性不予保证，如有错误欢迎<a href="mailto:a860635428@gmail.com" className="text-amber-100 hover:text-white underline font-medium">反馈</a>。
+        </p>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
