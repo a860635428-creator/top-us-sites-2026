@@ -3,10 +3,7 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
-    {
-      "source": "/((?!sitemap\\.xml|robots\\.txt|rss\\.xml|manifest\\.json|sw\\.js|favicon\\.|assets/).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {
