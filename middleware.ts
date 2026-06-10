@@ -20,5 +20,6 @@ Sorry for the inconvenience.`,
     );
   }
 
-  // Return nothing = Vercel continues normal request handling
+  // For non-Next.js frameworks, must use fetch(request) to forward the request
+  return fetch(request);
 }
