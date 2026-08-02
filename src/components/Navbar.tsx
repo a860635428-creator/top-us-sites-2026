@@ -84,6 +84,7 @@ const Navbar = () => {
               { label: 'Wrong Answers', path: '/wrong-answers' },
               { label: 'Dashboard', path: '/dashboard' },
               { label: 'Resources', path: '/resources' },
+              { label: 'Contact', path: '/contact' },
             ].map(({ label, path }) => (
               <Link
                 key={path}
@@ -201,6 +202,7 @@ const Navbar = () => {
               { label: 'Wrong Answers', path: '/wrong-answers' },
               { label: 'Dashboard', path: '/dashboard' },
               { label: 'Resources', path: '/resources' },
+              { label: 'Contact', path: '/contact' },
             ].map(({ label, path }) => (
               <Link
                 key={path}

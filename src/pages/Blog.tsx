@@ -430,7 +430,7 @@ const Blog = () => {
             Ready to Put These Strategies into Practice?
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
-            Apply what you've learned with 1069+ free USMLE practice questions. Multi-language
+            Apply what you've learned with 1568+ free USMLE practice questions. Multi-language
             explanations in English, Chinese, and Spanish.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

@@ -105,7 +105,7 @@ const Footer = () => {
             <Link to="/about" className="hover:text-gray-300 transition-colors">About</Link>
             <Link to="/privacy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-gray-300 transition-colors">Terms</Link>
-            <a href="mailto:a860635428@gmail.com" className="hover:text-gray-300 transition-colors">Contact</a>
+            <Link to="/contact" className="hover:text-gray-300 transition-colors">Contact</Link>
           </div>
           <p className="text-gray-600">Last updated: {buildDate}</p>
         </div>

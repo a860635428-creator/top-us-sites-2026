@@ -13,7 +13,7 @@ const Home = () => {
     <div className="bg-white">
       <SEO
         title="Free USMLE Step 1, 2 & 3 Practice Questions — USMLE Prep for IMGs"
-        description="1069+ free USMLE Step 1, Step 2 CK & Step 3 practice questions with multi-language explanations in English, Chinese and Spanish. Designed for international medical graduates (IMGs). No signup required."
+        description="1568+ free USMLE Step 1, Step 2 CK & Step 3 practice questions with multi-language explanations in English, Chinese and Spanish. Designed for international medical graduates (IMGs). No signup required."
         canonicalPath="/"
       />
       {/* Hero Section */}
@@ -79,7 +79,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '1069+', label: 'Practice Questions', icon: '📚' },
+              { number: '1568+', label: 'Practice Questions', icon: '📚' },
               { number: '3', label: 'USMLE Steps Covered', icon: '🎯' },
               { number: '3', label: 'Explanation Languages', icon: '🌐' },
               { number: 'Free', label: 'Starting Price', icon: '💰' },
@@ -124,7 +124,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Question Bank</h3>
               <p className="text-gray-600 leading-relaxed text-center">
-                1069+ high-yield practice questions organized by USMLE Step and subject area.
+                1568+ high-yield practice questions organized by USMLE Step and subject area.
                 Covers all major topics tested on the exam, with detailed explanations for every answer.
               </p>
             </div>
@@ -302,7 +302,7 @@ const Home = () => {
               {
                 icon: '💯',
                 title: 'Completely Free',
-                text: 'No subscriptions, no credit cards, no paywalls. All 1069+ practice questions and mock exams are free. We believe test prep should be accessible to everyone.',
+                text: 'No subscriptions, no credit cards, no paywalls. All 1568+ practice questions and mock exams are free. We believe test prep should be accessible to everyone.',
               },
               {
                 icon: '📱',
@@ -542,7 +542,7 @@ const Home = () => {
           {/* Trust badges */}
           <div className="mt-12 flex flex-wrap justify-center gap-8 text-center">
             {[
-              { number: '1069+', label: 'Practice Questions' },
+              { number: '1568+', label: 'Practice Questions' },
               { number: '3', label: 'Languages Supported' },
               { number: 'Free', label: 'No Hidden Costs' },
               { number: 'Weekly', label: 'Content Updates' },

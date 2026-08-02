@@ -139,7 +139,7 @@ export default function QuickQuestion() {
           {revealed && (
             <div className="text-center">
               <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                Ready to practice more? 1069+ questions across all 3 Steps.
+                Ready to practice more? 1568+ questions across all 3 Steps.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Link
