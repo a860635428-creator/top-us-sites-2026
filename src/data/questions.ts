@@ -16,7 +16,7 @@ export interface Question {
   highYieldTag?: string
 }
 
-export const questions: Question[] = [
+const _questions_part_1: Question[] = [
   // ============================================================
   // STEP 1 — FOUNDATIONAL SCIENCES (35 questions)
   // ============================================================
@@ -3669,7 +3669,8 @@ export const questions: Question[] = [
     explanationEn: 'Malaria (P. falciparum): ring forms, cerebral malaria risk, severe anemia. Blood smear is gold standard for diagnosis.',
     explanationZh: '恶性疟：环状体，脑疟风险，严重贫血。血涂片是诊断金标准。',
     explanationEs: 'Malaria por P. falciparum: formas en anillo, riesgo de malaria cerebral. Frotis sanguineo es el oro.'
-  },
+  },];
+const _questions_part_2: Question[] = [
   {
     id: 753, step: 'step2', subject: 'Infectious Disease',
     question: 'A 60F on long-term IV antibiotics via central line. Blood culture: Candida albicans. Management?',
@@ -7455,7 +7456,8 @@ export const questions: Question[] = [
     explanationZh: "I型超敏反应：IgE介导，肥大细胞/嗜碱性粒细胞脱颗粒→组胺、白三烯、前列腺素。快速发作。例：过敏性休克、过敏性鼻炎、哮喘。",
     explanationEs: "Hipersensibilidad tipo I: mediada por IgE, mastocitos.",
     difficulty: 'Medium'
-  },
+  },];
+const _questions_part_3: Question[] = [
   {
     id: 1145, step: 'step1', subject: 'Immunology',
     question: "A patient with hemolytic anemia has a positive direct Coombs test. Which type of hypersensitivity is this?",
@@ -11375,7 +11377,8 @@ export const questions: Question[] = [
     explanationZh: 'CD4+ T辅助细胞识别MHC II（APC上）。CD8+ 细胞毒性T细胞识别MHC I（所有有核细胞）。HIV靶向CD4+ T细胞。',
     explanationEs: 'CD4+: MHC II (APC, exógeno). CD8+: MHC I (todas nucleadas, endógeno).',
     difficulty: 'Easy'
-  },
+  },];
+const _questions_part_4: Question[] = [
   {
     id: 1537, step: 'step1', subject: 'Immunology',
     question: 'CD4 count 180 in HIV. Which prophylaxis should be started?',
@@ -15303,7 +15306,13 @@ export const questions: Question[] = [
     explanationEs: 'La entrada de órdenes médicas computarizada (CPOE) con sistemas de soporte de decisiones clínicas ha demostrado reducir los errores de medicación hasta en un 55-80%. Elimina la escritura ilegible, proporciona verificación de dosis, alertas de alergias y advertencias de interacciones medicamentosas. Aunque otras intervenciones son beneficiosas, la CPOE tiene la evidencia más fuerte para reducir errores de medicación.',
     difficulty: 'Medium'
   },
-]
+];
+export const questions: Question[] = [
+  ..._questions_part_1,
+  ..._questions_part_2,
+  ..._questions_part_3,
+  ..._questions_part_4,
+];
 export const subjects: Record<string, string[]> = {
   step1: ['Pathology', 'Physiology', 'Pharmacology', 'Internal Medicine', 'Anatomy', 'Biochemistry', 'Microbiology', 'Immunology', 'Genetics', 'Neurology', 'Behavioral Science', 'Biostatistics'],
   step2: ['Internal Medicine', 'Surgery', 'Pediatrics', 'Obstetrics & Gynecology', 'Psychiatry', 'Pathology', 'Emergency Medicine', 'Neurology', 'Cardiology', 'Infectious Disease', 'Gastroenterology', 'Dermatology', 'Endocrinology', 'ENT', 'Geriatrics', 'Hematology', 'Hepatology', 'Nephrology', 'Ophthalmology', 'Orthopedics', 'Pulmonology', 'Rheumatology'],
