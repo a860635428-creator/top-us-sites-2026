@@ -67,6 +67,12 @@ const AdBanner = ({
     return () => clearTimeout(timer)
   }, [slotDesktop, slotMobile, format, isMobile])
 
+  // Auto Ads mode: when no explicit ad-unit slot is provided, AdSense's global
+  // auto-placement handles ad insertion. Rendering an empty <ins> without a
+  // data-ad-slot would create a useless placeholder, so we render nothing.
+  // Pass slotDesktop/slotMobile to switch to manual Ad Units mode.
+  if (!slotDesktop && !slotMobile) return null
+
   return (
     <div className={`ad-container my-10 ${className}`}>
       <div

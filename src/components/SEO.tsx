@@ -36,6 +36,13 @@ export default function SEO({
       )}
       {canonicalPath && <link rel="canonical" href={`${BASE_URL}${canonicalPath}`} />}
 
+      {/* hreflang: single-language (English) site.
+          en + x-default both point to the canonical URL.
+          NOTE: do NOT add zh/es alternates — this site has no /zh or /es
+          routes, and pointing hreflang at non-existent URLs hurts SEO. */}
+      <link rel="alternate" hreflang="en" href={`${BASE_URL}${canonicalPath || '/'}`} />
+      <link rel="alternate" hreflang="x-default" href={`${BASE_URL}${canonicalPath || '/'}`} />
+
       {/* Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={SITE_NAME} />
