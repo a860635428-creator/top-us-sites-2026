@@ -1,5 +1,7 @@
 // Vercel Edge Middleware — Block mainland China IPs
-// Vercel provides geo info via: request.geo.country or x-vercel-ip-country header
+// Vercel provides geo info via: request.geo.country or x-vercel-ip-country
+// NOTE: crawler/compliance files (ads.txt, robots.txt, sitemap.xml, etc.) are
+// always allowed below so Google AdSense / Search Console can verify the site. header
 
 // Vercel Edge Middleware — Block mainland China IPs, BUT always allow
 // crawler/compliance files required by Google AdSense / Search Console.
