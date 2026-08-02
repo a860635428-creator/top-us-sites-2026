@@ -2726,7 +2726,7 @@ export const questions: Question[] = [
     explanationEs: 'PTI: trombocitopenia aislada en niño sano. A menudo postviral.'
   },
   {
-    id: 648, step: 'step2', subject: 'OB/GYN',
+    id: 648, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 28F at 32 weeks gestation has severe headache, visual disturbances, and BP 170/110. Dx?',
     options: ['Preeclampsia with severe features', 'Chronic hypertension', 'Gestational hypertension', 'HELLP syndrome', 'Eclampsia'],
     correctAnswer: 0,
@@ -2735,7 +2735,7 @@ export const questions: Question[] = [
     explanationEs: 'Preeclampsia: hipertensión + proteinuria post-20 semanas. Características severas.'
   },
   {
-    id: 649, step: 'step2', subject: 'OB/GYN',
+    id: 649, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 22F with severe menstrual cramps since menarche. Dyspareunia. Uterus normal size. Next step in diagnosis?',
     options: ['Pelvic ultrasound or MRI', 'Hysterosalpingogram', 'Laparoscopy with biopsy', 'Pap smear', 'CA-125 only'],
     correctAnswer: 0,
@@ -2744,7 +2744,7 @@ export const questions: Question[] = [
     explanationEs: 'Endometriosis: dismenorrea, dispareunia. Diagnóstico: laparoscopia con biopsia (oro).'
   },
   {
-    id: 650, step: 'step2', subject: 'OB/GYN',
+    id: 650, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 55F with postmenopausal bleeding. Endometrial thickness 8mm on ultrasound. Next step?',
     options: ['Endometrial biopsy', 'Hysterectomy', 'Pelvic ultrasound only', 'CA-125', 'CT abdomen'],
     correctAnswer: 0,
@@ -2753,7 +2753,7 @@ export const questions: Question[] = [
     explanationEs: 'Sangrado postmenopáusico: biopsia de endometrio obligatoria para descartar cáncer.'
   },
   {
-    id: 651, step: 'step2', subject: 'OB/GYN',
+    id: 651, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 25F with irregular menses, hirsutism, and obesity. LH:FSH ratio 3:1. Dx?',
     options: ['PCOS', 'Cushing syndrome', 'Congenital adrenal hyperplasia', 'Androgen-secreting tumor', 'Hyperprolactinemia'],
     correctAnswer: 0,
@@ -2762,7 +2762,7 @@ export const questions: Question[] = [
     explanationEs: 'SOP: menstruaciones irregulares, hirsutismo, obesidad. LH↑, FSH↓.'
   },
   {
-    id: 652, step: 'step2', subject: 'OB/GYN',
+    id: 652, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 30F with right lower quadrant pain and a positive pregnancy test. CMP: 5 weeks. Next step?',
     options: ['Transvaginal ultrasound', 'Laparoscopy', 'Quantitative beta-hCG', 'D&C', 'CT abdomen'],
     correctAnswer: 0,
@@ -2771,7 +2771,7 @@ export const questions: Question[] = [
     explanationEs: 'Embarazo ectópico sospechado: beta-hCG cuantitativa + ecografía transvaginal.'
   },
   {
-    id: 653, step: 'step2', subject: 'OB/GYN',
+    id: 653, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 16yo F with lower abdominal pain and purulent cervical discharge. Fever. Adnexal tenderness. Dx?',
     options: ['PID (pelvic inflammatory disease)', 'Appendicitis', 'Ectopic pregnancy', 'Ovarian torsion', 'Endometriosis'],
     correctAnswer: 0,
@@ -2780,7 +2780,7 @@ export const questions: Question[] = [
     explanationEs: 'EPI: dolor abdominal bajo, flujo cervical purulento, fiebre. Infertilidad.'
   },
   {
-    id: 654, step: 'step2', subject: 'OB/GYN',
+    id: 654, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 40F with multiple leiomyomas (fibroids) presents with menorrhagia and iron deficiency anemia. Uterus size 18 weeks. Management?',
     options: ['Hysterectomy or myomectomy', 'Oral contraceptives', 'GnRH agonists long-term', 'Hysteroscopic resection only', 'Uterine artery embolization only'],
     correctAnswer: 0,
@@ -2789,7 +2789,7 @@ export const questions: Question[] = [
     explanationEs: 'Miomas sintomáticos: menorragia. Quirúrgico: miomectomía (conservar fertilidad), histerectomía.'
   },
   {
-    id: 655, step: 'step2', subject: 'OB/GYN',
+    id: 655, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 35F with 3 prior cesarean sections presents with placenta previa and painless vaginal bleeding at 34 weeks. Management?',
     options: ['Urgent cesarean section', 'Vaginal delivery trial', 'Bed rest only', 'Tocolytics', 'Steroids only'],
     correctAnswer: 0,
@@ -2798,7 +2798,7 @@ export const questions: Question[] = [
     explanationEs: 'Placenta previa: sangrado vaginal indoloro en tercer trimestre. Cesárea urgente si sangrado grave.'
   },
   {
-    id: 656, step: 'step2', subject: 'OB/GYN',
+    id: 656, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 20F with primary amenorrhea. She has breast development but no pubic hair. Dx?',
     options: ['Androgen insensitivity syndrome (AIS)', 'Turner syndrome', 'Swyer syndrome', 'Müllerian agenesis', 'Kallmann syndrome'],
     correctAnswer: 0,
@@ -2807,7 +2807,7 @@ export const questions: Question[] = [
     explanationEs: 'Síndrome de insensibilidad androgénica: 46,XY, defecto en receptor de andrógenos.'
   },
   {
-    id: 657, step: 'step2', subject: 'OB/GYN',
+    id: 657, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 30F has yellow, frothy vaginal discharge and草莓 cervix on speculum exam. Management?',
     options: ['Metronidazole', 'Clotrimazole', 'Azithromycin', 'Ceftriaxone', 'Doxycycline'],
     correctAnswer: 0,
@@ -15154,7 +15154,7 @@ export const questions: Question[] = [
     difficulty: 'Medium'
   },
   {
-    id: 1914, step: 'step2', subject: 'OB/GYN',
+    id: 1914, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 28-year-old woman at 32 weeks gestation presents with painless vaginal bleeding. Ultrasound shows a placenta covering the internal cervical os. What is the most appropriate management?',
     options: ['Immediate vaginal delivery', 'Cesarean delivery at 36-37 weeks', 'Bed rest and serial ultrasounds, deliver at 37-38 weeks', 'Tocolysis and corticosteroids, deliver at 34 weeks', 'Cervical cerclage'],
     correctAnswer: 2,
@@ -15164,7 +15164,7 @@ export const questions: Question[] = [
     difficulty: 'Medium'
   },
   {
-    id: 1915, step: 'step2', subject: 'OB/GYN',
+    id: 1915, step: 'step2', subject: 'Obstetrics & Gynecology',
     question: 'A 19-year-old woman presents with severe dysmenorrhea that does not respond to NSAIDs. She reports deep dyspareunia and chronic pelvic pain. Pelvic exam reveals tender nodules in the posterior vaginal fornix. What is the most likely diagnosis?',
     options: ['Pelvic inflammatory disease', 'Endometriosis', 'Uterine fibroids', 'Adenomyosis', 'Ovarian cyst'],
     correctAnswer: 1,
@@ -15306,7 +15306,7 @@ export const questions: Question[] = [
 ]
 export const subjects: Record<string, string[]> = {
   step1: ['Pathology', 'Physiology', 'Pharmacology', 'Internal Medicine', 'Anatomy', 'Biochemistry', 'Microbiology', 'Immunology', 'Genetics', 'Neurology', 'Behavioral Science', 'Biostatistics'],
-  step2: ['Internal Medicine', 'Surgery', 'Pediatrics', 'Obstetrics & Gynecology', 'Psychiatry', 'Pathology', 'Emergency Medicine', 'Neurology', 'Cardiology', 'Infectious Disease', 'Gastroenterology'],
+  step2: ['Internal Medicine', 'Surgery', 'Pediatrics', 'Obstetrics & Gynecology', 'Psychiatry', 'Pathology', 'Emergency Medicine', 'Neurology', 'Cardiology', 'Infectious Disease', 'Gastroenterology', 'Dermatology', 'Endocrinology', 'ENT', 'Geriatrics', 'Hematology', 'Hepatology', 'Nephrology', 'Ophthalmology', 'Orthopedics', 'Pulmonology', 'Rheumatology'],
   step3: ['Primary Care', 'Internal Medicine', 'Emergency Medicine', 'Ethics', 'Patient Safety', 'Preventive Medicine', 'Biostatistics']
 }
 
