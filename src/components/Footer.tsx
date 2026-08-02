@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
-  const buildDate = '2026-06-10'
+  const buildDate = '2026-08-02'
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* Global Disclaimer Banner */}

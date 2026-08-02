@@ -11,7 +11,7 @@ const Privacy = () => {
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
-        <p className="text-gray-500 mb-10">Last updated: June 10, 2026</p>
+        <p className="text-gray-500 mb-10">Last updated: August 2, 2026</p>
 
         <div className="space-y-8 text-gray-700 leading-relaxed">
           <section>
