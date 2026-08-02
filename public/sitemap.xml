@@ -87,6 +87,13 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Contact -->
+  <url>
+    <loc>https://stepprepare.com/contact</loc>
+    <lastmod>2026-08-02</lastmod>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Auth Pages (public landing) -->
   <url>
     <loc>https://stepprepare.com/login</loc>
